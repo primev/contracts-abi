@@ -330,7 +330,7 @@
   },
   {
     "type": "function",
-    "name": "withdrawPrepayedAmount",
+    "name": "withdrawPrepaidAmount",
     "inputs": [
       {
         "name": "bidder",
@@ -378,7 +378,7 @@
         "internalType": "address"
       },
       {
-        "name": "prepayedAmount",
+        "name": "prepaidAmount",
         "type": "uint256",
         "indexed": false,
         "internalType": "uint256"
