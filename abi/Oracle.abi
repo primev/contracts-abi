@@ -8,11 +8,6 @@
         "internalType": "address"
       },
       {
-        "name": "_bidderRegistry",
-        "type": "address",
-        "internalType": "address"
-      },
-      {
         "name": "_nextRequestedBlockNumber",
         "type": "uint256",
         "internalType": "uint256"

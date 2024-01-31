@@ -667,6 +667,19 @@
   },
   {
     "type": "function",
+    "name": "unlockBidFunds",
+    "inputs": [
+      {
+        "name": "commitmentDigest",
+        "type": "bytes32",
+        "internalType": "bytes32"
+      }
+    ],
+    "outputs": [],
+    "stateMutability": "nonpayable"
+  },
+  {
+    "type": "function",
     "name": "updateBidderRegistry",
     "inputs": [
       {
