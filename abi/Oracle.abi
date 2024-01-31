@@ -8,6 +8,11 @@
         "internalType": "address"
       },
       {
+        "name": "_bidderRegistry",
+        "type": "address",
+        "internalType": "address"
+      },
+      {
         "name": "_nextRequestedBlockNumber",
         "type": "uint256",
         "internalType": "uint256"
@@ -186,6 +191,19 @@
         "name": "newOwner",
         "type": "address",
         "internalType": "address"
+      }
+    ],
+    "outputs": [],
+    "stateMutability": "nonpayable"
+  },
+  {
+    "type": "function",
+    "name": "unlockFunds",
+    "inputs": [
+      {
+        "name": "bidIDs",
+        "type": "bytes32[]",
+        "internalType": "bytes32[]"
       }
     ],
     "outputs": [],

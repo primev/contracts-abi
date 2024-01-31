@@ -35,6 +35,58 @@
   },
   {
     "type": "function",
+    "name": "BidPayment",
+    "inputs": [
+      {
+        "name": "",
+        "type": "bytes32",
+        "internalType": "bytes32"
+      }
+    ],
+    "outputs": [
+      {
+        "name": "bidder",
+        "type": "address",
+        "internalType": "address"
+      },
+      {
+        "name": "bidAmt",
+        "type": "uint64",
+        "internalType": "uint64"
+      },
+      {
+        "name": "state",
+        "type": "uint8",
+        "internalType": "enum IBidderRegistry.State"
+      }
+    ],
+    "stateMutability": "view"
+  },
+  {
+    "type": "function",
+    "name": "LockBidFunds",
+    "inputs": [
+      {
+        "name": "commitmentDigest",
+        "type": "bytes32",
+        "internalType": "bytes32"
+      },
+      {
+        "name": "bid",
+        "type": "uint64",
+        "internalType": "uint64"
+      },
+      {
+        "name": "bidder",
+        "type": "address",
+        "internalType": "address"
+      }
+    ],
+    "outputs": [],
+    "stateMutability": "nonpayable"
+  },
+  {
+    "type": "function",
     "name": "bidderPrepaidBalances",
     "inputs": [
       {
@@ -251,14 +303,9 @@
     "name": "retrieveFunds",
     "inputs": [
       {
-        "name": "bidder",
-        "type": "address",
-        "internalType": "address"
-      },
-      {
-        "name": "amt",
-        "type": "uint256",
-        "internalType": "uint256"
+        "name": "commitmentDigest",
+        "type": "bytes32",
+        "internalType": "bytes32"
       },
       {
         "name": "provider",
@@ -316,6 +363,19 @@
         "name": "newOwner",
         "type": "address",
         "internalType": "address"
+      }
+    ],
+    "outputs": [],
+    "stateMutability": "nonpayable"
+  },
+  {
+    "type": "function",
+    "name": "unlockFunds",
+    "inputs": [
+      {
+        "name": "bidID",
+        "type": "bytes32",
+        "internalType": "bytes32"
       }
     ],
     "outputs": [],
@@ -391,10 +451,10 @@
     "name": "FundsRetrieved",
     "inputs": [
       {
-        "name": "bidder",
-        "type": "address",
+        "name": "commitmentDigest",
+        "type": "bytes32",
         "indexed": true,
-        "internalType": "address"
+        "internalType": "bytes32"
       },
       {
         "name": "amount",
