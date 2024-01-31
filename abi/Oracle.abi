@@ -192,6 +192,19 @@
     "stateMutability": "nonpayable"
   },
   {
+    "type": "function",
+    "name": "unlockFunds",
+    "inputs": [
+      {
+        "name": "bidIDs",
+        "type": "bytes32[]",
+        "internalType": "bytes32[]"
+      }
+    ],
+    "outputs": [],
+    "stateMutability": "nonpayable"
+  },
+  {
     "type": "event",
     "name": "CommitmentProcessed",
     "inputs": [
