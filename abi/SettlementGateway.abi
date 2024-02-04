@@ -138,7 +138,20 @@
   },
   {
     "type": "function",
-    "name": "transferIdx",
+    "name": "transferFinalizedIdx",
+    "inputs": [],
+    "outputs": [
+      {
+        "name": "",
+        "type": "uint256",
+        "internalType": "uint256"
+      }
+    ],
+    "stateMutability": "view"
+  },
+  {
+    "type": "function",
+    "name": "transferInitiatedIdx",
     "inputs": [],
     "outputs": [
       {
@@ -213,7 +226,7 @@
       {
         "name": "counterpartyIdx",
         "type": "uint256",
-        "indexed": false,
+        "indexed": true,
         "internalType": "uint256"
       }
     ],
@@ -244,7 +257,7 @@
       {
         "name": "transferIdx",
         "type": "uint256",
-        "indexed": false,
+        "indexed": true,
         "internalType": "uint256"
       }
     ],

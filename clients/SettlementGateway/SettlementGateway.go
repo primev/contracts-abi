@@ -31,7 +31,7 @@ var (
 
 // SettlementgatewayMetaData contains all meta data concerning the Settlementgateway contract.
 var SettlementgatewayMetaData = &bind.MetaData{
-	ABI: "[{\"type\":\"constructor\",\"inputs\":[{\"name\":\"_whitelistAddr\",\"type\":\"address\",\"internalType\":\"address\"},{\"name\":\"_owner\",\"type\":\"address\",\"internalType\":\"address\"},{\"name\":\"_relayer\",\"type\":\"address\",\"internalType\":\"address\"},{\"name\":\"_finalizationFee\",\"type\":\"uint256\",\"internalType\":\"uint256\"},{\"name\":\"_counterpartyFee\",\"type\":\"uint256\",\"internalType\":\"uint256\"}],\"stateMutability\":\"nonpayable\"},{\"type\":\"function\",\"name\":\"counterpartyFee\",\"inputs\":[],\"outputs\":[{\"name\":\"\",\"type\":\"uint256\",\"internalType\":\"uint256\"}],\"stateMutability\":\"view\"},{\"type\":\"function\",\"name\":\"finalizationFee\",\"inputs\":[],\"outputs\":[{\"name\":\"\",\"type\":\"uint256\",\"internalType\":\"uint256\"}],\"stateMutability\":\"view\"},{\"type\":\"function\",\"name\":\"finalizeTransfer\",\"inputs\":[{\"name\":\"_recipient\",\"type\":\"address\",\"internalType\":\"address\"},{\"name\":\"_amount\",\"type\":\"uint256\",\"internalType\":\"uint256\"},{\"name\":\"_counterpartyIdx\",\"type\":\"uint256\",\"internalType\":\"uint256\"}],\"outputs\":[],\"stateMutability\":\"nonpayable\"},{\"type\":\"function\",\"name\":\"initiateTransfer\",\"inputs\":[{\"name\":\"_recipient\",\"type\":\"address\",\"internalType\":\"address\"},{\"name\":\"_amount\",\"type\":\"uint256\",\"internalType\":\"uint256\"}],\"outputs\":[{\"name\":\"returnIdx\",\"type\":\"uint256\",\"internalType\":\"uint256\"}],\"stateMutability\":\"payable\"},{\"type\":\"function\",\"name\":\"owner\",\"inputs\":[],\"outputs\":[{\"name\":\"\",\"type\":\"address\",\"internalType\":\"address\"}],\"stateMutability\":\"view\"},{\"type\":\"function\",\"name\":\"relayer\",\"inputs\":[],\"outputs\":[{\"name\":\"\",\"type\":\"address\",\"internalType\":\"address\"}],\"stateMutability\":\"view\"},{\"type\":\"function\",\"name\":\"renounceOwnership\",\"inputs\":[],\"outputs\":[],\"stateMutability\":\"nonpayable\"},{\"type\":\"function\",\"name\":\"transferIdx\",\"inputs\":[],\"outputs\":[{\"name\":\"\",\"type\":\"uint256\",\"internalType\":\"uint256\"}],\"stateMutability\":\"view\"},{\"type\":\"function\",\"name\":\"transferOwnership\",\"inputs\":[{\"name\":\"newOwner\",\"type\":\"address\",\"internalType\":\"address\"}],\"outputs\":[],\"stateMutability\":\"nonpayable\"},{\"type\":\"function\",\"name\":\"whitelistAddr\",\"inputs\":[],\"outputs\":[{\"name\":\"\",\"type\":\"address\",\"internalType\":\"address\"}],\"stateMutability\":\"view\"},{\"type\":\"event\",\"name\":\"OwnershipTransferred\",\"inputs\":[{\"name\":\"previousOwner\",\"type\":\"address\",\"indexed\":true,\"internalType\":\"address\"},{\"name\":\"newOwner\",\"type\":\"address\",\"indexed\":true,\"internalType\":\"address\"}],\"anonymous\":false},{\"type\":\"event\",\"name\":\"TransferFinalized\",\"inputs\":[{\"name\":\"recipient\",\"type\":\"address\",\"indexed\":true,\"internalType\":\"address\"},{\"name\":\"amount\",\"type\":\"uint256\",\"indexed\":false,\"internalType\":\"uint256\"},{\"name\":\"counterpartyIdx\",\"type\":\"uint256\",\"indexed\":false,\"internalType\":\"uint256\"}],\"anonymous\":false},{\"type\":\"event\",\"name\":\"TransferInitiated\",\"inputs\":[{\"name\":\"sender\",\"type\":\"address\",\"indexed\":true,\"internalType\":\"address\"},{\"name\":\"recipient\",\"type\":\"address\",\"indexed\":true,\"internalType\":\"address\"},{\"name\":\"amount\",\"type\":\"uint256\",\"indexed\":false,\"internalType\":\"uint256\"},{\"name\":\"transferIdx\",\"type\":\"uint256\",\"indexed\":false,\"internalType\":\"uint256\"}],\"anonymous\":false}]",
+	ABI: "[{\"type\":\"constructor\",\"inputs\":[{\"name\":\"_whitelistAddr\",\"type\":\"address\",\"internalType\":\"address\"},{\"name\":\"_owner\",\"type\":\"address\",\"internalType\":\"address\"},{\"name\":\"_relayer\",\"type\":\"address\",\"internalType\":\"address\"},{\"name\":\"_finalizationFee\",\"type\":\"uint256\",\"internalType\":\"uint256\"},{\"name\":\"_counterpartyFee\",\"type\":\"uint256\",\"internalType\":\"uint256\"}],\"stateMutability\":\"nonpayable\"},{\"type\":\"function\",\"name\":\"counterpartyFee\",\"inputs\":[],\"outputs\":[{\"name\":\"\",\"type\":\"uint256\",\"internalType\":\"uint256\"}],\"stateMutability\":\"view\"},{\"type\":\"function\",\"name\":\"finalizationFee\",\"inputs\":[],\"outputs\":[{\"name\":\"\",\"type\":\"uint256\",\"internalType\":\"uint256\"}],\"stateMutability\":\"view\"},{\"type\":\"function\",\"name\":\"finalizeTransfer\",\"inputs\":[{\"name\":\"_recipient\",\"type\":\"address\",\"internalType\":\"address\"},{\"name\":\"_amount\",\"type\":\"uint256\",\"internalType\":\"uint256\"},{\"name\":\"_counterpartyIdx\",\"type\":\"uint256\",\"internalType\":\"uint256\"}],\"outputs\":[],\"stateMutability\":\"nonpayable\"},{\"type\":\"function\",\"name\":\"initiateTransfer\",\"inputs\":[{\"name\":\"_recipient\",\"type\":\"address\",\"internalType\":\"address\"},{\"name\":\"_amount\",\"type\":\"uint256\",\"internalType\":\"uint256\"}],\"outputs\":[{\"name\":\"returnIdx\",\"type\":\"uint256\",\"internalType\":\"uint256\"}],\"stateMutability\":\"payable\"},{\"type\":\"function\",\"name\":\"owner\",\"inputs\":[],\"outputs\":[{\"name\":\"\",\"type\":\"address\",\"internalType\":\"address\"}],\"stateMutability\":\"view\"},{\"type\":\"function\",\"name\":\"relayer\",\"inputs\":[],\"outputs\":[{\"name\":\"\",\"type\":\"address\",\"internalType\":\"address\"}],\"stateMutability\":\"view\"},{\"type\":\"function\",\"name\":\"renounceOwnership\",\"inputs\":[],\"outputs\":[],\"stateMutability\":\"nonpayable\"},{\"type\":\"function\",\"name\":\"transferFinalizedIdx\",\"inputs\":[],\"outputs\":[{\"name\":\"\",\"type\":\"uint256\",\"internalType\":\"uint256\"}],\"stateMutability\":\"view\"},{\"type\":\"function\",\"name\":\"transferInitiatedIdx\",\"inputs\":[],\"outputs\":[{\"name\":\"\",\"type\":\"uint256\",\"internalType\":\"uint256\"}],\"stateMutability\":\"view\"},{\"type\":\"function\",\"name\":\"transferOwnership\",\"inputs\":[{\"name\":\"newOwner\",\"type\":\"address\",\"internalType\":\"address\"}],\"outputs\":[],\"stateMutability\":\"nonpayable\"},{\"type\":\"function\",\"name\":\"whitelistAddr\",\"inputs\":[],\"outputs\":[{\"name\":\"\",\"type\":\"address\",\"internalType\":\"address\"}],\"stateMutability\":\"view\"},{\"type\":\"event\",\"name\":\"OwnershipTransferred\",\"inputs\":[{\"name\":\"previousOwner\",\"type\":\"address\",\"indexed\":true,\"internalType\":\"address\"},{\"name\":\"newOwner\",\"type\":\"address\",\"indexed\":true,\"internalType\":\"address\"}],\"anonymous\":false},{\"type\":\"event\",\"name\":\"TransferFinalized\",\"inputs\":[{\"name\":\"recipient\",\"type\":\"address\",\"indexed\":true,\"internalType\":\"address\"},{\"name\":\"amount\",\"type\":\"uint256\",\"indexed\":false,\"internalType\":\"uint256\"},{\"name\":\"counterpartyIdx\",\"type\":\"uint256\",\"indexed\":true,\"internalType\":\"uint256\"}],\"anonymous\":false},{\"type\":\"event\",\"name\":\"TransferInitiated\",\"inputs\":[{\"name\":\"sender\",\"type\":\"address\",\"indexed\":true,\"internalType\":\"address\"},{\"name\":\"recipient\",\"type\":\"address\",\"indexed\":true,\"internalType\":\"address\"},{\"name\":\"amount\",\"type\":\"uint256\",\"indexed\":false,\"internalType\":\"uint256\"},{\"name\":\"transferIdx\",\"type\":\"uint256\",\"indexed\":true,\"internalType\":\"uint256\"}],\"anonymous\":false}]",
 }
 
 // SettlementgatewayABI is the input ABI used to generate the binding from.
@@ -304,12 +304,12 @@ func (_Settlementgateway *SettlementgatewayCallerSession) Relayer() (common.Addr
 	return _Settlementgateway.Contract.Relayer(&_Settlementgateway.CallOpts)
 }
 
-// TransferIdx is a free data retrieval call binding the contract method 0x2b81a55e.
+// TransferFinalizedIdx is a free data retrieval call binding the contract method 0xa2ff158d.
 //
-// Solidity: function transferIdx() view returns(uint256)
-func (_Settlementgateway *SettlementgatewayCaller) TransferIdx(opts *bind.CallOpts) (*big.Int, error) {
+// Solidity: function transferFinalizedIdx() view returns(uint256)
+func (_Settlementgateway *SettlementgatewayCaller) TransferFinalizedIdx(opts *bind.CallOpts) (*big.Int, error) {
 	var out []interface{}
-	err := _Settlementgateway.contract.Call(opts, &out, "transferIdx")
+	err := _Settlementgateway.contract.Call(opts, &out, "transferFinalizedIdx")
 
 	if err != nil {
 		return *new(*big.Int), err
@@ -321,18 +321,49 @@ func (_Settlementgateway *SettlementgatewayCaller) TransferIdx(opts *bind.CallOp
 
 }
 
-// TransferIdx is a free data retrieval call binding the contract method 0x2b81a55e.
+// TransferFinalizedIdx is a free data retrieval call binding the contract method 0xa2ff158d.
 //
-// Solidity: function transferIdx() view returns(uint256)
-func (_Settlementgateway *SettlementgatewaySession) TransferIdx() (*big.Int, error) {
-	return _Settlementgateway.Contract.TransferIdx(&_Settlementgateway.CallOpts)
+// Solidity: function transferFinalizedIdx() view returns(uint256)
+func (_Settlementgateway *SettlementgatewaySession) TransferFinalizedIdx() (*big.Int, error) {
+	return _Settlementgateway.Contract.TransferFinalizedIdx(&_Settlementgateway.CallOpts)
 }
 
-// TransferIdx is a free data retrieval call binding the contract method 0x2b81a55e.
+// TransferFinalizedIdx is a free data retrieval call binding the contract method 0xa2ff158d.
 //
-// Solidity: function transferIdx() view returns(uint256)
-func (_Settlementgateway *SettlementgatewayCallerSession) TransferIdx() (*big.Int, error) {
-	return _Settlementgateway.Contract.TransferIdx(&_Settlementgateway.CallOpts)
+// Solidity: function transferFinalizedIdx() view returns(uint256)
+func (_Settlementgateway *SettlementgatewayCallerSession) TransferFinalizedIdx() (*big.Int, error) {
+	return _Settlementgateway.Contract.TransferFinalizedIdx(&_Settlementgateway.CallOpts)
+}
+
+// TransferInitiatedIdx is a free data retrieval call binding the contract method 0xe557b142.
+//
+// Solidity: function transferInitiatedIdx() view returns(uint256)
+func (_Settlementgateway *SettlementgatewayCaller) TransferInitiatedIdx(opts *bind.CallOpts) (*big.Int, error) {
+	var out []interface{}
+	err := _Settlementgateway.contract.Call(opts, &out, "transferInitiatedIdx")
+
+	if err != nil {
+		return *new(*big.Int), err
+	}
+
+	out0 := *abi.ConvertType(out[0], new(*big.Int)).(**big.Int)
+
+	return out0, err
+
+}
+
+// TransferInitiatedIdx is a free data retrieval call binding the contract method 0xe557b142.
+//
+// Solidity: function transferInitiatedIdx() view returns(uint256)
+func (_Settlementgateway *SettlementgatewaySession) TransferInitiatedIdx() (*big.Int, error) {
+	return _Settlementgateway.Contract.TransferInitiatedIdx(&_Settlementgateway.CallOpts)
+}
+
+// TransferInitiatedIdx is a free data retrieval call binding the contract method 0xe557b142.
+//
+// Solidity: function transferInitiatedIdx() view returns(uint256)
+func (_Settlementgateway *SettlementgatewayCallerSession) TransferInitiatedIdx() (*big.Int, error) {
+	return _Settlementgateway.Contract.TransferInitiatedIdx(&_Settlementgateway.CallOpts)
 }
 
 // WhitelistAddr is a free data retrieval call binding the contract method 0x48a0baf8.
@@ -680,15 +711,20 @@ type SettlementgatewayTransferFinalized struct {
 
 // FilterTransferFinalized is a free log retrieval operation binding the contract event 0x8c1419715bf9fd4efa8c0fd1833ba527cbdd86f6018aa79102af32103bbfdefd.
 //
-// Solidity: event TransferFinalized(address indexed recipient, uint256 amount, uint256 counterpartyIdx)
-func (_Settlementgateway *SettlementgatewayFilterer) FilterTransferFinalized(opts *bind.FilterOpts, recipient []common.Address) (*SettlementgatewayTransferFinalizedIterator, error) {
+// Solidity: event TransferFinalized(address indexed recipient, uint256 amount, uint256 indexed counterpartyIdx)
+func (_Settlementgateway *SettlementgatewayFilterer) FilterTransferFinalized(opts *bind.FilterOpts, recipient []common.Address, counterpartyIdx []*big.Int) (*SettlementgatewayTransferFinalizedIterator, error) {
 
 	var recipientRule []interface{}
 	for _, recipientItem := range recipient {
 		recipientRule = append(recipientRule, recipientItem)
 	}
 
-	logs, sub, err := _Settlementgateway.contract.FilterLogs(opts, "TransferFinalized", recipientRule)
+	var counterpartyIdxRule []interface{}
+	for _, counterpartyIdxItem := range counterpartyIdx {
+		counterpartyIdxRule = append(counterpartyIdxRule, counterpartyIdxItem)
+	}
+
+	logs, sub, err := _Settlementgateway.contract.FilterLogs(opts, "TransferFinalized", recipientRule, counterpartyIdxRule)
 	if err != nil {
 		return nil, err
 	}
@@ -697,15 +733,20 @@ func (_Settlementgateway *SettlementgatewayFilterer) FilterTransferFinalized(opt
 
 // WatchTransferFinalized is a free log subscription operation binding the contract event 0x8c1419715bf9fd4efa8c0fd1833ba527cbdd86f6018aa79102af32103bbfdefd.
 //
-// Solidity: event TransferFinalized(address indexed recipient, uint256 amount, uint256 counterpartyIdx)
-func (_Settlementgateway *SettlementgatewayFilterer) WatchTransferFinalized(opts *bind.WatchOpts, sink chan<- *SettlementgatewayTransferFinalized, recipient []common.Address) (event.Subscription, error) {
+// Solidity: event TransferFinalized(address indexed recipient, uint256 amount, uint256 indexed counterpartyIdx)
+func (_Settlementgateway *SettlementgatewayFilterer) WatchTransferFinalized(opts *bind.WatchOpts, sink chan<- *SettlementgatewayTransferFinalized, recipient []common.Address, counterpartyIdx []*big.Int) (event.Subscription, error) {
 
 	var recipientRule []interface{}
 	for _, recipientItem := range recipient {
 		recipientRule = append(recipientRule, recipientItem)
 	}
 
-	logs, sub, err := _Settlementgateway.contract.WatchLogs(opts, "TransferFinalized", recipientRule)
+	var counterpartyIdxRule []interface{}
+	for _, counterpartyIdxItem := range counterpartyIdx {
+		counterpartyIdxRule = append(counterpartyIdxRule, counterpartyIdxItem)
+	}
+
+	logs, sub, err := _Settlementgateway.contract.WatchLogs(opts, "TransferFinalized", recipientRule, counterpartyIdxRule)
 	if err != nil {
 		return nil, err
 	}
@@ -739,7 +780,7 @@ func (_Settlementgateway *SettlementgatewayFilterer) WatchTransferFinalized(opts
 
 // ParseTransferFinalized is a log parse operation binding the contract event 0x8c1419715bf9fd4efa8c0fd1833ba527cbdd86f6018aa79102af32103bbfdefd.
 //
-// Solidity: event TransferFinalized(address indexed recipient, uint256 amount, uint256 counterpartyIdx)
+// Solidity: event TransferFinalized(address indexed recipient, uint256 amount, uint256 indexed counterpartyIdx)
 func (_Settlementgateway *SettlementgatewayFilterer) ParseTransferFinalized(log types.Log) (*SettlementgatewayTransferFinalized, error) {
 	event := new(SettlementgatewayTransferFinalized)
 	if err := _Settlementgateway.contract.UnpackLog(event, "TransferFinalized", log); err != nil {
@@ -827,8 +868,8 @@ type SettlementgatewayTransferInitiated struct {
 
 // FilterTransferInitiated is a free log retrieval operation binding the contract event 0x6abe792a4e9e702afbc17fdac3c94f6ed1d8c9a8e4917c99672474b3f775ab43.
 //
-// Solidity: event TransferInitiated(address indexed sender, address indexed recipient, uint256 amount, uint256 transferIdx)
-func (_Settlementgateway *SettlementgatewayFilterer) FilterTransferInitiated(opts *bind.FilterOpts, sender []common.Address, recipient []common.Address) (*SettlementgatewayTransferInitiatedIterator, error) {
+// Solidity: event TransferInitiated(address indexed sender, address indexed recipient, uint256 amount, uint256 indexed transferIdx)
+func (_Settlementgateway *SettlementgatewayFilterer) FilterTransferInitiated(opts *bind.FilterOpts, sender []common.Address, recipient []common.Address, transferIdx []*big.Int) (*SettlementgatewayTransferInitiatedIterator, error) {
 
 	var senderRule []interface{}
 	for _, senderItem := range sender {
@@ -839,7 +880,12 @@ func (_Settlementgateway *SettlementgatewayFilterer) FilterTransferInitiated(opt
 		recipientRule = append(recipientRule, recipientItem)
 	}
 
-	logs, sub, err := _Settlementgateway.contract.FilterLogs(opts, "TransferInitiated", senderRule, recipientRule)
+	var transferIdxRule []interface{}
+	for _, transferIdxItem := range transferIdx {
+		transferIdxRule = append(transferIdxRule, transferIdxItem)
+	}
+
+	logs, sub, err := _Settlementgateway.contract.FilterLogs(opts, "TransferInitiated", senderRule, recipientRule, transferIdxRule)
 	if err != nil {
 		return nil, err
 	}
@@ -848,8 +894,8 @@ func (_Settlementgateway *SettlementgatewayFilterer) FilterTransferInitiated(opt
 
 // WatchTransferInitiated is a free log subscription operation binding the contract event 0x6abe792a4e9e702afbc17fdac3c94f6ed1d8c9a8e4917c99672474b3f775ab43.
 //
-// Solidity: event TransferInitiated(address indexed sender, address indexed recipient, uint256 amount, uint256 transferIdx)
-func (_Settlementgateway *SettlementgatewayFilterer) WatchTransferInitiated(opts *bind.WatchOpts, sink chan<- *SettlementgatewayTransferInitiated, sender []common.Address, recipient []common.Address) (event.Subscription, error) {
+// Solidity: event TransferInitiated(address indexed sender, address indexed recipient, uint256 amount, uint256 indexed transferIdx)
+func (_Settlementgateway *SettlementgatewayFilterer) WatchTransferInitiated(opts *bind.WatchOpts, sink chan<- *SettlementgatewayTransferInitiated, sender []common.Address, recipient []common.Address, transferIdx []*big.Int) (event.Subscription, error) {
 
 	var senderRule []interface{}
 	for _, senderItem := range sender {
@@ -860,7 +906,12 @@ func (_Settlementgateway *SettlementgatewayFilterer) WatchTransferInitiated(opts
 		recipientRule = append(recipientRule, recipientItem)
 	}
 
-	logs, sub, err := _Settlementgateway.contract.WatchLogs(opts, "TransferInitiated", senderRule, recipientRule)
+	var transferIdxRule []interface{}
+	for _, transferIdxItem := range transferIdx {
+		transferIdxRule = append(transferIdxRule, transferIdxItem)
+	}
+
+	logs, sub, err := _Settlementgateway.contract.WatchLogs(opts, "TransferInitiated", senderRule, recipientRule, transferIdxRule)
 	if err != nil {
 		return nil, err
 	}
@@ -894,7 +945,7 @@ func (_Settlementgateway *SettlementgatewayFilterer) WatchTransferInitiated(opts
 
 // ParseTransferInitiated is a log parse operation binding the contract event 0x6abe792a4e9e702afbc17fdac3c94f6ed1d8c9a8e4917c99672474b3f775ab43.
 //
-// Solidity: event TransferInitiated(address indexed sender, address indexed recipient, uint256 amount, uint256 transferIdx)
+// Solidity: event TransferInitiated(address indexed sender, address indexed recipient, uint256 amount, uint256 indexed transferIdx)
 func (_Settlementgateway *SettlementgatewayFilterer) ParseTransferInitiated(log types.Log) (*SettlementgatewayTransferInitiated, error) {
 	event := new(SettlementgatewayTransferInitiated)
 	if err := _Settlementgateway.contract.UnpackLog(event, "TransferInitiated", log); err != nil {
