@@ -28,6 +28,12 @@ extract_and_save_abi "$BASE_DIR/out/Oracle.sol/Oracle.json" "$ABI_DIR/Oracle.abi
 # Extract ABI for PreConfCommitmentStore.json
 extract_and_save_abi "$BASE_DIR/out/PreConfirmations.sol/PreConfCommitmentStore.json" "$ABI_DIR/PreConfCommitmentStore.abi"
 
+# Extract ABI for SettlementGateway.json
+extract_and_save_abi "$BASE_DIR/out/SettlementGateway.sol/SettlementGateway.json" "$ABI_DIR/SettlementGateway.abi"
+
+# Extract ABI for L1Gateway.json
+extract_and_save_abi "$BASE_DIR/out/L1Gateway.sol/L1Gateway.json" "$ABI_DIR/L1Gateway.abi"
+
 echo "ABI files extracted successfully."
 
 
@@ -62,6 +68,12 @@ generate_go_code "$ABI_DIR/Oracle.abi" "Oracle" "oracle"
 
 # Generate Go code for PreConfCommitmentStore.abi
 generate_go_code "$ABI_DIR/PreConfCommitmentStore.abi" "PreConfCommitmentStore" "preconfcommitmentstore"
+
+# Generate Go code for SettlementGateway.abi
+generate_go_code "$ABI_DIR/SettlementGateway.abi" "SettlementGateway" "settlementgateway"
+
+# Generate Go code for L1Gateway.abi
+generate_go_code "$ABI_DIR/L1Gateway.abi" "L1Gateway" "l1gateway"
 
 echo "Go code generated successfully in separate folders."
 
