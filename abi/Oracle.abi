@@ -153,6 +153,11 @@
         "name": "isSlash",
         "type": "bool",
         "internalType": "bool"
+      },
+      {
+        "name": "risidualBidAfterDecay",
+        "type": "uint256",
+        "internalType": "uint256"
       }
     ],
     "outputs": [],

@@ -61,7 +61,7 @@
   },
   {
     "type": "function",
-    "name": "EIP712_COMMITMENT_TYPEHASH",
+    "name": "EIP712_BID_TYPEHASH",
     "inputs": [],
     "outputs": [
       {
@@ -74,7 +74,7 @@
   },
   {
     "type": "function",
-    "name": "EIP712_MESSAGE_TYPEHASH",
+    "name": "EIP712_COMMITMENT_TYPEHASH",
     "inputs": [],
     "outputs": [
       {
@@ -196,6 +196,16 @@
         "internalType": "bytes32"
       },
       {
+        "name": "decayStartTimeStamp",
+        "type": "uint64",
+        "internalType": "uint64"
+      },
+      {
+        "name": "decayEndTimeStamp",
+        "type": "uint64",
+        "internalType": "uint64"
+      },
+      {
         "name": "txnHash",
         "type": "string",
         "internalType": "string"
@@ -214,6 +224,11 @@
         "name": "commitmentSignature",
         "type": "bytes",
         "internalType": "bytes"
+      },
+      {
+        "name": "blockCommitedAt",
+        "type": "uint256",
+        "internalType": "uint256"
       }
     ],
     "stateMutability": "view"
@@ -253,6 +268,16 @@
       },
       {
         "name": "_blockNumber",
+        "type": "uint64",
+        "internalType": "uint64"
+      },
+      {
+        "name": "_decayStartTimeStamp",
+        "type": "uint64",
+        "internalType": "uint64"
+      },
+      {
+        "name": "_decayEndTimeStamp",
         "type": "uint64",
         "internalType": "uint64"
       }
@@ -313,6 +338,16 @@
             "internalType": "bytes32"
           },
           {
+            "name": "decayStartTimeStamp",
+            "type": "uint64",
+            "internalType": "uint64"
+          },
+          {
+            "name": "decayEndTimeStamp",
+            "type": "uint64",
+            "internalType": "uint64"
+          },
+          {
             "name": "txnHash",
             "type": "string",
             "internalType": "string"
@@ -331,6 +366,11 @@
             "name": "commitmentSignature",
             "type": "bytes",
             "internalType": "bytes"
+          },
+          {
+            "name": "blockCommitedAt",
+            "type": "uint256",
+            "internalType": "uint256"
           }
         ]
       }
@@ -377,6 +417,16 @@
             "internalType": "bytes32"
           },
           {
+            "name": "decayStartTimeStamp",
+            "type": "uint64",
+            "internalType": "uint64"
+          },
+          {
+            "name": "decayEndTimeStamp",
+            "type": "uint64",
+            "internalType": "uint64"
+          },
+          {
             "name": "txnHash",
             "type": "string",
             "internalType": "string"
@@ -395,6 +445,11 @@
             "name": "commitmentSignature",
             "type": "bytes",
             "internalType": "bytes"
+          },
+          {
+            "name": "blockCommitedAt",
+            "type": "uint256",
+            "internalType": "uint256"
           }
         ]
       }
@@ -466,6 +521,16 @@
         "internalType": "uint64"
       },
       {
+        "name": "_decayStartTimeStamp",
+        "type": "uint64",
+        "internalType": "uint64"
+      },
+      {
+        "name": "_decayEndTimeStamp",
+        "type": "uint64",
+        "internalType": "uint64"
+      },
+      {
         "name": "_bidHash",
         "type": "bytes32",
         "internalType": "bytes32"
@@ -506,12 +571,17 @@
   },
   {
     "type": "function",
-    "name": "initateReward",
+    "name": "initiateReward",
     "inputs": [
       {
         "name": "commitmentIndex",
         "type": "bytes32",
         "internalType": "bytes32"
+      },
+      {
+        "name": "risidualBidAfterDecay",
+        "type": "uint256",
+        "internalType": "uint256"
       }
     ],
     "outputs": [],
@@ -525,6 +595,11 @@
         "name": "commitmentIndex",
         "type": "bytes32",
         "internalType": "bytes32"
+      },
+      {
+        "name": "residualDecayAfterBid",
+        "type": "uint256",
+        "internalType": "uint256"
       }
     ],
     "outputs": [],
@@ -633,6 +708,16 @@
         "internalType": "string"
       },
       {
+        "name": "decayStartTimeStamp",
+        "type": "uint64",
+        "internalType": "uint64"
+      },
+      {
+        "name": "decayEndTimeStamp",
+        "type": "uint64",
+        "internalType": "uint64"
+      },
+      {
         "name": "bidSignature",
         "type": "bytes",
         "internalType": "bytes"
@@ -732,6 +817,16 @@
         "internalType": "uint64"
       },
       {
+        "name": "decayStartTimeStamp",
+        "type": "uint64",
+        "internalType": "uint64"
+      },
+      {
+        "name": "decayEndTimeStamp",
+        "type": "uint64",
+        "internalType": "uint64"
+      },
+      {
         "name": "txnHash",
         "type": "string",
         "internalType": "string"
@@ -777,6 +872,16 @@
       },
       {
         "name": "blockNumber",
+        "type": "uint64",
+        "internalType": "uint64"
+      },
+      {
+        "name": "decayStartTimeStamp",
+        "type": "uint64",
+        "internalType": "uint64"
+      },
+      {
+        "name": "decayEndTimeStamp",
         "type": "uint64",
         "internalType": "uint64"
       },
