@@ -311,6 +311,11 @@
         "name": "provider",
         "type": "address",
         "internalType": "address payable"
+      },
+      {
+        "name": "risidualBidAfterDecay",
+        "type": "uint256",
+        "internalType": "uint256"
       }
     ],
     "outputs": [],

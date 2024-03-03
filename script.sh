@@ -7,7 +7,7 @@ BASE_DIR="$HOME/.primev/contracts"
 ABI_DIR="./abi"
 mkdir -p "$ABI_DIR"
 
-forge compile --root $BASE_DIR
+forge compile --root $BASE_DIR --via-ir
 
 # Function to extract and save the ABI
 extract_and_save_abi() {
