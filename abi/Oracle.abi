@@ -155,7 +155,7 @@
         "internalType": "bool"
       },
       {
-        "name": "risidualBidAfterDecay",
+        "name": "residualBidPercentAfterDecay",
         "type": "uint256",
         "internalType": "uint256"
       }

@@ -579,7 +579,7 @@
         "internalType": "bytes32"
       },
       {
-        "name": "risidualBidAfterDecay",
+        "name": "residualBidPercentAfterDecay",
         "type": "uint256",
         "internalType": "uint256"
       }
@@ -597,7 +597,7 @@
         "internalType": "bytes32"
       },
       {
-        "name": "residualDecayAfterBid",
+        "name": "residualBidPercentAfterDecay",
         "type": "uint256",
         "internalType": "uint256"
       }

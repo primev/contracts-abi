@@ -267,7 +267,7 @@
         "internalType": "address payable"
       },
       {
-        "name": "residualBidAfterDecay",
+        "name": "residualBidPercentAfterDecay",
         "type": "uint256",
         "internalType": "uint256"
       }
