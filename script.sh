@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # Define the base directory where the .json files are located
-BASE_DIR="$HOME/.primev/contracts"
+BASE_DIR="$HOME/.primevorg/contracts"
 
 # Create the abi directory if it doesn't exist
 ABI_DIR="./abi"
