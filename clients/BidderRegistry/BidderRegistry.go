@@ -26,12 +26,11 @@ var (
 	_ = common.Big1
 	_ = types.BloomLookup
 	_ = event.NewSubscription
-	_ = abi.ConvertType
 )
 
 // BidderregistryMetaData contains all meta data concerning the Bidderregistry contract.
 var BidderregistryMetaData = &bind.MetaData{
-	ABI: "[{\"type\":\"constructor\",\"inputs\":[{\"name\":\"_minAllowance\",\"type\":\"uint256\",\"internalType\":\"uint256\"},{\"name\":\"_feeRecipient\",\"type\":\"address\",\"internalType\":\"address\"},{\"name\":\"_feePercent\",\"type\":\"uint16\",\"internalType\":\"uint16\"},{\"name\":\"_owner\",\"type\":\"address\",\"internalType\":\"address\"}],\"stateMutability\":\"nonpayable\"},{\"type\":\"fallback\",\"stateMutability\":\"payable\"},{\"type\":\"receive\",\"stateMutability\":\"payable\"},{\"type\":\"function\",\"name\":\"BidPayment\",\"inputs\":[{\"name\":\"\",\"type\":\"bytes32\",\"internalType\":\"bytes32\"}],\"outputs\":[{\"name\":\"bidder\",\"type\":\"address\",\"internalType\":\"address\"},{\"name\":\"bidAmt\",\"type\":\"uint64\",\"internalType\":\"uint64\"},{\"name\":\"state\",\"type\":\"uint8\",\"internalType\":\"enumIBidderRegistry.State\"}],\"stateMutability\":\"view\"},{\"type\":\"function\",\"name\":\"LockBidFunds\",\"inputs\":[{\"name\":\"commitmentDigest\",\"type\":\"bytes32\",\"internalType\":\"bytes32\"},{\"name\":\"bid\",\"type\":\"uint64\",\"internalType\":\"uint64\"},{\"name\":\"bidder\",\"type\":\"address\",\"internalType\":\"address\"}],\"outputs\":[],\"stateMutability\":\"nonpayable\"},{\"type\":\"function\",\"name\":\"bidderPrepaidBalances\",\"inputs\":[{\"name\":\"\",\"type\":\"address\",\"internalType\":\"address\"}],\"outputs\":[{\"name\":\"\",\"type\":\"uint256\",\"internalType\":\"uint256\"}],\"stateMutability\":\"view\"},{\"type\":\"function\",\"name\":\"bidderRegistered\",\"inputs\":[{\"name\":\"\",\"type\":\"address\",\"internalType\":\"address\"}],\"outputs\":[{\"name\":\"\",\"type\":\"bool\",\"internalType\":\"bool\"}],\"stateMutability\":\"view\"},{\"type\":\"function\",\"name\":\"feePercent\",\"inputs\":[],\"outputs\":[{\"name\":\"\",\"type\":\"uint16\",\"internalType\":\"uint16\"}],\"stateMutability\":\"view\"},{\"type\":\"function\",\"name\":\"feeRecipient\",\"inputs\":[],\"outputs\":[{\"name\":\"\",\"type\":\"address\",\"internalType\":\"address\"}],\"stateMutability\":\"view\"},{\"type\":\"function\",\"name\":\"feeRecipientAmount\",\"inputs\":[],\"outputs\":[{\"name\":\"\",\"type\":\"uint256\",\"internalType\":\"uint256\"}],\"stateMutability\":\"view\"},{\"type\":\"function\",\"name\":\"getAllowance\",\"inputs\":[{\"name\":\"bidder\",\"type\":\"address\",\"internalType\":\"address\"}],\"outputs\":[{\"name\":\"\",\"type\":\"uint256\",\"internalType\":\"uint256\"}],\"stateMutability\":\"view\"},{\"type\":\"function\",\"name\":\"getFeeRecipientAmount\",\"inputs\":[],\"outputs\":[{\"name\":\"\",\"type\":\"uint256\",\"internalType\":\"uint256\"}],\"stateMutability\":\"view\"},{\"type\":\"function\",\"name\":\"getProviderAmount\",\"inputs\":[{\"name\":\"provider\",\"type\":\"address\",\"internalType\":\"address\"}],\"outputs\":[{\"name\":\"\",\"type\":\"uint256\",\"internalType\":\"uint256\"}],\"stateMutability\":\"view\"},{\"type\":\"function\",\"name\":\"minAllowance\",\"inputs\":[],\"outputs\":[{\"name\":\"\",\"type\":\"uint256\",\"internalType\":\"uint256\"}],\"stateMutability\":\"view\"},{\"type\":\"function\",\"name\":\"owner\",\"inputs\":[],\"outputs\":[{\"name\":\"\",\"type\":\"address\",\"internalType\":\"address\"}],\"stateMutability\":\"view\"},{\"type\":\"function\",\"name\":\"preConfirmationsContract\",\"inputs\":[],\"outputs\":[{\"name\":\"\",\"type\":\"address\",\"internalType\":\"address\"}],\"stateMutability\":\"view\"},{\"type\":\"function\",\"name\":\"prepay\",\"inputs\":[],\"outputs\":[],\"stateMutability\":\"payable\"},{\"type\":\"function\",\"name\":\"protocolFeeAmount\",\"inputs\":[],\"outputs\":[{\"name\":\"\",\"type\":\"uint256\",\"internalType\":\"uint256\"}],\"stateMutability\":\"view\"},{\"type\":\"function\",\"name\":\"providerAmount\",\"inputs\":[{\"name\":\"\",\"type\":\"address\",\"internalType\":\"address\"}],\"outputs\":[{\"name\":\"\",\"type\":\"uint256\",\"internalType\":\"uint256\"}],\"stateMutability\":\"view\"},{\"type\":\"function\",\"name\":\"renounceOwnership\",\"inputs\":[],\"outputs\":[],\"stateMutability\":\"nonpayable\"},{\"type\":\"function\",\"name\":\"retrieveFunds\",\"inputs\":[{\"name\":\"commitmentDigest\",\"type\":\"bytes32\",\"internalType\":\"bytes32\"},{\"name\":\"provider\",\"type\":\"address\",\"internalType\":\"addresspayable\"},{\"name\":\"residualBidPercentAfterDecay\",\"type\":\"uint256\",\"internalType\":\"uint256\"}],\"outputs\":[],\"stateMutability\":\"nonpayable\"},{\"type\":\"function\",\"name\":\"setNewFeePercent\",\"inputs\":[{\"name\":\"newFeePercent\",\"type\":\"uint16\",\"internalType\":\"uint16\"}],\"outputs\":[],\"stateMutability\":\"nonpayable\"},{\"type\":\"function\",\"name\":\"setNewFeeRecipient\",\"inputs\":[{\"name\":\"newFeeRecipient\",\"type\":\"address\",\"internalType\":\"address\"}],\"outputs\":[],\"stateMutability\":\"nonpayable\"},{\"type\":\"function\",\"name\":\"setPreconfirmationsContract\",\"inputs\":[{\"name\":\"contractAddress\",\"type\":\"address\",\"internalType\":\"address\"}],\"outputs\":[],\"stateMutability\":\"nonpayable\"},{\"type\":\"function\",\"name\":\"transferOwnership\",\"inputs\":[{\"name\":\"newOwner\",\"type\":\"address\",\"internalType\":\"address\"}],\"outputs\":[],\"stateMutability\":\"nonpayable\"},{\"type\":\"function\",\"name\":\"unlockFunds\",\"inputs\":[{\"name\":\"bidID\",\"type\":\"bytes32\",\"internalType\":\"bytes32\"}],\"outputs\":[],\"stateMutability\":\"nonpayable\"},{\"type\":\"function\",\"name\":\"withdrawFeeRecipientAmount\",\"inputs\":[],\"outputs\":[],\"stateMutability\":\"nonpayable\"},{\"type\":\"function\",\"name\":\"withdrawPrepaidAmount\",\"inputs\":[{\"name\":\"bidder\",\"type\":\"address\",\"internalType\":\"addresspayable\"}],\"outputs\":[],\"stateMutability\":\"nonpayable\"},{\"type\":\"function\",\"name\":\"withdrawProtocolFee\",\"inputs\":[{\"name\":\"bidder\",\"type\":\"address\",\"internalType\":\"addresspayable\"}],\"outputs\":[],\"stateMutability\":\"nonpayable\"},{\"type\":\"function\",\"name\":\"withdrawProviderAmount\",\"inputs\":[{\"name\":\"provider\",\"type\":\"address\",\"internalType\":\"addresspayable\"}],\"outputs\":[],\"stateMutability\":\"nonpayable\"},{\"type\":\"event\",\"name\":\"BidderRegistered\",\"inputs\":[{\"name\":\"bidder\",\"type\":\"address\",\"indexed\":true,\"internalType\":\"address\"},{\"name\":\"prepaidAmount\",\"type\":\"uint256\",\"indexed\":false,\"internalType\":\"uint256\"}],\"anonymous\":false},{\"type\":\"event\",\"name\":\"FundsRetrieved\",\"inputs\":[{\"name\":\"commitmentDigest\",\"type\":\"bytes32\",\"indexed\":true,\"internalType\":\"bytes32\"},{\"name\":\"amount\",\"type\":\"uint256\",\"indexed\":false,\"internalType\":\"uint256\"}],\"anonymous\":false},{\"type\":\"event\",\"name\":\"OwnershipTransferred\",\"inputs\":[{\"name\":\"previousOwner\",\"type\":\"address\",\"indexed\":true,\"internalType\":\"address\"},{\"name\":\"newOwner\",\"type\":\"address\",\"indexed\":true,\"internalType\":\"address\"}],\"anonymous\":false}]",
+	ABI: "[{\"inputs\":[{\"internalType\":\"uint256\",\"name\":\"_minAllowance\",\"type\":\"uint256\"},{\"internalType\":\"address\",\"name\":\"_feeRecipient\",\"type\":\"address\"},{\"internalType\":\"uint16\",\"name\":\"_feePercent\",\"type\":\"uint16\"},{\"internalType\":\"address\",\"name\":\"_owner\",\"type\":\"address\"},{\"internalType\":\"address\",\"name\":\"_blockTracker\",\"type\":\"address\"}],\"stateMutability\":\"nonpayable\",\"type\":\"constructor\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"address\",\"name\":\"bidder\",\"type\":\"address\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"prepaidAmount\",\"type\":\"uint256\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"windowNumber\",\"type\":\"uint256\"}],\"name\":\"BidderRegistered\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"address\",\"name\":\"bidder\",\"type\":\"address\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"window\",\"type\":\"uint256\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"amount\",\"type\":\"uint256\"}],\"name\":\"BidderWithdrawal\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"bytes32\",\"name\":\"commitmentDigest\",\"type\":\"bytes32\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"amount\",\"type\":\"uint256\"}],\"name\":\"FundsRetrieved\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"address\",\"name\":\"previousOwner\",\"type\":\"address\"},{\"indexed\":true,\"internalType\":\"address\",\"name\":\"newOwner\",\"type\":\"address\"}],\"name\":\"OwnershipTransferred\",\"type\":\"event\"},{\"stateMutability\":\"payable\",\"type\":\"fallback\"},{\"inputs\":[{\"internalType\":\"bytes32\",\"name\":\"\",\"type\":\"bytes32\"}],\"name\":\"BidPayment\",\"outputs\":[{\"internalType\":\"address\",\"name\":\"bidder\",\"type\":\"address\"},{\"internalType\":\"uint64\",\"name\":\"bidAmt\",\"type\":\"uint64\"},{\"internalType\":\"enumIBidderRegistry.State\",\"name\":\"state\",\"type\":\"uint8\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"\",\"type\":\"address\"}],\"name\":\"bidderRegistered\",\"outputs\":[{\"internalType\":\"bool\",\"name\":\"\",\"type\":\"bool\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"blockTrackerContract\",\"outputs\":[{\"internalType\":\"contractIBlockTracker\",\"name\":\"\",\"type\":\"address\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"feePercent\",\"outputs\":[{\"internalType\":\"uint16\",\"name\":\"\",\"type\":\"uint16\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"feeRecipient\",\"outputs\":[{\"internalType\":\"address\",\"name\":\"\",\"type\":\"address\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"feeRecipientAmount\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"bidder\",\"type\":\"address\"},{\"internalType\":\"uint256\",\"name\":\"window\",\"type\":\"uint256\"}],\"name\":\"getAllowance\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"getFeeRecipientAmount\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"provider\",\"type\":\"address\"}],\"name\":\"getProviderAmount\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"\",\"type\":\"address\"},{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"name\":\"lockedFunds\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"minAllowance\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"owner\",\"outputs\":[{\"internalType\":\"address\",\"name\":\"\",\"type\":\"address\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"preConfirmationsContract\",\"outputs\":[{\"internalType\":\"address\",\"name\":\"\",\"type\":\"address\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"prepay\",\"outputs\":[],\"stateMutability\":\"payable\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"protocolFeeAmount\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"\",\"type\":\"address\"}],\"name\":\"providerAmount\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"renounceOwnership\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"uint256\",\"name\":\"windowToSettle\",\"type\":\"uint256\"},{\"internalType\":\"bytes32\",\"name\":\"commitmentDigest\",\"type\":\"bytes32\"},{\"internalType\":\"addresspayable\",\"name\":\"provider\",\"type\":\"address\"},{\"internalType\":\"uint256\",\"name\":\"residualBidPercentAfterDecay\",\"type\":\"uint256\"}],\"name\":\"retrieveFunds\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"uint16\",\"name\":\"newFeePercent\",\"type\":\"uint16\"}],\"name\":\"setNewFeePercent\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"newFeeRecipient\",\"type\":\"address\"}],\"name\":\"setNewFeeRecipient\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"contractAddress\",\"type\":\"address\"}],\"name\":\"setPreconfirmationsContract\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"newOwner\",\"type\":\"address\"}],\"name\":\"transferOwnership\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"addresspayable\",\"name\":\"bidder\",\"type\":\"address\"},{\"internalType\":\"uint256\",\"name\":\"window\",\"type\":\"uint256\"}],\"name\":\"withdrawBidderAmountFromWindow\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"withdrawFeeRecipientAmount\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"addresspayable\",\"name\":\"bidder\",\"type\":\"address\"}],\"name\":\"withdrawProtocolFee\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"addresspayable\",\"name\":\"provider\",\"type\":\"address\"}],\"name\":\"withdrawProviderAmount\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"stateMutability\":\"payable\",\"type\":\"receive\"}]",
 }
 
 // BidderregistryABI is the input ABI used to generate the binding from.
@@ -135,11 +134,11 @@ func NewBidderregistryFilterer(address common.Address, filterer bind.ContractFil
 
 // bindBidderregistry binds a generic wrapper to an already deployed contract.
 func bindBidderregistry(address common.Address, caller bind.ContractCaller, transactor bind.ContractTransactor, filterer bind.ContractFilterer) (*bind.BoundContract, error) {
-	parsed, err := BidderregistryMetaData.GetAbi()
+	parsed, err := abi.JSON(strings.NewReader(BidderregistryABI))
 	if err != nil {
 		return nil, err
 	}
-	return bind.NewBoundContract(address, *parsed, caller, transactor, filterer), nil
+	return bind.NewBoundContract(address, parsed, caller, transactor, filterer), nil
 }
 
 // Call invokes the (constant) contract method with params as input values and
@@ -230,37 +229,6 @@ func (_Bidderregistry *BidderregistryCallerSession) BidPayment(arg0 [32]byte) (s
 	return _Bidderregistry.Contract.BidPayment(&_Bidderregistry.CallOpts, arg0)
 }
 
-// BidderPrepaidBalances is a free data retrieval call binding the contract method 0x08dea35a.
-//
-// Solidity: function bidderPrepaidBalances(address ) view returns(uint256)
-func (_Bidderregistry *BidderregistryCaller) BidderPrepaidBalances(opts *bind.CallOpts, arg0 common.Address) (*big.Int, error) {
-	var out []interface{}
-	err := _Bidderregistry.contract.Call(opts, &out, "bidderPrepaidBalances", arg0)
-
-	if err != nil {
-		return *new(*big.Int), err
-	}
-
-	out0 := *abi.ConvertType(out[0], new(*big.Int)).(**big.Int)
-
-	return out0, err
-
-}
-
-// BidderPrepaidBalances is a free data retrieval call binding the contract method 0x08dea35a.
-//
-// Solidity: function bidderPrepaidBalances(address ) view returns(uint256)
-func (_Bidderregistry *BidderregistrySession) BidderPrepaidBalances(arg0 common.Address) (*big.Int, error) {
-	return _Bidderregistry.Contract.BidderPrepaidBalances(&_Bidderregistry.CallOpts, arg0)
-}
-
-// BidderPrepaidBalances is a free data retrieval call binding the contract method 0x08dea35a.
-//
-// Solidity: function bidderPrepaidBalances(address ) view returns(uint256)
-func (_Bidderregistry *BidderregistryCallerSession) BidderPrepaidBalances(arg0 common.Address) (*big.Int, error) {
-	return _Bidderregistry.Contract.BidderPrepaidBalances(&_Bidderregistry.CallOpts, arg0)
-}
-
 // BidderRegistered is a free data retrieval call binding the contract method 0x2a0773de.
 //
 // Solidity: function bidderRegistered(address ) view returns(bool)
@@ -290,6 +258,37 @@ func (_Bidderregistry *BidderregistrySession) BidderRegistered(arg0 common.Addre
 // Solidity: function bidderRegistered(address ) view returns(bool)
 func (_Bidderregistry *BidderregistryCallerSession) BidderRegistered(arg0 common.Address) (bool, error) {
 	return _Bidderregistry.Contract.BidderRegistered(&_Bidderregistry.CallOpts, arg0)
+}
+
+// BlockTrackerContract is a free data retrieval call binding the contract method 0x6d82071b.
+//
+// Solidity: function blockTrackerContract() view returns(address)
+func (_Bidderregistry *BidderregistryCaller) BlockTrackerContract(opts *bind.CallOpts) (common.Address, error) {
+	var out []interface{}
+	err := _Bidderregistry.contract.Call(opts, &out, "blockTrackerContract")
+
+	if err != nil {
+		return *new(common.Address), err
+	}
+
+	out0 := *abi.ConvertType(out[0], new(common.Address)).(*common.Address)
+
+	return out0, err
+
+}
+
+// BlockTrackerContract is a free data retrieval call binding the contract method 0x6d82071b.
+//
+// Solidity: function blockTrackerContract() view returns(address)
+func (_Bidderregistry *BidderregistrySession) BlockTrackerContract() (common.Address, error) {
+	return _Bidderregistry.Contract.BlockTrackerContract(&_Bidderregistry.CallOpts)
+}
+
+// BlockTrackerContract is a free data retrieval call binding the contract method 0x6d82071b.
+//
+// Solidity: function blockTrackerContract() view returns(address)
+func (_Bidderregistry *BidderregistryCallerSession) BlockTrackerContract() (common.Address, error) {
+	return _Bidderregistry.Contract.BlockTrackerContract(&_Bidderregistry.CallOpts)
 }
 
 // FeePercent is a free data retrieval call binding the contract method 0x7fd6f15c.
@@ -385,12 +384,12 @@ func (_Bidderregistry *BidderregistryCallerSession) FeeRecipientAmount() (*big.I
 	return _Bidderregistry.Contract.FeeRecipientAmount(&_Bidderregistry.CallOpts)
 }
 
-// GetAllowance is a free data retrieval call binding the contract method 0xeb5a662e.
+// GetAllowance is a free data retrieval call binding the contract method 0xb545b11f.
 //
-// Solidity: function getAllowance(address bidder) view returns(uint256)
-func (_Bidderregistry *BidderregistryCaller) GetAllowance(opts *bind.CallOpts, bidder common.Address) (*big.Int, error) {
+// Solidity: function getAllowance(address bidder, uint256 window) view returns(uint256)
+func (_Bidderregistry *BidderregistryCaller) GetAllowance(opts *bind.CallOpts, bidder common.Address, window *big.Int) (*big.Int, error) {
 	var out []interface{}
-	err := _Bidderregistry.contract.Call(opts, &out, "getAllowance", bidder)
+	err := _Bidderregistry.contract.Call(opts, &out, "getAllowance", bidder, window)
 
 	if err != nil {
 		return *new(*big.Int), err
@@ -402,18 +401,18 @@ func (_Bidderregistry *BidderregistryCaller) GetAllowance(opts *bind.CallOpts, b
 
 }
 
-// GetAllowance is a free data retrieval call binding the contract method 0xeb5a662e.
+// GetAllowance is a free data retrieval call binding the contract method 0xb545b11f.
 //
-// Solidity: function getAllowance(address bidder) view returns(uint256)
-func (_Bidderregistry *BidderregistrySession) GetAllowance(bidder common.Address) (*big.Int, error) {
-	return _Bidderregistry.Contract.GetAllowance(&_Bidderregistry.CallOpts, bidder)
+// Solidity: function getAllowance(address bidder, uint256 window) view returns(uint256)
+func (_Bidderregistry *BidderregistrySession) GetAllowance(bidder common.Address, window *big.Int) (*big.Int, error) {
+	return _Bidderregistry.Contract.GetAllowance(&_Bidderregistry.CallOpts, bidder, window)
 }
 
-// GetAllowance is a free data retrieval call binding the contract method 0xeb5a662e.
+// GetAllowance is a free data retrieval call binding the contract method 0xb545b11f.
 //
-// Solidity: function getAllowance(address bidder) view returns(uint256)
-func (_Bidderregistry *BidderregistryCallerSession) GetAllowance(bidder common.Address) (*big.Int, error) {
-	return _Bidderregistry.Contract.GetAllowance(&_Bidderregistry.CallOpts, bidder)
+// Solidity: function getAllowance(address bidder, uint256 window) view returns(uint256)
+func (_Bidderregistry *BidderregistryCallerSession) GetAllowance(bidder common.Address, window *big.Int) (*big.Int, error) {
+	return _Bidderregistry.Contract.GetAllowance(&_Bidderregistry.CallOpts, bidder, window)
 }
 
 // GetFeeRecipientAmount is a free data retrieval call binding the contract method 0xc286f373.
@@ -476,6 +475,37 @@ func (_Bidderregistry *BidderregistrySession) GetProviderAmount(provider common.
 // Solidity: function getProviderAmount(address provider) view returns(uint256)
 func (_Bidderregistry *BidderregistryCallerSession) GetProviderAmount(provider common.Address) (*big.Int, error) {
 	return _Bidderregistry.Contract.GetProviderAmount(&_Bidderregistry.CallOpts, provider)
+}
+
+// LockedFunds is a free data retrieval call binding the contract method 0x1355d861.
+//
+// Solidity: function lockedFunds(address , uint256 ) view returns(uint256)
+func (_Bidderregistry *BidderregistryCaller) LockedFunds(opts *bind.CallOpts, arg0 common.Address, arg1 *big.Int) (*big.Int, error) {
+	var out []interface{}
+	err := _Bidderregistry.contract.Call(opts, &out, "lockedFunds", arg0, arg1)
+
+	if err != nil {
+		return *new(*big.Int), err
+	}
+
+	out0 := *abi.ConvertType(out[0], new(*big.Int)).(**big.Int)
+
+	return out0, err
+
+}
+
+// LockedFunds is a free data retrieval call binding the contract method 0x1355d861.
+//
+// Solidity: function lockedFunds(address , uint256 ) view returns(uint256)
+func (_Bidderregistry *BidderregistrySession) LockedFunds(arg0 common.Address, arg1 *big.Int) (*big.Int, error) {
+	return _Bidderregistry.Contract.LockedFunds(&_Bidderregistry.CallOpts, arg0, arg1)
+}
+
+// LockedFunds is a free data retrieval call binding the contract method 0x1355d861.
+//
+// Solidity: function lockedFunds(address , uint256 ) view returns(uint256)
+func (_Bidderregistry *BidderregistryCallerSession) LockedFunds(arg0 common.Address, arg1 *big.Int) (*big.Int, error) {
+	return _Bidderregistry.Contract.LockedFunds(&_Bidderregistry.CallOpts, arg0, arg1)
 }
 
 // MinAllowance is a free data retrieval call binding the contract method 0x8938db8d.
@@ -633,27 +663,6 @@ func (_Bidderregistry *BidderregistryCallerSession) ProviderAmount(arg0 common.A
 	return _Bidderregistry.Contract.ProviderAmount(&_Bidderregistry.CallOpts, arg0)
 }
 
-// LockBidFunds is a paid mutator transaction binding the contract method 0xbb0a378d.
-//
-// Solidity: function LockBidFunds(bytes32 commitmentDigest, uint64 bid, address bidder) returns()
-func (_Bidderregistry *BidderregistryTransactor) LockBidFunds(opts *bind.TransactOpts, commitmentDigest [32]byte, bid uint64, bidder common.Address) (*types.Transaction, error) {
-	return _Bidderregistry.contract.Transact(opts, "LockBidFunds", commitmentDigest, bid, bidder)
-}
-
-// LockBidFunds is a paid mutator transaction binding the contract method 0xbb0a378d.
-//
-// Solidity: function LockBidFunds(bytes32 commitmentDigest, uint64 bid, address bidder) returns()
-func (_Bidderregistry *BidderregistrySession) LockBidFunds(commitmentDigest [32]byte, bid uint64, bidder common.Address) (*types.Transaction, error) {
-	return _Bidderregistry.Contract.LockBidFunds(&_Bidderregistry.TransactOpts, commitmentDigest, bid, bidder)
-}
-
-// LockBidFunds is a paid mutator transaction binding the contract method 0xbb0a378d.
-//
-// Solidity: function LockBidFunds(bytes32 commitmentDigest, uint64 bid, address bidder) returns()
-func (_Bidderregistry *BidderregistryTransactorSession) LockBidFunds(commitmentDigest [32]byte, bid uint64, bidder common.Address) (*types.Transaction, error) {
-	return _Bidderregistry.Contract.LockBidFunds(&_Bidderregistry.TransactOpts, commitmentDigest, bid, bidder)
-}
-
 // Prepay is a paid mutator transaction binding the contract method 0x34fe1d1e.
 //
 // Solidity: function prepay() payable returns()
@@ -696,25 +705,25 @@ func (_Bidderregistry *BidderregistryTransactorSession) RenounceOwnership() (*ty
 	return _Bidderregistry.Contract.RenounceOwnership(&_Bidderregistry.TransactOpts)
 }
 
-// RetrieveFunds is a paid mutator transaction binding the contract method 0x05c27ed6.
+// RetrieveFunds is a paid mutator transaction binding the contract method 0x0c2e5b0e.
 //
-// Solidity: function retrieveFunds(bytes32 commitmentDigest, address provider, uint256 residualBidPercentAfterDecay) returns()
-func (_Bidderregistry *BidderregistryTransactor) RetrieveFunds(opts *bind.TransactOpts, commitmentDigest [32]byte, provider common.Address, residualBidPercentAfterDecay *big.Int) (*types.Transaction, error) {
-	return _Bidderregistry.contract.Transact(opts, "retrieveFunds", commitmentDigest, provider, residualBidPercentAfterDecay)
+// Solidity: function retrieveFunds(uint256 windowToSettle, bytes32 commitmentDigest, address provider, uint256 residualBidPercentAfterDecay) returns()
+func (_Bidderregistry *BidderregistryTransactor) RetrieveFunds(opts *bind.TransactOpts, windowToSettle *big.Int, commitmentDigest [32]byte, provider common.Address, residualBidPercentAfterDecay *big.Int) (*types.Transaction, error) {
+	return _Bidderregistry.contract.Transact(opts, "retrieveFunds", windowToSettle, commitmentDigest, provider, residualBidPercentAfterDecay)
 }
 
-// RetrieveFunds is a paid mutator transaction binding the contract method 0x05c27ed6.
+// RetrieveFunds is a paid mutator transaction binding the contract method 0x0c2e5b0e.
 //
-// Solidity: function retrieveFunds(bytes32 commitmentDigest, address provider, uint256 residualBidPercentAfterDecay) returns()
-func (_Bidderregistry *BidderregistrySession) RetrieveFunds(commitmentDigest [32]byte, provider common.Address, residualBidPercentAfterDecay *big.Int) (*types.Transaction, error) {
-	return _Bidderregistry.Contract.RetrieveFunds(&_Bidderregistry.TransactOpts, commitmentDigest, provider, residualBidPercentAfterDecay)
+// Solidity: function retrieveFunds(uint256 windowToSettle, bytes32 commitmentDigest, address provider, uint256 residualBidPercentAfterDecay) returns()
+func (_Bidderregistry *BidderregistrySession) RetrieveFunds(windowToSettle *big.Int, commitmentDigest [32]byte, provider common.Address, residualBidPercentAfterDecay *big.Int) (*types.Transaction, error) {
+	return _Bidderregistry.Contract.RetrieveFunds(&_Bidderregistry.TransactOpts, windowToSettle, commitmentDigest, provider, residualBidPercentAfterDecay)
 }
 
-// RetrieveFunds is a paid mutator transaction binding the contract method 0x05c27ed6.
+// RetrieveFunds is a paid mutator transaction binding the contract method 0x0c2e5b0e.
 //
-// Solidity: function retrieveFunds(bytes32 commitmentDigest, address provider, uint256 residualBidPercentAfterDecay) returns()
-func (_Bidderregistry *BidderregistryTransactorSession) RetrieveFunds(commitmentDigest [32]byte, provider common.Address, residualBidPercentAfterDecay *big.Int) (*types.Transaction, error) {
-	return _Bidderregistry.Contract.RetrieveFunds(&_Bidderregistry.TransactOpts, commitmentDigest, provider, residualBidPercentAfterDecay)
+// Solidity: function retrieveFunds(uint256 windowToSettle, bytes32 commitmentDigest, address provider, uint256 residualBidPercentAfterDecay) returns()
+func (_Bidderregistry *BidderregistryTransactorSession) RetrieveFunds(windowToSettle *big.Int, commitmentDigest [32]byte, provider common.Address, residualBidPercentAfterDecay *big.Int) (*types.Transaction, error) {
+	return _Bidderregistry.Contract.RetrieveFunds(&_Bidderregistry.TransactOpts, windowToSettle, commitmentDigest, provider, residualBidPercentAfterDecay)
 }
 
 // SetNewFeePercent is a paid mutator transaction binding the contract method 0xfb22febf.
@@ -801,25 +810,25 @@ func (_Bidderregistry *BidderregistryTransactorSession) TransferOwnership(newOwn
 	return _Bidderregistry.Contract.TransferOwnership(&_Bidderregistry.TransactOpts, newOwner)
 }
 
-// UnlockFunds is a paid mutator transaction binding the contract method 0xefe485ee.
+// WithdrawBidderAmountFromWindow is a paid mutator transaction binding the contract method 0xa4bf023c.
 //
-// Solidity: function unlockFunds(bytes32 bidID) returns()
-func (_Bidderregistry *BidderregistryTransactor) UnlockFunds(opts *bind.TransactOpts, bidID [32]byte) (*types.Transaction, error) {
-	return _Bidderregistry.contract.Transact(opts, "unlockFunds", bidID)
+// Solidity: function withdrawBidderAmountFromWindow(address bidder, uint256 window) returns()
+func (_Bidderregistry *BidderregistryTransactor) WithdrawBidderAmountFromWindow(opts *bind.TransactOpts, bidder common.Address, window *big.Int) (*types.Transaction, error) {
+	return _Bidderregistry.contract.Transact(opts, "withdrawBidderAmountFromWindow", bidder, window)
 }
 
-// UnlockFunds is a paid mutator transaction binding the contract method 0xefe485ee.
+// WithdrawBidderAmountFromWindow is a paid mutator transaction binding the contract method 0xa4bf023c.
 //
-// Solidity: function unlockFunds(bytes32 bidID) returns()
-func (_Bidderregistry *BidderregistrySession) UnlockFunds(bidID [32]byte) (*types.Transaction, error) {
-	return _Bidderregistry.Contract.UnlockFunds(&_Bidderregistry.TransactOpts, bidID)
+// Solidity: function withdrawBidderAmountFromWindow(address bidder, uint256 window) returns()
+func (_Bidderregistry *BidderregistrySession) WithdrawBidderAmountFromWindow(bidder common.Address, window *big.Int) (*types.Transaction, error) {
+	return _Bidderregistry.Contract.WithdrawBidderAmountFromWindow(&_Bidderregistry.TransactOpts, bidder, window)
 }
 
-// UnlockFunds is a paid mutator transaction binding the contract method 0xefe485ee.
+// WithdrawBidderAmountFromWindow is a paid mutator transaction binding the contract method 0xa4bf023c.
 //
-// Solidity: function unlockFunds(bytes32 bidID) returns()
-func (_Bidderregistry *BidderregistryTransactorSession) UnlockFunds(bidID [32]byte) (*types.Transaction, error) {
-	return _Bidderregistry.Contract.UnlockFunds(&_Bidderregistry.TransactOpts, bidID)
+// Solidity: function withdrawBidderAmountFromWindow(address bidder, uint256 window) returns()
+func (_Bidderregistry *BidderregistryTransactorSession) WithdrawBidderAmountFromWindow(bidder common.Address, window *big.Int) (*types.Transaction, error) {
+	return _Bidderregistry.Contract.WithdrawBidderAmountFromWindow(&_Bidderregistry.TransactOpts, bidder, window)
 }
 
 // WithdrawFeeRecipientAmount is a paid mutator transaction binding the contract method 0x7e5713d8.
@@ -841,27 +850,6 @@ func (_Bidderregistry *BidderregistrySession) WithdrawFeeRecipientAmount() (*typ
 // Solidity: function withdrawFeeRecipientAmount() returns()
 func (_Bidderregistry *BidderregistryTransactorSession) WithdrawFeeRecipientAmount() (*types.Transaction, error) {
 	return _Bidderregistry.Contract.WithdrawFeeRecipientAmount(&_Bidderregistry.TransactOpts)
-}
-
-// WithdrawPrepaidAmount is a paid mutator transaction binding the contract method 0x29add31a.
-//
-// Solidity: function withdrawPrepaidAmount(address bidder) returns()
-func (_Bidderregistry *BidderregistryTransactor) WithdrawPrepaidAmount(opts *bind.TransactOpts, bidder common.Address) (*types.Transaction, error) {
-	return _Bidderregistry.contract.Transact(opts, "withdrawPrepaidAmount", bidder)
-}
-
-// WithdrawPrepaidAmount is a paid mutator transaction binding the contract method 0x29add31a.
-//
-// Solidity: function withdrawPrepaidAmount(address bidder) returns()
-func (_Bidderregistry *BidderregistrySession) WithdrawPrepaidAmount(bidder common.Address) (*types.Transaction, error) {
-	return _Bidderregistry.Contract.WithdrawPrepaidAmount(&_Bidderregistry.TransactOpts, bidder)
-}
-
-// WithdrawPrepaidAmount is a paid mutator transaction binding the contract method 0x29add31a.
-//
-// Solidity: function withdrawPrepaidAmount(address bidder) returns()
-func (_Bidderregistry *BidderregistryTransactorSession) WithdrawPrepaidAmount(bidder common.Address) (*types.Transaction, error) {
-	return _Bidderregistry.Contract.WithdrawPrepaidAmount(&_Bidderregistry.TransactOpts, bidder)
 }
 
 // WithdrawProtocolFee is a paid mutator transaction binding the contract method 0x668fb6dc.
@@ -1019,12 +1007,13 @@ func (it *BidderregistryBidderRegisteredIterator) Close() error {
 type BidderregistryBidderRegistered struct {
 	Bidder        common.Address
 	PrepaidAmount *big.Int
+	WindowNumber  *big.Int
 	Raw           types.Log // Blockchain specific contextual infos
 }
 
-// FilterBidderRegistered is a free log retrieval operation binding the contract event 0xe295bf197c7d23a64c638180faf17bb3472ae8707927da396d54050b6e1d9051.
+// FilterBidderRegistered is a free log retrieval operation binding the contract event 0x2ed10ffb7f7e5289e3bb91b8c3751388cb5d9b7f4533b9f0d59881a99822ddb3.
 //
-// Solidity: event BidderRegistered(address indexed bidder, uint256 prepaidAmount)
+// Solidity: event BidderRegistered(address indexed bidder, uint256 prepaidAmount, uint256 windowNumber)
 func (_Bidderregistry *BidderregistryFilterer) FilterBidderRegistered(opts *bind.FilterOpts, bidder []common.Address) (*BidderregistryBidderRegisteredIterator, error) {
 
 	var bidderRule []interface{}
@@ -1039,9 +1028,9 @@ func (_Bidderregistry *BidderregistryFilterer) FilterBidderRegistered(opts *bind
 	return &BidderregistryBidderRegisteredIterator{contract: _Bidderregistry.contract, event: "BidderRegistered", logs: logs, sub: sub}, nil
 }
 
-// WatchBidderRegistered is a free log subscription operation binding the contract event 0xe295bf197c7d23a64c638180faf17bb3472ae8707927da396d54050b6e1d9051.
+// WatchBidderRegistered is a free log subscription operation binding the contract event 0x2ed10ffb7f7e5289e3bb91b8c3751388cb5d9b7f4533b9f0d59881a99822ddb3.
 //
-// Solidity: event BidderRegistered(address indexed bidder, uint256 prepaidAmount)
+// Solidity: event BidderRegistered(address indexed bidder, uint256 prepaidAmount, uint256 windowNumber)
 func (_Bidderregistry *BidderregistryFilterer) WatchBidderRegistered(opts *bind.WatchOpts, sink chan<- *BidderregistryBidderRegistered, bidder []common.Address) (event.Subscription, error) {
 
 	var bidderRule []interface{}
@@ -1081,12 +1070,158 @@ func (_Bidderregistry *BidderregistryFilterer) WatchBidderRegistered(opts *bind.
 	}), nil
 }
 
-// ParseBidderRegistered is a log parse operation binding the contract event 0xe295bf197c7d23a64c638180faf17bb3472ae8707927da396d54050b6e1d9051.
+// ParseBidderRegistered is a log parse operation binding the contract event 0x2ed10ffb7f7e5289e3bb91b8c3751388cb5d9b7f4533b9f0d59881a99822ddb3.
 //
-// Solidity: event BidderRegistered(address indexed bidder, uint256 prepaidAmount)
+// Solidity: event BidderRegistered(address indexed bidder, uint256 prepaidAmount, uint256 windowNumber)
 func (_Bidderregistry *BidderregistryFilterer) ParseBidderRegistered(log types.Log) (*BidderregistryBidderRegistered, error) {
 	event := new(BidderregistryBidderRegistered)
 	if err := _Bidderregistry.contract.UnpackLog(event, "BidderRegistered", log); err != nil {
+		return nil, err
+	}
+	event.Raw = log
+	return event, nil
+}
+
+// BidderregistryBidderWithdrawalIterator is returned from FilterBidderWithdrawal and is used to iterate over the raw logs and unpacked data for BidderWithdrawal events raised by the Bidderregistry contract.
+type BidderregistryBidderWithdrawalIterator struct {
+	Event *BidderregistryBidderWithdrawal // Event containing the contract specifics and raw log
+
+	contract *bind.BoundContract // Generic contract to use for unpacking event data
+	event    string              // Event name to use for unpacking event data
+
+	logs chan types.Log        // Log channel receiving the found contract events
+	sub  ethereum.Subscription // Subscription for errors, completion and termination
+	done bool                  // Whether the subscription completed delivering logs
+	fail error                 // Occurred error to stop iteration
+}
+
+// Next advances the iterator to the subsequent event, returning whether there
+// are any more events found. In case of a retrieval or parsing error, false is
+// returned and Error() can be queried for the exact failure.
+func (it *BidderregistryBidderWithdrawalIterator) Next() bool {
+	// If the iterator failed, stop iterating
+	if it.fail != nil {
+		return false
+	}
+	// If the iterator completed, deliver directly whatever's available
+	if it.done {
+		select {
+		case log := <-it.logs:
+			it.Event = new(BidderregistryBidderWithdrawal)
+			if err := it.contract.UnpackLog(it.Event, it.event, log); err != nil {
+				it.fail = err
+				return false
+			}
+			it.Event.Raw = log
+			return true
+
+		default:
+			return false
+		}
+	}
+	// Iterator still in progress, wait for either a data or an error event
+	select {
+	case log := <-it.logs:
+		it.Event = new(BidderregistryBidderWithdrawal)
+		if err := it.contract.UnpackLog(it.Event, it.event, log); err != nil {
+			it.fail = err
+			return false
+		}
+		it.Event.Raw = log
+		return true
+
+	case err := <-it.sub.Err():
+		it.done = true
+		it.fail = err
+		return it.Next()
+	}
+}
+
+// Error returns any retrieval or parsing error occurred during filtering.
+func (it *BidderregistryBidderWithdrawalIterator) Error() error {
+	return it.fail
+}
+
+// Close terminates the iteration process, releasing any pending underlying
+// resources.
+func (it *BidderregistryBidderWithdrawalIterator) Close() error {
+	it.sub.Unsubscribe()
+	return nil
+}
+
+// BidderregistryBidderWithdrawal represents a BidderWithdrawal event raised by the Bidderregistry contract.
+type BidderregistryBidderWithdrawal struct {
+	Bidder common.Address
+	Window *big.Int
+	Amount *big.Int
+	Raw    types.Log // Blockchain specific contextual infos
+}
+
+// FilterBidderWithdrawal is a free log retrieval operation binding the contract event 0x2be239cccec761cb15b4070dda36677f39cb05afba45c7419fe7e27ed2c90b29.
+//
+// Solidity: event BidderWithdrawal(address indexed bidder, uint256 window, uint256 amount)
+func (_Bidderregistry *BidderregistryFilterer) FilterBidderWithdrawal(opts *bind.FilterOpts, bidder []common.Address) (*BidderregistryBidderWithdrawalIterator, error) {
+
+	var bidderRule []interface{}
+	for _, bidderItem := range bidder {
+		bidderRule = append(bidderRule, bidderItem)
+	}
+
+	logs, sub, err := _Bidderregistry.contract.FilterLogs(opts, "BidderWithdrawal", bidderRule)
+	if err != nil {
+		return nil, err
+	}
+	return &BidderregistryBidderWithdrawalIterator{contract: _Bidderregistry.contract, event: "BidderWithdrawal", logs: logs, sub: sub}, nil
+}
+
+// WatchBidderWithdrawal is a free log subscription operation binding the contract event 0x2be239cccec761cb15b4070dda36677f39cb05afba45c7419fe7e27ed2c90b29.
+//
+// Solidity: event BidderWithdrawal(address indexed bidder, uint256 window, uint256 amount)
+func (_Bidderregistry *BidderregistryFilterer) WatchBidderWithdrawal(opts *bind.WatchOpts, sink chan<- *BidderregistryBidderWithdrawal, bidder []common.Address) (event.Subscription, error) {
+
+	var bidderRule []interface{}
+	for _, bidderItem := range bidder {
+		bidderRule = append(bidderRule, bidderItem)
+	}
+
+	logs, sub, err := _Bidderregistry.contract.WatchLogs(opts, "BidderWithdrawal", bidderRule)
+	if err != nil {
+		return nil, err
+	}
+	return event.NewSubscription(func(quit <-chan struct{}) error {
+		defer sub.Unsubscribe()
+		for {
+			select {
+			case log := <-logs:
+				// New log arrived, parse the event and forward to the user
+				event := new(BidderregistryBidderWithdrawal)
+				if err := _Bidderregistry.contract.UnpackLog(event, "BidderWithdrawal", log); err != nil {
+					return err
+				}
+				event.Raw = log
+
+				select {
+				case sink <- event:
+				case err := <-sub.Err():
+					return err
+				case <-quit:
+					return nil
+				}
+			case err := <-sub.Err():
+				return err
+			case <-quit:
+				return nil
+			}
+		}
+	}), nil
+}
+
+// ParseBidderWithdrawal is a log parse operation binding the contract event 0x2be239cccec761cb15b4070dda36677f39cb05afba45c7419fe7e27ed2c90b29.
+//
+// Solidity: event BidderWithdrawal(address indexed bidder, uint256 window, uint256 amount)
+func (_Bidderregistry *BidderregistryFilterer) ParseBidderWithdrawal(log types.Log) (*BidderregistryBidderWithdrawal, error) {
+	event := new(BidderregistryBidderWithdrawal)
+	if err := _Bidderregistry.contract.UnpackLog(event, "BidderWithdrawal", log); err != nil {
 		return nil, err
 	}
 	event.Raw = log

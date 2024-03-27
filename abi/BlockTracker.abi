@@ -3,16 +3,6 @@
     "inputs": [
       {
         "internalType": "address",
-        "name": "_preConfContract",
-        "type": "address"
-      },
-      {
-        "internalType": "address",
-        "name": "_blockTrackerContract",
-        "type": "address"
-      },
-      {
-        "internalType": "address",
         "name": "_owner",
         "type": "address"
       }
@@ -24,19 +14,32 @@
     "anonymous": false,
     "inputs": [
       {
-        "indexed": false,
-        "internalType": "bytes32",
-        "name": "commitmentHash",
-        "type": "bytes32"
+        "indexed": true,
+        "internalType": "uint256",
+        "name": "blockNumber",
+        "type": "uint256"
       },
       {
-        "indexed": false,
-        "internalType": "bool",
-        "name": "isSlash",
-        "type": "bool"
+        "indexed": true,
+        "internalType": "address",
+        "name": "winner",
+        "type": "address"
       }
     ],
-    "name": "CommitmentProcessed",
+    "name": "NewL1Block",
+    "type": "event"
+  },
+  {
+    "anonymous": false,
+    "inputs": [
+      {
+        "indexed": true,
+        "internalType": "uint256",
+        "name": "window",
+        "type": "uint256"
+      }
+    ],
+    "name": "NewWindow",
     "type": "event"
   },
   {
@@ -63,32 +66,60 @@
     "type": "fallback"
   },
   {
-    "inputs": [
+    "inputs": [],
+    "name": "blocksPerWindow",
+    "outputs": [
       {
-        "internalType": "string",
-        "name": "builderName",
-        "type": "string"
-      },
-      {
-        "internalType": "address",
-        "name": "builderAddress",
-        "type": "address"
+        "internalType": "uint256",
+        "name": "",
+        "type": "uint256"
       }
     ],
-    "name": "addBuilderAddress",
-    "outputs": [],
-    "stateMutability": "nonpayable",
+    "stateMutability": "view",
     "type": "function"
   },
   {
-    "inputs": [
+    "inputs": [],
+    "name": "currentWindow",
+    "outputs": [
       {
-        "internalType": "string",
+        "internalType": "uint256",
         "name": "",
-        "type": "string"
+        "type": "uint256"
       }
     ],
-    "name": "blockBuilderNameToAddress",
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [],
+    "name": "getCurrentWindow",
+    "outputs": [
+      {
+        "internalType": "uint256",
+        "name": "",
+        "type": "uint256"
+      }
+    ],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [],
+    "name": "getLastL1BlockNumber",
+    "outputs": [
+      {
+        "internalType": "uint256",
+        "name": "",
+        "type": "uint256"
+      }
+    ],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [],
+    "name": "getLastL1BlockWinner",
     "outputs": [
       {
         "internalType": "address",
@@ -100,14 +131,21 @@
     "type": "function"
   },
   {
-    "inputs": [
+    "inputs": [],
+    "name": "lastL1BlockNumber",
+    "outputs": [
       {
-        "internalType": "string",
-        "name": "builderNameGrafiti",
-        "type": "string"
+        "internalType": "uint256",
+        "name": "",
+        "type": "uint256"
       }
     ],
-    "name": "getBuilder",
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [],
+    "name": "lastL1BlockWinner",
     "outputs": [
       {
         "internalType": "address",
@@ -134,32 +172,17 @@
   {
     "inputs": [
       {
-        "internalType": "bytes32",
-        "name": "commitmentIndex",
-        "type": "bytes32"
-      },
-      {
         "internalType": "uint256",
-        "name": "blockNumber",
+        "name": "_blockNumber",
         "type": "uint256"
       },
       {
-        "internalType": "string",
-        "name": "blockBuilderName",
-        "type": "string"
-      },
-      {
-        "internalType": "bool",
-        "name": "isSlash",
-        "type": "bool"
-      },
-      {
-        "internalType": "uint256",
-        "name": "residualBidPercentAfterDecay",
-        "type": "uint256"
+        "internalType": "address",
+        "name": "_winner",
+        "type": "address"
       }
     ],
-    "name": "processBuilderCommitmentForBlockNumber",
+    "name": "recordL1Block",
     "outputs": [],
     "stateMutability": "nonpayable",
     "type": "function"
@@ -180,19 +203,6 @@
       }
     ],
     "name": "transferOwnership",
-    "outputs": [],
-    "stateMutability": "nonpayable",
-    "type": "function"
-  },
-  {
-    "inputs": [
-      {
-        "internalType": "bytes32[]",
-        "name": "bidIDs",
-        "type": "bytes32[]"
-      }
-    ],
-    "name": "unlockFunds",
     "outputs": [],
     "stateMutability": "nonpayable",
     "type": "function"

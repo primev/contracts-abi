@@ -52,11 +52,12 @@ type PreConfCommitmentStorePreConfCommitment struct {
 	BidSignature        []byte
 	CommitmentSignature []byte
 	BlockCommitedAt     *big.Int
+	SharedSecretKey     []byte
 }
 
 // PreconfcommitmentstoreMetaData contains all meta data concerning the Preconfcommitmentstore contract.
 var PreconfcommitmentstoreMetaData = &bind.MetaData{
-	ABI: "[{\"inputs\":[{\"internalType\":\"address\",\"name\":\"_providerRegistry\",\"type\":\"address\"},{\"internalType\":\"address\",\"name\":\"_bidderRegistry\",\"type\":\"address\"},{\"internalType\":\"address\",\"name\":\"_oracle\",\"type\":\"address\"},{\"internalType\":\"address\",\"name\":\"_owner\",\"type\":\"address\"}],\"stateMutability\":\"nonpayable\",\"type\":\"constructor\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"address\",\"name\":\"previousOwner\",\"type\":\"address\"},{\"indexed\":true,\"internalType\":\"address\",\"name\":\"newOwner\",\"type\":\"address\"}],\"name\":\"OwnershipTransferred\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"address\",\"name\":\"signer\",\"type\":\"address\"},{\"indexed\":false,\"internalType\":\"string\",\"name\":\"txnHash\",\"type\":\"string\"},{\"indexed\":true,\"internalType\":\"uint64\",\"name\":\"bid\",\"type\":\"uint64\"},{\"indexed\":false,\"internalType\":\"uint64\",\"name\":\"blockNumber\",\"type\":\"uint64\"}],\"name\":\"SignatureVerified\",\"type\":\"event\"},{\"stateMutability\":\"payable\",\"type\":\"fallback\"},{\"inputs\":[],\"name\":\"DOMAIN_SEPARATOR_BID\",\"outputs\":[{\"internalType\":\"bytes32\",\"name\":\"\",\"type\":\"bytes32\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"DOMAIN_SEPARATOR_PRECONF\",\"outputs\":[{\"internalType\":\"bytes32\",\"name\":\"\",\"type\":\"bytes32\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"EIP712_BID_TYPEHASH\",\"outputs\":[{\"internalType\":\"bytes32\",\"name\":\"\",\"type\":\"bytes32\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"EIP712_COMMITMENT_TYPEHASH\",\"outputs\":[{\"internalType\":\"bytes32\",\"name\":\"\",\"type\":\"bytes32\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"bytes\",\"name\":\"_bytes\",\"type\":\"bytes\"}],\"name\":\"_bytesToHexString\",\"outputs\":[{\"internalType\":\"string\",\"name\":\"\",\"type\":\"string\"}],\"stateMutability\":\"pure\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"bidderRegistry\",\"outputs\":[{\"internalType\":\"contractIBidderRegistry\",\"name\":\"\",\"type\":\"address\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"name\":\"blockCommitments\",\"outputs\":[{\"internalType\":\"bytes32\",\"name\":\"\",\"type\":\"bytes32\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"commitmentCount\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"bytes32\",\"name\":\"\",\"type\":\"bytes32\"}],\"name\":\"commitments\",\"outputs\":[{\"internalType\":\"bool\",\"name\":\"commitmentUsed\",\"type\":\"bool\"},{\"internalType\":\"address\",\"name\":\"bidder\",\"type\":\"address\"},{\"internalType\":\"address\",\"name\":\"commiter\",\"type\":\"address\"},{\"internalType\":\"uint64\",\"name\":\"bid\",\"type\":\"uint64\"},{\"internalType\":\"uint64\",\"name\":\"blockNumber\",\"type\":\"uint64\"},{\"internalType\":\"bytes32\",\"name\":\"bidHash\",\"type\":\"bytes32\"},{\"internalType\":\"uint64\",\"name\":\"decayStartTimeStamp\",\"type\":\"uint64\"},{\"internalType\":\"uint64\",\"name\":\"decayEndTimeStamp\",\"type\":\"uint64\"},{\"internalType\":\"string\",\"name\":\"txnHash\",\"type\":\"string\"},{\"internalType\":\"bytes32\",\"name\":\"commitmentHash\",\"type\":\"bytes32\"},{\"internalType\":\"bytes\",\"name\":\"bidSignature\",\"type\":\"bytes\"},{\"internalType\":\"bytes\",\"name\":\"commitmentSignature\",\"type\":\"bytes\"},{\"internalType\":\"uint256\",\"name\":\"blockCommitedAt\",\"type\":\"uint256\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"\",\"type\":\"address\"}],\"name\":\"commitmentsCount\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"bytes32\",\"name\":\"\",\"type\":\"bytes32\"}],\"name\":\"encryptedCommitments\",\"outputs\":[{\"internalType\":\"bool\",\"name\":\"commitmentUsed\",\"type\":\"bool\"},{\"internalType\":\"address\",\"name\":\"commiter\",\"type\":\"address\"},{\"internalType\":\"bytes32\",\"name\":\"commitmentDigest\",\"type\":\"bytes32\"},{\"internalType\":\"bytes\",\"name\":\"commitmentSignature\",\"type\":\"bytes\"},{\"internalType\":\"uint256\",\"name\":\"blockCommitedAt\",\"type\":\"uint256\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"string\",\"name\":\"_txnHash\",\"type\":\"string\"},{\"internalType\":\"uint64\",\"name\":\"_bid\",\"type\":\"uint64\"},{\"internalType\":\"uint64\",\"name\":\"_blockNumber\",\"type\":\"uint64\"},{\"internalType\":\"uint64\",\"name\":\"_decayStartTimeStamp\",\"type\":\"uint64\"},{\"internalType\":\"uint64\",\"name\":\"_decayEndTimeStamp\",\"type\":\"uint64\"}],\"name\":\"getBidHash\",\"outputs\":[{\"internalType\":\"bytes32\",\"name\":\"\",\"type\":\"bytes32\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"bytes32\",\"name\":\"commitmentIndex\",\"type\":\"bytes32\"}],\"name\":\"getCommitment\",\"outputs\":[{\"components\":[{\"internalType\":\"bool\",\"name\":\"commitmentUsed\",\"type\":\"bool\"},{\"internalType\":\"address\",\"name\":\"bidder\",\"type\":\"address\"},{\"internalType\":\"address\",\"name\":\"commiter\",\"type\":\"address\"},{\"internalType\":\"uint64\",\"name\":\"bid\",\"type\":\"uint64\"},{\"internalType\":\"uint64\",\"name\":\"blockNumber\",\"type\":\"uint64\"},{\"internalType\":\"bytes32\",\"name\":\"bidHash\",\"type\":\"bytes32\"},{\"internalType\":\"uint64\",\"name\":\"decayStartTimeStamp\",\"type\":\"uint64\"},{\"internalType\":\"uint64\",\"name\":\"decayEndTimeStamp\",\"type\":\"uint64\"},{\"internalType\":\"string\",\"name\":\"txnHash\",\"type\":\"string\"},{\"internalType\":\"bytes32\",\"name\":\"commitmentHash\",\"type\":\"bytes32\"},{\"internalType\":\"bytes\",\"name\":\"bidSignature\",\"type\":\"bytes\"},{\"internalType\":\"bytes\",\"name\":\"commitmentSignature\",\"type\":\"bytes\"},{\"internalType\":\"uint256\",\"name\":\"blockCommitedAt\",\"type\":\"uint256\"}],\"internalType\":\"structPreConfCommitmentStore.PreConfCommitment\",\"name\":\"\",\"type\":\"tuple\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"components\":[{\"internalType\":\"bool\",\"name\":\"commitmentUsed\",\"type\":\"bool\"},{\"internalType\":\"address\",\"name\":\"bidder\",\"type\":\"address\"},{\"internalType\":\"address\",\"name\":\"commiter\",\"type\":\"address\"},{\"internalType\":\"uint64\",\"name\":\"bid\",\"type\":\"uint64\"},{\"internalType\":\"uint64\",\"name\":\"blockNumber\",\"type\":\"uint64\"},{\"internalType\":\"bytes32\",\"name\":\"bidHash\",\"type\":\"bytes32\"},{\"internalType\":\"uint64\",\"name\":\"decayStartTimeStamp\",\"type\":\"uint64\"},{\"internalType\":\"uint64\",\"name\":\"decayEndTimeStamp\",\"type\":\"uint64\"},{\"internalType\":\"string\",\"name\":\"txnHash\",\"type\":\"string\"},{\"internalType\":\"bytes32\",\"name\":\"commitmentHash\",\"type\":\"bytes32\"},{\"internalType\":\"bytes\",\"name\":\"bidSignature\",\"type\":\"bytes\"},{\"internalType\":\"bytes\",\"name\":\"commitmentSignature\",\"type\":\"bytes\"},{\"internalType\":\"uint256\",\"name\":\"blockCommitedAt\",\"type\":\"uint256\"}],\"internalType\":\"structPreConfCommitmentStore.PreConfCommitment\",\"name\":\"commitment\",\"type\":\"tuple\"}],\"name\":\"getCommitmentIndex\",\"outputs\":[{\"internalType\":\"bytes32\",\"name\":\"\",\"type\":\"bytes32\"}],\"stateMutability\":\"pure\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"uint256\",\"name\":\"blockNumber\",\"type\":\"uint256\"}],\"name\":\"getCommitmentsByBlockNumber\",\"outputs\":[{\"internalType\":\"bytes32[]\",\"name\":\"\",\"type\":\"bytes32[]\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"commiter\",\"type\":\"address\"}],\"name\":\"getCommitmentsByCommitter\",\"outputs\":[{\"internalType\":\"bytes32[]\",\"name\":\"\",\"type\":\"bytes32[]\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"bytes32\",\"name\":\"commitmentIndex\",\"type\":\"bytes32\"}],\"name\":\"getEncryptedCommitment\",\"outputs\":[{\"components\":[{\"internalType\":\"bool\",\"name\":\"commitmentUsed\",\"type\":\"bool\"},{\"internalType\":\"address\",\"name\":\"commiter\",\"type\":\"address\"},{\"internalType\":\"bytes32\",\"name\":\"commitmentDigest\",\"type\":\"bytes32\"},{\"internalType\":\"bytes\",\"name\":\"commitmentSignature\",\"type\":\"bytes\"},{\"internalType\":\"uint256\",\"name\":\"blockCommitedAt\",\"type\":\"uint256\"}],\"internalType\":\"structPreConfCommitmentStore.EncrPreConfCommitment\",\"name\":\"\",\"type\":\"tuple\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"components\":[{\"internalType\":\"bool\",\"name\":\"commitmentUsed\",\"type\":\"bool\"},{\"internalType\":\"address\",\"name\":\"commiter\",\"type\":\"address\"},{\"internalType\":\"bytes32\",\"name\":\"commitmentDigest\",\"type\":\"bytes32\"},{\"internalType\":\"bytes\",\"name\":\"commitmentSignature\",\"type\":\"bytes\"},{\"internalType\":\"uint256\",\"name\":\"blockCommitedAt\",\"type\":\"uint256\"}],\"internalType\":\"structPreConfCommitmentStore.EncrPreConfCommitment\",\"name\":\"commitment\",\"type\":\"tuple\"}],\"name\":\"getEncryptedCommitmentIndex\",\"outputs\":[{\"internalType\":\"bytes32\",\"name\":\"\",\"type\":\"bytes32\"}],\"stateMutability\":\"pure\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"string\",\"name\":\"_txnHash\",\"type\":\"string\"},{\"internalType\":\"uint64\",\"name\":\"_bid\",\"type\":\"uint64\"},{\"internalType\":\"uint64\",\"name\":\"_blockNumber\",\"type\":\"uint64\"},{\"internalType\":\"uint64\",\"name\":\"_decayStartTimeStamp\",\"type\":\"uint64\"},{\"internalType\":\"uint64\",\"name\":\"_decayEndTimeStamp\",\"type\":\"uint64\"},{\"internalType\":\"bytes32\",\"name\":\"_bidHash\",\"type\":\"bytes32\"},{\"internalType\":\"string\",\"name\":\"_bidSignature\",\"type\":\"string\"}],\"name\":\"getPreConfHash\",\"outputs\":[{\"internalType\":\"bytes32\",\"name\":\"\",\"type\":\"bytes32\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"bytes32\",\"name\":\"commitmentIndex\",\"type\":\"bytes32\"}],\"name\":\"getTxnHashFromCommitment\",\"outputs\":[{\"internalType\":\"string\",\"name\":\"txnHash\",\"type\":\"string\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"bytes32\",\"name\":\"commitmentIndex\",\"type\":\"bytes32\"},{\"internalType\":\"uint256\",\"name\":\"residualBidPercentAfterDecay\",\"type\":\"uint256\"}],\"name\":\"initiateReward\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"bytes32\",\"name\":\"commitmentIndex\",\"type\":\"bytes32\"},{\"internalType\":\"uint256\",\"name\":\"residualBidPercentAfterDecay\",\"type\":\"uint256\"}],\"name\":\"initiateSlash\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"lastProcessedBlock\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"oracle\",\"outputs\":[{\"internalType\":\"address\",\"name\":\"\",\"type\":\"address\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"owner\",\"outputs\":[{\"internalType\":\"address\",\"name\":\"\",\"type\":\"address\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"\",\"type\":\"address\"},{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"name\":\"providerCommitments\",\"outputs\":[{\"internalType\":\"bytes32\",\"name\":\"\",\"type\":\"bytes32\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"\",\"type\":\"address\"},{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"name\":\"providerEncryptedCommitments\",\"outputs\":[{\"internalType\":\"bytes32\",\"name\":\"\",\"type\":\"bytes32\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"providerRegistry\",\"outputs\":[{\"internalType\":\"contractIProviderRegistry\",\"name\":\"\",\"type\":\"address\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"renounceOwnership\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"uint64\",\"name\":\"bid\",\"type\":\"uint64\"},{\"internalType\":\"uint64\",\"name\":\"blockNumber\",\"type\":\"uint64\"},{\"internalType\":\"string\",\"name\":\"txnHash\",\"type\":\"string\"},{\"internalType\":\"uint64\",\"name\":\"decayStartTimeStamp\",\"type\":\"uint64\"},{\"internalType\":\"uint64\",\"name\":\"decayEndTimeStamp\",\"type\":\"uint64\"},{\"internalType\":\"bytes\",\"name\":\"bidSignature\",\"type\":\"bytes\"},{\"internalType\":\"bytes\",\"name\":\"commitmentSignature\",\"type\":\"bytes\"}],\"name\":\"storeCommitment\",\"outputs\":[{\"internalType\":\"bytes32\",\"name\":\"commitmentIndex\",\"type\":\"bytes32\"}],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"bytes32\",\"name\":\"commitmentDigest\",\"type\":\"bytes32\"},{\"internalType\":\"bytes\",\"name\":\"commitmentSignature\",\"type\":\"bytes\"}],\"name\":\"storeEncryptedCommitment\",\"outputs\":[{\"internalType\":\"bytes32\",\"name\":\"commitmentIndex\",\"type\":\"bytes32\"}],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"newOwner\",\"type\":\"address\"}],\"name\":\"transferOwnership\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"bytes32\",\"name\":\"commitmentDigest\",\"type\":\"bytes32\"}],\"name\":\"unlockBidFunds\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"newBidderRegistry\",\"type\":\"address\"}],\"name\":\"updateBidderRegistry\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"newOracle\",\"type\":\"address\"}],\"name\":\"updateOracle\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"newProviderRegistry\",\"type\":\"address\"}],\"name\":\"updateProviderRegistry\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"uint64\",\"name\":\"bid\",\"type\":\"uint64\"},{\"internalType\":\"uint64\",\"name\":\"blockNumber\",\"type\":\"uint64\"},{\"internalType\":\"uint64\",\"name\":\"decayStartTimeStamp\",\"type\":\"uint64\"},{\"internalType\":\"uint64\",\"name\":\"decayEndTimeStamp\",\"type\":\"uint64\"},{\"internalType\":\"string\",\"name\":\"txnHash\",\"type\":\"string\"},{\"internalType\":\"bytes\",\"name\":\"bidSignature\",\"type\":\"bytes\"}],\"name\":\"verifyBid\",\"outputs\":[{\"internalType\":\"bytes32\",\"name\":\"messageDigest\",\"type\":\"bytes32\"},{\"internalType\":\"address\",\"name\":\"recoveredAddress\",\"type\":\"address\"},{\"internalType\":\"uint256\",\"name\":\"stake\",\"type\":\"uint256\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"string\",\"name\":\"txnHash\",\"type\":\"string\"},{\"internalType\":\"uint64\",\"name\":\"bid\",\"type\":\"uint64\"},{\"internalType\":\"uint64\",\"name\":\"blockNumber\",\"type\":\"uint64\"},{\"internalType\":\"uint64\",\"name\":\"decayStartTimeStamp\",\"type\":\"uint64\"},{\"internalType\":\"uint64\",\"name\":\"decayEndTimeStamp\",\"type\":\"uint64\"},{\"internalType\":\"bytes32\",\"name\":\"bidHash\",\"type\":\"bytes32\"},{\"internalType\":\"bytes\",\"name\":\"bidSignature\",\"type\":\"bytes\"},{\"internalType\":\"bytes\",\"name\":\"commitmentSignature\",\"type\":\"bytes\"}],\"name\":\"verifyPreConfCommitment\",\"outputs\":[{\"internalType\":\"bytes32\",\"name\":\"preConfHash\",\"type\":\"bytes32\"},{\"internalType\":\"address\",\"name\":\"commiterAddress\",\"type\":\"address\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"stateMutability\":\"payable\",\"type\":\"receive\"}]",
+	ABI: "[{\"inputs\":[{\"internalType\":\"address\",\"name\":\"_providerRegistry\",\"type\":\"address\"},{\"internalType\":\"address\",\"name\":\"_bidderRegistry\",\"type\":\"address\"},{\"internalType\":\"address\",\"name\":\"_oracle\",\"type\":\"address\"},{\"internalType\":\"address\",\"name\":\"_owner\",\"type\":\"address\"}],\"stateMutability\":\"nonpayable\",\"type\":\"constructor\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":false,\"internalType\":\"address\",\"name\":\"bidder\",\"type\":\"address\"},{\"indexed\":false,\"internalType\":\"address\",\"name\":\"commiter\",\"type\":\"address\"},{\"indexed\":false,\"internalType\":\"uint64\",\"name\":\"bid\",\"type\":\"uint64\"},{\"indexed\":false,\"internalType\":\"uint64\",\"name\":\"blockNumber\",\"type\":\"uint64\"},{\"indexed\":false,\"internalType\":\"bytes32\",\"name\":\"bidHash\",\"type\":\"bytes32\"},{\"indexed\":false,\"internalType\":\"uint64\",\"name\":\"decayStartTimeStamp\",\"type\":\"uint64\"},{\"indexed\":false,\"internalType\":\"uint64\",\"name\":\"decayEndTimeStamp\",\"type\":\"uint64\"},{\"indexed\":false,\"internalType\":\"string\",\"name\":\"txnHash\",\"type\":\"string\"},{\"indexed\":false,\"internalType\":\"bytes32\",\"name\":\"commitmentHash\",\"type\":\"bytes32\"},{\"indexed\":false,\"internalType\":\"bytes\",\"name\":\"bidSignature\",\"type\":\"bytes\"},{\"indexed\":false,\"internalType\":\"bytes\",\"name\":\"commitmentSignature\",\"type\":\"bytes\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"blockCommitedAt\",\"type\":\"uint256\"},{\"indexed\":false,\"internalType\":\"bytes\",\"name\":\"sharedSecretKey\",\"type\":\"bytes\"}],\"name\":\"CommitmentStored\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"address\",\"name\":\"previousOwner\",\"type\":\"address\"},{\"indexed\":true,\"internalType\":\"address\",\"name\":\"newOwner\",\"type\":\"address\"}],\"name\":\"OwnershipTransferred\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"address\",\"name\":\"signer\",\"type\":\"address\"},{\"indexed\":false,\"internalType\":\"string\",\"name\":\"txnHash\",\"type\":\"string\"},{\"indexed\":true,\"internalType\":\"uint64\",\"name\":\"bid\",\"type\":\"uint64\"},{\"indexed\":false,\"internalType\":\"uint64\",\"name\":\"blockNumber\",\"type\":\"uint64\"}],\"name\":\"SignatureVerified\",\"type\":\"event\"},{\"stateMutability\":\"payable\",\"type\":\"fallback\"},{\"inputs\":[],\"name\":\"DOMAIN_SEPARATOR_BID\",\"outputs\":[{\"internalType\":\"bytes32\",\"name\":\"\",\"type\":\"bytes32\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"DOMAIN_SEPARATOR_PRECONF\",\"outputs\":[{\"internalType\":\"bytes32\",\"name\":\"\",\"type\":\"bytes32\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"EIP712_BID_TYPEHASH\",\"outputs\":[{\"internalType\":\"bytes32\",\"name\":\"\",\"type\":\"bytes32\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"EIP712_COMMITMENT_TYPEHASH\",\"outputs\":[{\"internalType\":\"bytes32\",\"name\":\"\",\"type\":\"bytes32\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"bytes\",\"name\":\"_bytes\",\"type\":\"bytes\"}],\"name\":\"_bytesToHexString\",\"outputs\":[{\"internalType\":\"string\",\"name\":\"\",\"type\":\"string\"}],\"stateMutability\":\"pure\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"bidderRegistry\",\"outputs\":[{\"internalType\":\"contractIBidderRegistry\",\"name\":\"\",\"type\":\"address\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"name\":\"blockCommitments\",\"outputs\":[{\"internalType\":\"bytes32\",\"name\":\"\",\"type\":\"bytes32\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"commitmentCount\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"bytes32\",\"name\":\"\",\"type\":\"bytes32\"}],\"name\":\"commitments\",\"outputs\":[{\"internalType\":\"bool\",\"name\":\"commitmentUsed\",\"type\":\"bool\"},{\"internalType\":\"address\",\"name\":\"bidder\",\"type\":\"address\"},{\"internalType\":\"address\",\"name\":\"commiter\",\"type\":\"address\"},{\"internalType\":\"uint64\",\"name\":\"bid\",\"type\":\"uint64\"},{\"internalType\":\"uint64\",\"name\":\"blockNumber\",\"type\":\"uint64\"},{\"internalType\":\"bytes32\",\"name\":\"bidHash\",\"type\":\"bytes32\"},{\"internalType\":\"uint64\",\"name\":\"decayStartTimeStamp\",\"type\":\"uint64\"},{\"internalType\":\"uint64\",\"name\":\"decayEndTimeStamp\",\"type\":\"uint64\"},{\"internalType\":\"string\",\"name\":\"txnHash\",\"type\":\"string\"},{\"internalType\":\"bytes32\",\"name\":\"commitmentHash\",\"type\":\"bytes32\"},{\"internalType\":\"bytes\",\"name\":\"bidSignature\",\"type\":\"bytes\"},{\"internalType\":\"bytes\",\"name\":\"commitmentSignature\",\"type\":\"bytes\"},{\"internalType\":\"uint256\",\"name\":\"blockCommitedAt\",\"type\":\"uint256\"},{\"internalType\":\"bytes\",\"name\":\"sharedSecretKey\",\"type\":\"bytes\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"\",\"type\":\"address\"}],\"name\":\"commitmentsCount\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"bytes32\",\"name\":\"\",\"type\":\"bytes32\"}],\"name\":\"encryptedCommitments\",\"outputs\":[{\"internalType\":\"bool\",\"name\":\"commitmentUsed\",\"type\":\"bool\"},{\"internalType\":\"address\",\"name\":\"commiter\",\"type\":\"address\"},{\"internalType\":\"bytes32\",\"name\":\"commitmentDigest\",\"type\":\"bytes32\"},{\"internalType\":\"bytes\",\"name\":\"commitmentSignature\",\"type\":\"bytes\"},{\"internalType\":\"uint256\",\"name\":\"blockCommitedAt\",\"type\":\"uint256\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"string\",\"name\":\"_txnHash\",\"type\":\"string\"},{\"internalType\":\"uint64\",\"name\":\"_bid\",\"type\":\"uint64\"},{\"internalType\":\"uint64\",\"name\":\"_blockNumber\",\"type\":\"uint64\"},{\"internalType\":\"uint64\",\"name\":\"_decayStartTimeStamp\",\"type\":\"uint64\"},{\"internalType\":\"uint64\",\"name\":\"_decayEndTimeStamp\",\"type\":\"uint64\"}],\"name\":\"getBidHash\",\"outputs\":[{\"internalType\":\"bytes32\",\"name\":\"\",\"type\":\"bytes32\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"bytes32\",\"name\":\"commitmentIndex\",\"type\":\"bytes32\"}],\"name\":\"getCommitment\",\"outputs\":[{\"components\":[{\"internalType\":\"bool\",\"name\":\"commitmentUsed\",\"type\":\"bool\"},{\"internalType\":\"address\",\"name\":\"bidder\",\"type\":\"address\"},{\"internalType\":\"address\",\"name\":\"commiter\",\"type\":\"address\"},{\"internalType\":\"uint64\",\"name\":\"bid\",\"type\":\"uint64\"},{\"internalType\":\"uint64\",\"name\":\"blockNumber\",\"type\":\"uint64\"},{\"internalType\":\"bytes32\",\"name\":\"bidHash\",\"type\":\"bytes32\"},{\"internalType\":\"uint64\",\"name\":\"decayStartTimeStamp\",\"type\":\"uint64\"},{\"internalType\":\"uint64\",\"name\":\"decayEndTimeStamp\",\"type\":\"uint64\"},{\"internalType\":\"string\",\"name\":\"txnHash\",\"type\":\"string\"},{\"internalType\":\"bytes32\",\"name\":\"commitmentHash\",\"type\":\"bytes32\"},{\"internalType\":\"bytes\",\"name\":\"bidSignature\",\"type\":\"bytes\"},{\"internalType\":\"bytes\",\"name\":\"commitmentSignature\",\"type\":\"bytes\"},{\"internalType\":\"uint256\",\"name\":\"blockCommitedAt\",\"type\":\"uint256\"},{\"internalType\":\"bytes\",\"name\":\"sharedSecretKey\",\"type\":\"bytes\"}],\"internalType\":\"structPreConfCommitmentStore.PreConfCommitment\",\"name\":\"\",\"type\":\"tuple\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"components\":[{\"internalType\":\"bool\",\"name\":\"commitmentUsed\",\"type\":\"bool\"},{\"internalType\":\"address\",\"name\":\"bidder\",\"type\":\"address\"},{\"internalType\":\"address\",\"name\":\"commiter\",\"type\":\"address\"},{\"internalType\":\"uint64\",\"name\":\"bid\",\"type\":\"uint64\"},{\"internalType\":\"uint64\",\"name\":\"blockNumber\",\"type\":\"uint64\"},{\"internalType\":\"bytes32\",\"name\":\"bidHash\",\"type\":\"bytes32\"},{\"internalType\":\"uint64\",\"name\":\"decayStartTimeStamp\",\"type\":\"uint64\"},{\"internalType\":\"uint64\",\"name\":\"decayEndTimeStamp\",\"type\":\"uint64\"},{\"internalType\":\"string\",\"name\":\"txnHash\",\"type\":\"string\"},{\"internalType\":\"bytes32\",\"name\":\"commitmentHash\",\"type\":\"bytes32\"},{\"internalType\":\"bytes\",\"name\":\"bidSignature\",\"type\":\"bytes\"},{\"internalType\":\"bytes\",\"name\":\"commitmentSignature\",\"type\":\"bytes\"},{\"internalType\":\"uint256\",\"name\":\"blockCommitedAt\",\"type\":\"uint256\"},{\"internalType\":\"bytes\",\"name\":\"sharedSecretKey\",\"type\":\"bytes\"}],\"internalType\":\"structPreConfCommitmentStore.PreConfCommitment\",\"name\":\"commitment\",\"type\":\"tuple\"}],\"name\":\"getCommitmentIndex\",\"outputs\":[{\"internalType\":\"bytes32\",\"name\":\"\",\"type\":\"bytes32\"}],\"stateMutability\":\"pure\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"uint256\",\"name\":\"blockNumber\",\"type\":\"uint256\"}],\"name\":\"getCommitmentsByBlockNumber\",\"outputs\":[{\"internalType\":\"bytes32[]\",\"name\":\"\",\"type\":\"bytes32[]\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"commiter\",\"type\":\"address\"}],\"name\":\"getCommitmentsByCommitter\",\"outputs\":[{\"internalType\":\"bytes32[]\",\"name\":\"\",\"type\":\"bytes32[]\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"bytes32\",\"name\":\"commitmentIndex\",\"type\":\"bytes32\"}],\"name\":\"getEncryptedCommitment\",\"outputs\":[{\"components\":[{\"internalType\":\"bool\",\"name\":\"commitmentUsed\",\"type\":\"bool\"},{\"internalType\":\"address\",\"name\":\"commiter\",\"type\":\"address\"},{\"internalType\":\"bytes32\",\"name\":\"commitmentDigest\",\"type\":\"bytes32\"},{\"internalType\":\"bytes\",\"name\":\"commitmentSignature\",\"type\":\"bytes\"},{\"internalType\":\"uint256\",\"name\":\"blockCommitedAt\",\"type\":\"uint256\"}],\"internalType\":\"structPreConfCommitmentStore.EncrPreConfCommitment\",\"name\":\"\",\"type\":\"tuple\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"components\":[{\"internalType\":\"bool\",\"name\":\"commitmentUsed\",\"type\":\"bool\"},{\"internalType\":\"address\",\"name\":\"commiter\",\"type\":\"address\"},{\"internalType\":\"bytes32\",\"name\":\"commitmentDigest\",\"type\":\"bytes32\"},{\"internalType\":\"bytes\",\"name\":\"commitmentSignature\",\"type\":\"bytes\"},{\"internalType\":\"uint256\",\"name\":\"blockCommitedAt\",\"type\":\"uint256\"}],\"internalType\":\"structPreConfCommitmentStore.EncrPreConfCommitment\",\"name\":\"commitment\",\"type\":\"tuple\"}],\"name\":\"getEncryptedCommitmentIndex\",\"outputs\":[{\"internalType\":\"bytes32\",\"name\":\"\",\"type\":\"bytes32\"}],\"stateMutability\":\"pure\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"string\",\"name\":\"_txnHash\",\"type\":\"string\"},{\"internalType\":\"uint64\",\"name\":\"_bid\",\"type\":\"uint64\"},{\"internalType\":\"uint64\",\"name\":\"_blockNumber\",\"type\":\"uint64\"},{\"internalType\":\"uint64\",\"name\":\"_decayStartTimeStamp\",\"type\":\"uint64\"},{\"internalType\":\"uint64\",\"name\":\"_decayEndTimeStamp\",\"type\":\"uint64\"},{\"internalType\":\"bytes32\",\"name\":\"_bidHash\",\"type\":\"bytes32\"},{\"internalType\":\"string\",\"name\":\"_bidSignature\",\"type\":\"string\"},{\"internalType\":\"string\",\"name\":\"_sharedSecretKey\",\"type\":\"string\"}],\"name\":\"getPreConfHash\",\"outputs\":[{\"internalType\":\"bytes32\",\"name\":\"\",\"type\":\"bytes32\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"bytes32\",\"name\":\"commitmentIndex\",\"type\":\"bytes32\"}],\"name\":\"getTxnHashFromCommitment\",\"outputs\":[{\"internalType\":\"string\",\"name\":\"txnHash\",\"type\":\"string\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"uint256\",\"name\":\"windowToSettle\",\"type\":\"uint256\"},{\"internalType\":\"bytes32\",\"name\":\"commitmentIndex\",\"type\":\"bytes32\"},{\"internalType\":\"uint256\",\"name\":\"residualBidPercentAfterDecay\",\"type\":\"uint256\"}],\"name\":\"initiateReward\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"bytes32\",\"name\":\"commitmentIndex\",\"type\":\"bytes32\"},{\"internalType\":\"uint256\",\"name\":\"residualBidPercentAfterDecay\",\"type\":\"uint256\"}],\"name\":\"initiateSlash\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"lastProcessedBlock\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"bytes32\",\"name\":\"encryptedCommitmentIndex\",\"type\":\"bytes32\"},{\"internalType\":\"uint64\",\"name\":\"bid\",\"type\":\"uint64\"},{\"internalType\":\"uint64\",\"name\":\"blockNumber\",\"type\":\"uint64\"},{\"internalType\":\"string\",\"name\":\"txnHash\",\"type\":\"string\"},{\"internalType\":\"uint64\",\"name\":\"decayStartTimeStamp\",\"type\":\"uint64\"},{\"internalType\":\"uint64\",\"name\":\"decayEndTimeStamp\",\"type\":\"uint64\"},{\"internalType\":\"bytes\",\"name\":\"bidSignature\",\"type\":\"bytes\"},{\"internalType\":\"bytes\",\"name\":\"commitmentSignature\",\"type\":\"bytes\"},{\"internalType\":\"bytes\",\"name\":\"sharedSecretKey\",\"type\":\"bytes\"}],\"name\":\"openCommitment\",\"outputs\":[{\"internalType\":\"bytes32\",\"name\":\"commitmentIndex\",\"type\":\"bytes32\"}],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"oracle\",\"outputs\":[{\"internalType\":\"address\",\"name\":\"\",\"type\":\"address\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"owner\",\"outputs\":[{\"internalType\":\"address\",\"name\":\"\",\"type\":\"address\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"\",\"type\":\"address\"},{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"name\":\"providerCommitments\",\"outputs\":[{\"internalType\":\"bytes32\",\"name\":\"\",\"type\":\"bytes32\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"\",\"type\":\"address\"},{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"name\":\"providerEncryptedCommitments\",\"outputs\":[{\"internalType\":\"bytes32\",\"name\":\"\",\"type\":\"bytes32\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"providerRegistry\",\"outputs\":[{\"internalType\":\"contractIProviderRegistry\",\"name\":\"\",\"type\":\"address\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"renounceOwnership\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"bytes32\",\"name\":\"commitmentDigest\",\"type\":\"bytes32\"},{\"internalType\":\"bytes\",\"name\":\"commitmentSignature\",\"type\":\"bytes\"}],\"name\":\"storeEncryptedCommitment\",\"outputs\":[{\"internalType\":\"bytes32\",\"name\":\"commitmentIndex\",\"type\":\"bytes32\"}],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"newOwner\",\"type\":\"address\"}],\"name\":\"transferOwnership\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"newBidderRegistry\",\"type\":\"address\"}],\"name\":\"updateBidderRegistry\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"newOracle\",\"type\":\"address\"}],\"name\":\"updateOracle\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"newProviderRegistry\",\"type\":\"address\"}],\"name\":\"updateProviderRegistry\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"uint64\",\"name\":\"bid\",\"type\":\"uint64\"},{\"internalType\":\"uint64\",\"name\":\"blockNumber\",\"type\":\"uint64\"},{\"internalType\":\"uint64\",\"name\":\"decayStartTimeStamp\",\"type\":\"uint64\"},{\"internalType\":\"uint64\",\"name\":\"decayEndTimeStamp\",\"type\":\"uint64\"},{\"internalType\":\"string\",\"name\":\"txnHash\",\"type\":\"string\"},{\"internalType\":\"bytes\",\"name\":\"bidSignature\",\"type\":\"bytes\"}],\"name\":\"verifyBid\",\"outputs\":[{\"internalType\":\"bytes32\",\"name\":\"messageDigest\",\"type\":\"bytes32\"},{\"internalType\":\"address\",\"name\":\"recoveredAddress\",\"type\":\"address\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"stateMutability\":\"payable\",\"type\":\"receive\"}]",
 }
 
 // PreconfcommitmentstoreABI is the input ABI used to generate the binding from.
@@ -455,7 +456,7 @@ func (_Preconfcommitmentstore *PreconfcommitmentstoreCallerSession) CommitmentCo
 
 // Commitments is a free data retrieval call binding the contract method 0x839df945.
 //
-// Solidity: function commitments(bytes32 ) view returns(bool commitmentUsed, address bidder, address commiter, uint64 bid, uint64 blockNumber, bytes32 bidHash, uint64 decayStartTimeStamp, uint64 decayEndTimeStamp, string txnHash, bytes32 commitmentHash, bytes bidSignature, bytes commitmentSignature, uint256 blockCommitedAt)
+// Solidity: function commitments(bytes32 ) view returns(bool commitmentUsed, address bidder, address commiter, uint64 bid, uint64 blockNumber, bytes32 bidHash, uint64 decayStartTimeStamp, uint64 decayEndTimeStamp, string txnHash, bytes32 commitmentHash, bytes bidSignature, bytes commitmentSignature, uint256 blockCommitedAt, bytes sharedSecretKey)
 func (_Preconfcommitmentstore *PreconfcommitmentstoreCaller) Commitments(opts *bind.CallOpts, arg0 [32]byte) (struct {
 	CommitmentUsed      bool
 	Bidder              common.Address
@@ -470,6 +471,7 @@ func (_Preconfcommitmentstore *PreconfcommitmentstoreCaller) Commitments(opts *b
 	BidSignature        []byte
 	CommitmentSignature []byte
 	BlockCommitedAt     *big.Int
+	SharedSecretKey     []byte
 }, error) {
 	var out []interface{}
 	err := _Preconfcommitmentstore.contract.Call(opts, &out, "commitments", arg0)
@@ -488,6 +490,7 @@ func (_Preconfcommitmentstore *PreconfcommitmentstoreCaller) Commitments(opts *b
 		BidSignature        []byte
 		CommitmentSignature []byte
 		BlockCommitedAt     *big.Int
+		SharedSecretKey     []byte
 	})
 	if err != nil {
 		return *outstruct, err
@@ -506,6 +509,7 @@ func (_Preconfcommitmentstore *PreconfcommitmentstoreCaller) Commitments(opts *b
 	outstruct.BidSignature = *abi.ConvertType(out[10], new([]byte)).(*[]byte)
 	outstruct.CommitmentSignature = *abi.ConvertType(out[11], new([]byte)).(*[]byte)
 	outstruct.BlockCommitedAt = *abi.ConvertType(out[12], new(*big.Int)).(**big.Int)
+	outstruct.SharedSecretKey = *abi.ConvertType(out[13], new([]byte)).(*[]byte)
 
 	return *outstruct, err
 
@@ -513,7 +517,7 @@ func (_Preconfcommitmentstore *PreconfcommitmentstoreCaller) Commitments(opts *b
 
 // Commitments is a free data retrieval call binding the contract method 0x839df945.
 //
-// Solidity: function commitments(bytes32 ) view returns(bool commitmentUsed, address bidder, address commiter, uint64 bid, uint64 blockNumber, bytes32 bidHash, uint64 decayStartTimeStamp, uint64 decayEndTimeStamp, string txnHash, bytes32 commitmentHash, bytes bidSignature, bytes commitmentSignature, uint256 blockCommitedAt)
+// Solidity: function commitments(bytes32 ) view returns(bool commitmentUsed, address bidder, address commiter, uint64 bid, uint64 blockNumber, bytes32 bidHash, uint64 decayStartTimeStamp, uint64 decayEndTimeStamp, string txnHash, bytes32 commitmentHash, bytes bidSignature, bytes commitmentSignature, uint256 blockCommitedAt, bytes sharedSecretKey)
 func (_Preconfcommitmentstore *PreconfcommitmentstoreSession) Commitments(arg0 [32]byte) (struct {
 	CommitmentUsed      bool
 	Bidder              common.Address
@@ -528,13 +532,14 @@ func (_Preconfcommitmentstore *PreconfcommitmentstoreSession) Commitments(arg0 [
 	BidSignature        []byte
 	CommitmentSignature []byte
 	BlockCommitedAt     *big.Int
+	SharedSecretKey     []byte
 }, error) {
 	return _Preconfcommitmentstore.Contract.Commitments(&_Preconfcommitmentstore.CallOpts, arg0)
 }
 
 // Commitments is a free data retrieval call binding the contract method 0x839df945.
 //
-// Solidity: function commitments(bytes32 ) view returns(bool commitmentUsed, address bidder, address commiter, uint64 bid, uint64 blockNumber, bytes32 bidHash, uint64 decayStartTimeStamp, uint64 decayEndTimeStamp, string txnHash, bytes32 commitmentHash, bytes bidSignature, bytes commitmentSignature, uint256 blockCommitedAt)
+// Solidity: function commitments(bytes32 ) view returns(bool commitmentUsed, address bidder, address commiter, uint64 bid, uint64 blockNumber, bytes32 bidHash, uint64 decayStartTimeStamp, uint64 decayEndTimeStamp, string txnHash, bytes32 commitmentHash, bytes bidSignature, bytes commitmentSignature, uint256 blockCommitedAt, bytes sharedSecretKey)
 func (_Preconfcommitmentstore *PreconfcommitmentstoreCallerSession) Commitments(arg0 [32]byte) (struct {
 	CommitmentUsed      bool
 	Bidder              common.Address
@@ -549,6 +554,7 @@ func (_Preconfcommitmentstore *PreconfcommitmentstoreCallerSession) Commitments(
 	BidSignature        []byte
 	CommitmentSignature []byte
 	BlockCommitedAt     *big.Int
+	SharedSecretKey     []byte
 }, error) {
 	return _Preconfcommitmentstore.Contract.Commitments(&_Preconfcommitmentstore.CallOpts, arg0)
 }
@@ -677,7 +683,7 @@ func (_Preconfcommitmentstore *PreconfcommitmentstoreCallerSession) GetBidHash(_
 
 // GetCommitment is a free data retrieval call binding the contract method 0x7795820c.
 //
-// Solidity: function getCommitment(bytes32 commitmentIndex) view returns((bool,address,address,uint64,uint64,bytes32,uint64,uint64,string,bytes32,bytes,bytes,uint256))
+// Solidity: function getCommitment(bytes32 commitmentIndex) view returns((bool,address,address,uint64,uint64,bytes32,uint64,uint64,string,bytes32,bytes,bytes,uint256,bytes))
 func (_Preconfcommitmentstore *PreconfcommitmentstoreCaller) GetCommitment(opts *bind.CallOpts, commitmentIndex [32]byte) (PreConfCommitmentStorePreConfCommitment, error) {
 	var out []interface{}
 	err := _Preconfcommitmentstore.contract.Call(opts, &out, "getCommitment", commitmentIndex)
@@ -694,21 +700,21 @@ func (_Preconfcommitmentstore *PreconfcommitmentstoreCaller) GetCommitment(opts 
 
 // GetCommitment is a free data retrieval call binding the contract method 0x7795820c.
 //
-// Solidity: function getCommitment(bytes32 commitmentIndex) view returns((bool,address,address,uint64,uint64,bytes32,uint64,uint64,string,bytes32,bytes,bytes,uint256))
+// Solidity: function getCommitment(bytes32 commitmentIndex) view returns((bool,address,address,uint64,uint64,bytes32,uint64,uint64,string,bytes32,bytes,bytes,uint256,bytes))
 func (_Preconfcommitmentstore *PreconfcommitmentstoreSession) GetCommitment(commitmentIndex [32]byte) (PreConfCommitmentStorePreConfCommitment, error) {
 	return _Preconfcommitmentstore.Contract.GetCommitment(&_Preconfcommitmentstore.CallOpts, commitmentIndex)
 }
 
 // GetCommitment is a free data retrieval call binding the contract method 0x7795820c.
 //
-// Solidity: function getCommitment(bytes32 commitmentIndex) view returns((bool,address,address,uint64,uint64,bytes32,uint64,uint64,string,bytes32,bytes,bytes,uint256))
+// Solidity: function getCommitment(bytes32 commitmentIndex) view returns((bool,address,address,uint64,uint64,bytes32,uint64,uint64,string,bytes32,bytes,bytes,uint256,bytes))
 func (_Preconfcommitmentstore *PreconfcommitmentstoreCallerSession) GetCommitment(commitmentIndex [32]byte) (PreConfCommitmentStorePreConfCommitment, error) {
 	return _Preconfcommitmentstore.Contract.GetCommitment(&_Preconfcommitmentstore.CallOpts, commitmentIndex)
 }
 
-// GetCommitmentIndex is a free data retrieval call binding the contract method 0xebdb90e4.
+// GetCommitmentIndex is a free data retrieval call binding the contract method 0x06812e31.
 //
-// Solidity: function getCommitmentIndex((bool,address,address,uint64,uint64,bytes32,uint64,uint64,string,bytes32,bytes,bytes,uint256) commitment) pure returns(bytes32)
+// Solidity: function getCommitmentIndex((bool,address,address,uint64,uint64,bytes32,uint64,uint64,string,bytes32,bytes,bytes,uint256,bytes) commitment) pure returns(bytes32)
 func (_Preconfcommitmentstore *PreconfcommitmentstoreCaller) GetCommitmentIndex(opts *bind.CallOpts, commitment PreConfCommitmentStorePreConfCommitment) ([32]byte, error) {
 	var out []interface{}
 	err := _Preconfcommitmentstore.contract.Call(opts, &out, "getCommitmentIndex", commitment)
@@ -723,16 +729,16 @@ func (_Preconfcommitmentstore *PreconfcommitmentstoreCaller) GetCommitmentIndex(
 
 }
 
-// GetCommitmentIndex is a free data retrieval call binding the contract method 0xebdb90e4.
+// GetCommitmentIndex is a free data retrieval call binding the contract method 0x06812e31.
 //
-// Solidity: function getCommitmentIndex((bool,address,address,uint64,uint64,bytes32,uint64,uint64,string,bytes32,bytes,bytes,uint256) commitment) pure returns(bytes32)
+// Solidity: function getCommitmentIndex((bool,address,address,uint64,uint64,bytes32,uint64,uint64,string,bytes32,bytes,bytes,uint256,bytes) commitment) pure returns(bytes32)
 func (_Preconfcommitmentstore *PreconfcommitmentstoreSession) GetCommitmentIndex(commitment PreConfCommitmentStorePreConfCommitment) ([32]byte, error) {
 	return _Preconfcommitmentstore.Contract.GetCommitmentIndex(&_Preconfcommitmentstore.CallOpts, commitment)
 }
 
-// GetCommitmentIndex is a free data retrieval call binding the contract method 0xebdb90e4.
+// GetCommitmentIndex is a free data retrieval call binding the contract method 0x06812e31.
 //
-// Solidity: function getCommitmentIndex((bool,address,address,uint64,uint64,bytes32,uint64,uint64,string,bytes32,bytes,bytes,uint256) commitment) pure returns(bytes32)
+// Solidity: function getCommitmentIndex((bool,address,address,uint64,uint64,bytes32,uint64,uint64,string,bytes32,bytes,bytes,uint256,bytes) commitment) pure returns(bytes32)
 func (_Preconfcommitmentstore *PreconfcommitmentstoreCallerSession) GetCommitmentIndex(commitment PreConfCommitmentStorePreConfCommitment) ([32]byte, error) {
 	return _Preconfcommitmentstore.Contract.GetCommitmentIndex(&_Preconfcommitmentstore.CallOpts, commitment)
 }
@@ -861,12 +867,12 @@ func (_Preconfcommitmentstore *PreconfcommitmentstoreCallerSession) GetEncrypted
 	return _Preconfcommitmentstore.Contract.GetEncryptedCommitmentIndex(&_Preconfcommitmentstore.CallOpts, commitment)
 }
 
-// GetPreConfHash is a free data retrieval call binding the contract method 0x85358288.
+// GetPreConfHash is a free data retrieval call binding the contract method 0xef913cf6.
 //
-// Solidity: function getPreConfHash(string _txnHash, uint64 _bid, uint64 _blockNumber, uint64 _decayStartTimeStamp, uint64 _decayEndTimeStamp, bytes32 _bidHash, string _bidSignature) view returns(bytes32)
-func (_Preconfcommitmentstore *PreconfcommitmentstoreCaller) GetPreConfHash(opts *bind.CallOpts, _txnHash string, _bid uint64, _blockNumber uint64, _decayStartTimeStamp uint64, _decayEndTimeStamp uint64, _bidHash [32]byte, _bidSignature string) ([32]byte, error) {
+// Solidity: function getPreConfHash(string _txnHash, uint64 _bid, uint64 _blockNumber, uint64 _decayStartTimeStamp, uint64 _decayEndTimeStamp, bytes32 _bidHash, string _bidSignature, string _sharedSecretKey) view returns(bytes32)
+func (_Preconfcommitmentstore *PreconfcommitmentstoreCaller) GetPreConfHash(opts *bind.CallOpts, _txnHash string, _bid uint64, _blockNumber uint64, _decayStartTimeStamp uint64, _decayEndTimeStamp uint64, _bidHash [32]byte, _bidSignature string, _sharedSecretKey string) ([32]byte, error) {
 	var out []interface{}
-	err := _Preconfcommitmentstore.contract.Call(opts, &out, "getPreConfHash", _txnHash, _bid, _blockNumber, _decayStartTimeStamp, _decayEndTimeStamp, _bidHash, _bidSignature)
+	err := _Preconfcommitmentstore.contract.Call(opts, &out, "getPreConfHash", _txnHash, _bid, _blockNumber, _decayStartTimeStamp, _decayEndTimeStamp, _bidHash, _bidSignature, _sharedSecretKey)
 
 	if err != nil {
 		return *new([32]byte), err
@@ -878,18 +884,18 @@ func (_Preconfcommitmentstore *PreconfcommitmentstoreCaller) GetPreConfHash(opts
 
 }
 
-// GetPreConfHash is a free data retrieval call binding the contract method 0x85358288.
+// GetPreConfHash is a free data retrieval call binding the contract method 0xef913cf6.
 //
-// Solidity: function getPreConfHash(string _txnHash, uint64 _bid, uint64 _blockNumber, uint64 _decayStartTimeStamp, uint64 _decayEndTimeStamp, bytes32 _bidHash, string _bidSignature) view returns(bytes32)
-func (_Preconfcommitmentstore *PreconfcommitmentstoreSession) GetPreConfHash(_txnHash string, _bid uint64, _blockNumber uint64, _decayStartTimeStamp uint64, _decayEndTimeStamp uint64, _bidHash [32]byte, _bidSignature string) ([32]byte, error) {
-	return _Preconfcommitmentstore.Contract.GetPreConfHash(&_Preconfcommitmentstore.CallOpts, _txnHash, _bid, _blockNumber, _decayStartTimeStamp, _decayEndTimeStamp, _bidHash, _bidSignature)
+// Solidity: function getPreConfHash(string _txnHash, uint64 _bid, uint64 _blockNumber, uint64 _decayStartTimeStamp, uint64 _decayEndTimeStamp, bytes32 _bidHash, string _bidSignature, string _sharedSecretKey) view returns(bytes32)
+func (_Preconfcommitmentstore *PreconfcommitmentstoreSession) GetPreConfHash(_txnHash string, _bid uint64, _blockNumber uint64, _decayStartTimeStamp uint64, _decayEndTimeStamp uint64, _bidHash [32]byte, _bidSignature string, _sharedSecretKey string) ([32]byte, error) {
+	return _Preconfcommitmentstore.Contract.GetPreConfHash(&_Preconfcommitmentstore.CallOpts, _txnHash, _bid, _blockNumber, _decayStartTimeStamp, _decayEndTimeStamp, _bidHash, _bidSignature, _sharedSecretKey)
 }
 
-// GetPreConfHash is a free data retrieval call binding the contract method 0x85358288.
+// GetPreConfHash is a free data retrieval call binding the contract method 0xef913cf6.
 //
-// Solidity: function getPreConfHash(string _txnHash, uint64 _bid, uint64 _blockNumber, uint64 _decayStartTimeStamp, uint64 _decayEndTimeStamp, bytes32 _bidHash, string _bidSignature) view returns(bytes32)
-func (_Preconfcommitmentstore *PreconfcommitmentstoreCallerSession) GetPreConfHash(_txnHash string, _bid uint64, _blockNumber uint64, _decayStartTimeStamp uint64, _decayEndTimeStamp uint64, _bidHash [32]byte, _bidSignature string) ([32]byte, error) {
-	return _Preconfcommitmentstore.Contract.GetPreConfHash(&_Preconfcommitmentstore.CallOpts, _txnHash, _bid, _blockNumber, _decayStartTimeStamp, _decayEndTimeStamp, _bidHash, _bidSignature)
+// Solidity: function getPreConfHash(string _txnHash, uint64 _bid, uint64 _blockNumber, uint64 _decayStartTimeStamp, uint64 _decayEndTimeStamp, bytes32 _bidHash, string _bidSignature, string _sharedSecretKey) view returns(bytes32)
+func (_Preconfcommitmentstore *PreconfcommitmentstoreCallerSession) GetPreConfHash(_txnHash string, _bid uint64, _blockNumber uint64, _decayStartTimeStamp uint64, _decayEndTimeStamp uint64, _bidHash [32]byte, _bidSignature string, _sharedSecretKey string) ([32]byte, error) {
+	return _Preconfcommitmentstore.Contract.GetPreConfHash(&_Preconfcommitmentstore.CallOpts, _txnHash, _bid, _blockNumber, _decayStartTimeStamp, _decayEndTimeStamp, _bidHash, _bidSignature, _sharedSecretKey)
 }
 
 // GetTxnHashFromCommitment is a free data retrieval call binding the contract method 0xfc4fbe32.
@@ -1111,11 +1117,10 @@ func (_Preconfcommitmentstore *PreconfcommitmentstoreCallerSession) ProviderRegi
 
 // VerifyBid is a free data retrieval call binding the contract method 0x45216cb6.
 //
-// Solidity: function verifyBid(uint64 bid, uint64 blockNumber, uint64 decayStartTimeStamp, uint64 decayEndTimeStamp, string txnHash, bytes bidSignature) view returns(bytes32 messageDigest, address recoveredAddress, uint256 stake)
+// Solidity: function verifyBid(uint64 bid, uint64 blockNumber, uint64 decayStartTimeStamp, uint64 decayEndTimeStamp, string txnHash, bytes bidSignature) view returns(bytes32 messageDigest, address recoveredAddress)
 func (_Preconfcommitmentstore *PreconfcommitmentstoreCaller) VerifyBid(opts *bind.CallOpts, bid uint64, blockNumber uint64, decayStartTimeStamp uint64, decayEndTimeStamp uint64, txnHash string, bidSignature []byte) (struct {
 	MessageDigest    [32]byte
 	RecoveredAddress common.Address
-	Stake            *big.Int
 }, error) {
 	var out []interface{}
 	err := _Preconfcommitmentstore.contract.Call(opts, &out, "verifyBid", bid, blockNumber, decayStartTimeStamp, decayEndTimeStamp, txnHash, bidSignature)
@@ -1123,7 +1128,6 @@ func (_Preconfcommitmentstore *PreconfcommitmentstoreCaller) VerifyBid(opts *bin
 	outstruct := new(struct {
 		MessageDigest    [32]byte
 		RecoveredAddress common.Address
-		Stake            *big.Int
 	})
 	if err != nil {
 		return *outstruct, err
@@ -1131,7 +1135,6 @@ func (_Preconfcommitmentstore *PreconfcommitmentstoreCaller) VerifyBid(opts *bin
 
 	outstruct.MessageDigest = *abi.ConvertType(out[0], new([32]byte)).(*[32]byte)
 	outstruct.RecoveredAddress = *abi.ConvertType(out[1], new(common.Address)).(*common.Address)
-	outstruct.Stake = *abi.ConvertType(out[2], new(*big.Int)).(**big.Int)
 
 	return *outstruct, err
 
@@ -1139,90 +1142,43 @@ func (_Preconfcommitmentstore *PreconfcommitmentstoreCaller) VerifyBid(opts *bin
 
 // VerifyBid is a free data retrieval call binding the contract method 0x45216cb6.
 //
-// Solidity: function verifyBid(uint64 bid, uint64 blockNumber, uint64 decayStartTimeStamp, uint64 decayEndTimeStamp, string txnHash, bytes bidSignature) view returns(bytes32 messageDigest, address recoveredAddress, uint256 stake)
+// Solidity: function verifyBid(uint64 bid, uint64 blockNumber, uint64 decayStartTimeStamp, uint64 decayEndTimeStamp, string txnHash, bytes bidSignature) view returns(bytes32 messageDigest, address recoveredAddress)
 func (_Preconfcommitmentstore *PreconfcommitmentstoreSession) VerifyBid(bid uint64, blockNumber uint64, decayStartTimeStamp uint64, decayEndTimeStamp uint64, txnHash string, bidSignature []byte) (struct {
 	MessageDigest    [32]byte
 	RecoveredAddress common.Address
-	Stake            *big.Int
 }, error) {
 	return _Preconfcommitmentstore.Contract.VerifyBid(&_Preconfcommitmentstore.CallOpts, bid, blockNumber, decayStartTimeStamp, decayEndTimeStamp, txnHash, bidSignature)
 }
 
 // VerifyBid is a free data retrieval call binding the contract method 0x45216cb6.
 //
-// Solidity: function verifyBid(uint64 bid, uint64 blockNumber, uint64 decayStartTimeStamp, uint64 decayEndTimeStamp, string txnHash, bytes bidSignature) view returns(bytes32 messageDigest, address recoveredAddress, uint256 stake)
+// Solidity: function verifyBid(uint64 bid, uint64 blockNumber, uint64 decayStartTimeStamp, uint64 decayEndTimeStamp, string txnHash, bytes bidSignature) view returns(bytes32 messageDigest, address recoveredAddress)
 func (_Preconfcommitmentstore *PreconfcommitmentstoreCallerSession) VerifyBid(bid uint64, blockNumber uint64, decayStartTimeStamp uint64, decayEndTimeStamp uint64, txnHash string, bidSignature []byte) (struct {
 	MessageDigest    [32]byte
 	RecoveredAddress common.Address
-	Stake            *big.Int
 }, error) {
 	return _Preconfcommitmentstore.Contract.VerifyBid(&_Preconfcommitmentstore.CallOpts, bid, blockNumber, decayStartTimeStamp, decayEndTimeStamp, txnHash, bidSignature)
 }
 
-// VerifyPreConfCommitment is a free data retrieval call binding the contract method 0x9a16af55.
+// InitiateReward is a paid mutator transaction binding the contract method 0x14912e9b.
 //
-// Solidity: function verifyPreConfCommitment(string txnHash, uint64 bid, uint64 blockNumber, uint64 decayStartTimeStamp, uint64 decayEndTimeStamp, bytes32 bidHash, bytes bidSignature, bytes commitmentSignature) view returns(bytes32 preConfHash, address commiterAddress)
-func (_Preconfcommitmentstore *PreconfcommitmentstoreCaller) VerifyPreConfCommitment(opts *bind.CallOpts, txnHash string, bid uint64, blockNumber uint64, decayStartTimeStamp uint64, decayEndTimeStamp uint64, bidHash [32]byte, bidSignature []byte, commitmentSignature []byte) (struct {
-	PreConfHash     [32]byte
-	CommiterAddress common.Address
-}, error) {
-	var out []interface{}
-	err := _Preconfcommitmentstore.contract.Call(opts, &out, "verifyPreConfCommitment", txnHash, bid, blockNumber, decayStartTimeStamp, decayEndTimeStamp, bidHash, bidSignature, commitmentSignature)
-
-	outstruct := new(struct {
-		PreConfHash     [32]byte
-		CommiterAddress common.Address
-	})
-	if err != nil {
-		return *outstruct, err
-	}
-
-	outstruct.PreConfHash = *abi.ConvertType(out[0], new([32]byte)).(*[32]byte)
-	outstruct.CommiterAddress = *abi.ConvertType(out[1], new(common.Address)).(*common.Address)
-
-	return *outstruct, err
-
+// Solidity: function initiateReward(uint256 windowToSettle, bytes32 commitmentIndex, uint256 residualBidPercentAfterDecay) returns()
+func (_Preconfcommitmentstore *PreconfcommitmentstoreTransactor) InitiateReward(opts *bind.TransactOpts, windowToSettle *big.Int, commitmentIndex [32]byte, residualBidPercentAfterDecay *big.Int) (*types.Transaction, error) {
+	return _Preconfcommitmentstore.contract.Transact(opts, "initiateReward", windowToSettle, commitmentIndex, residualBidPercentAfterDecay)
 }
 
-// VerifyPreConfCommitment is a free data retrieval call binding the contract method 0x9a16af55.
+// InitiateReward is a paid mutator transaction binding the contract method 0x14912e9b.
 //
-// Solidity: function verifyPreConfCommitment(string txnHash, uint64 bid, uint64 blockNumber, uint64 decayStartTimeStamp, uint64 decayEndTimeStamp, bytes32 bidHash, bytes bidSignature, bytes commitmentSignature) view returns(bytes32 preConfHash, address commiterAddress)
-func (_Preconfcommitmentstore *PreconfcommitmentstoreSession) VerifyPreConfCommitment(txnHash string, bid uint64, blockNumber uint64, decayStartTimeStamp uint64, decayEndTimeStamp uint64, bidHash [32]byte, bidSignature []byte, commitmentSignature []byte) (struct {
-	PreConfHash     [32]byte
-	CommiterAddress common.Address
-}, error) {
-	return _Preconfcommitmentstore.Contract.VerifyPreConfCommitment(&_Preconfcommitmentstore.CallOpts, txnHash, bid, blockNumber, decayStartTimeStamp, decayEndTimeStamp, bidHash, bidSignature, commitmentSignature)
+// Solidity: function initiateReward(uint256 windowToSettle, bytes32 commitmentIndex, uint256 residualBidPercentAfterDecay) returns()
+func (_Preconfcommitmentstore *PreconfcommitmentstoreSession) InitiateReward(windowToSettle *big.Int, commitmentIndex [32]byte, residualBidPercentAfterDecay *big.Int) (*types.Transaction, error) {
+	return _Preconfcommitmentstore.Contract.InitiateReward(&_Preconfcommitmentstore.TransactOpts, windowToSettle, commitmentIndex, residualBidPercentAfterDecay)
 }
 
-// VerifyPreConfCommitment is a free data retrieval call binding the contract method 0x9a16af55.
+// InitiateReward is a paid mutator transaction binding the contract method 0x14912e9b.
 //
-// Solidity: function verifyPreConfCommitment(string txnHash, uint64 bid, uint64 blockNumber, uint64 decayStartTimeStamp, uint64 decayEndTimeStamp, bytes32 bidHash, bytes bidSignature, bytes commitmentSignature) view returns(bytes32 preConfHash, address commiterAddress)
-func (_Preconfcommitmentstore *PreconfcommitmentstoreCallerSession) VerifyPreConfCommitment(txnHash string, bid uint64, blockNumber uint64, decayStartTimeStamp uint64, decayEndTimeStamp uint64, bidHash [32]byte, bidSignature []byte, commitmentSignature []byte) (struct {
-	PreConfHash     [32]byte
-	CommiterAddress common.Address
-}, error) {
-	return _Preconfcommitmentstore.Contract.VerifyPreConfCommitment(&_Preconfcommitmentstore.CallOpts, txnHash, bid, blockNumber, decayStartTimeStamp, decayEndTimeStamp, bidHash, bidSignature, commitmentSignature)
-}
-
-// InitiateReward is a paid mutator transaction binding the contract method 0x03faf979.
-//
-// Solidity: function initiateReward(bytes32 commitmentIndex, uint256 residualBidPercentAfterDecay) returns()
-func (_Preconfcommitmentstore *PreconfcommitmentstoreTransactor) InitiateReward(opts *bind.TransactOpts, commitmentIndex [32]byte, residualBidPercentAfterDecay *big.Int) (*types.Transaction, error) {
-	return _Preconfcommitmentstore.contract.Transact(opts, "initiateReward", commitmentIndex, residualBidPercentAfterDecay)
-}
-
-// InitiateReward is a paid mutator transaction binding the contract method 0x03faf979.
-//
-// Solidity: function initiateReward(bytes32 commitmentIndex, uint256 residualBidPercentAfterDecay) returns()
-func (_Preconfcommitmentstore *PreconfcommitmentstoreSession) InitiateReward(commitmentIndex [32]byte, residualBidPercentAfterDecay *big.Int) (*types.Transaction, error) {
-	return _Preconfcommitmentstore.Contract.InitiateReward(&_Preconfcommitmentstore.TransactOpts, commitmentIndex, residualBidPercentAfterDecay)
-}
-
-// InitiateReward is a paid mutator transaction binding the contract method 0x03faf979.
-//
-// Solidity: function initiateReward(bytes32 commitmentIndex, uint256 residualBidPercentAfterDecay) returns()
-func (_Preconfcommitmentstore *PreconfcommitmentstoreTransactorSession) InitiateReward(commitmentIndex [32]byte, residualBidPercentAfterDecay *big.Int) (*types.Transaction, error) {
-	return _Preconfcommitmentstore.Contract.InitiateReward(&_Preconfcommitmentstore.TransactOpts, commitmentIndex, residualBidPercentAfterDecay)
+// Solidity: function initiateReward(uint256 windowToSettle, bytes32 commitmentIndex, uint256 residualBidPercentAfterDecay) returns()
+func (_Preconfcommitmentstore *PreconfcommitmentstoreTransactorSession) InitiateReward(windowToSettle *big.Int, commitmentIndex [32]byte, residualBidPercentAfterDecay *big.Int) (*types.Transaction, error) {
+	return _Preconfcommitmentstore.Contract.InitiateReward(&_Preconfcommitmentstore.TransactOpts, windowToSettle, commitmentIndex, residualBidPercentAfterDecay)
 }
 
 // InitiateSlash is a paid mutator transaction binding the contract method 0x30778c78.
@@ -1246,6 +1202,27 @@ func (_Preconfcommitmentstore *PreconfcommitmentstoreTransactorSession) Initiate
 	return _Preconfcommitmentstore.Contract.InitiateSlash(&_Preconfcommitmentstore.TransactOpts, commitmentIndex, residualBidPercentAfterDecay)
 }
 
+// OpenCommitment is a paid mutator transaction binding the contract method 0xf1bb40ef.
+//
+// Solidity: function openCommitment(bytes32 encryptedCommitmentIndex, uint64 bid, uint64 blockNumber, string txnHash, uint64 decayStartTimeStamp, uint64 decayEndTimeStamp, bytes bidSignature, bytes commitmentSignature, bytes sharedSecretKey) returns(bytes32 commitmentIndex)
+func (_Preconfcommitmentstore *PreconfcommitmentstoreTransactor) OpenCommitment(opts *bind.TransactOpts, encryptedCommitmentIndex [32]byte, bid uint64, blockNumber uint64, txnHash string, decayStartTimeStamp uint64, decayEndTimeStamp uint64, bidSignature []byte, commitmentSignature []byte, sharedSecretKey []byte) (*types.Transaction, error) {
+	return _Preconfcommitmentstore.contract.Transact(opts, "openCommitment", encryptedCommitmentIndex, bid, blockNumber, txnHash, decayStartTimeStamp, decayEndTimeStamp, bidSignature, commitmentSignature, sharedSecretKey)
+}
+
+// OpenCommitment is a paid mutator transaction binding the contract method 0xf1bb40ef.
+//
+// Solidity: function openCommitment(bytes32 encryptedCommitmentIndex, uint64 bid, uint64 blockNumber, string txnHash, uint64 decayStartTimeStamp, uint64 decayEndTimeStamp, bytes bidSignature, bytes commitmentSignature, bytes sharedSecretKey) returns(bytes32 commitmentIndex)
+func (_Preconfcommitmentstore *PreconfcommitmentstoreSession) OpenCommitment(encryptedCommitmentIndex [32]byte, bid uint64, blockNumber uint64, txnHash string, decayStartTimeStamp uint64, decayEndTimeStamp uint64, bidSignature []byte, commitmentSignature []byte, sharedSecretKey []byte) (*types.Transaction, error) {
+	return _Preconfcommitmentstore.Contract.OpenCommitment(&_Preconfcommitmentstore.TransactOpts, encryptedCommitmentIndex, bid, blockNumber, txnHash, decayStartTimeStamp, decayEndTimeStamp, bidSignature, commitmentSignature, sharedSecretKey)
+}
+
+// OpenCommitment is a paid mutator transaction binding the contract method 0xf1bb40ef.
+//
+// Solidity: function openCommitment(bytes32 encryptedCommitmentIndex, uint64 bid, uint64 blockNumber, string txnHash, uint64 decayStartTimeStamp, uint64 decayEndTimeStamp, bytes bidSignature, bytes commitmentSignature, bytes sharedSecretKey) returns(bytes32 commitmentIndex)
+func (_Preconfcommitmentstore *PreconfcommitmentstoreTransactorSession) OpenCommitment(encryptedCommitmentIndex [32]byte, bid uint64, blockNumber uint64, txnHash string, decayStartTimeStamp uint64, decayEndTimeStamp uint64, bidSignature []byte, commitmentSignature []byte, sharedSecretKey []byte) (*types.Transaction, error) {
+	return _Preconfcommitmentstore.Contract.OpenCommitment(&_Preconfcommitmentstore.TransactOpts, encryptedCommitmentIndex, bid, blockNumber, txnHash, decayStartTimeStamp, decayEndTimeStamp, bidSignature, commitmentSignature, sharedSecretKey)
+}
+
 // RenounceOwnership is a paid mutator transaction binding the contract method 0x715018a6.
 //
 // Solidity: function renounceOwnership() returns()
@@ -1265,27 +1242,6 @@ func (_Preconfcommitmentstore *PreconfcommitmentstoreSession) RenounceOwnership(
 // Solidity: function renounceOwnership() returns()
 func (_Preconfcommitmentstore *PreconfcommitmentstoreTransactorSession) RenounceOwnership() (*types.Transaction, error) {
 	return _Preconfcommitmentstore.Contract.RenounceOwnership(&_Preconfcommitmentstore.TransactOpts)
-}
-
-// StoreCommitment is a paid mutator transaction binding the contract method 0xbfd21439.
-//
-// Solidity: function storeCommitment(uint64 bid, uint64 blockNumber, string txnHash, uint64 decayStartTimeStamp, uint64 decayEndTimeStamp, bytes bidSignature, bytes commitmentSignature) returns(bytes32 commitmentIndex)
-func (_Preconfcommitmentstore *PreconfcommitmentstoreTransactor) StoreCommitment(opts *bind.TransactOpts, bid uint64, blockNumber uint64, txnHash string, decayStartTimeStamp uint64, decayEndTimeStamp uint64, bidSignature []byte, commitmentSignature []byte) (*types.Transaction, error) {
-	return _Preconfcommitmentstore.contract.Transact(opts, "storeCommitment", bid, blockNumber, txnHash, decayStartTimeStamp, decayEndTimeStamp, bidSignature, commitmentSignature)
-}
-
-// StoreCommitment is a paid mutator transaction binding the contract method 0xbfd21439.
-//
-// Solidity: function storeCommitment(uint64 bid, uint64 blockNumber, string txnHash, uint64 decayStartTimeStamp, uint64 decayEndTimeStamp, bytes bidSignature, bytes commitmentSignature) returns(bytes32 commitmentIndex)
-func (_Preconfcommitmentstore *PreconfcommitmentstoreSession) StoreCommitment(bid uint64, blockNumber uint64, txnHash string, decayStartTimeStamp uint64, decayEndTimeStamp uint64, bidSignature []byte, commitmentSignature []byte) (*types.Transaction, error) {
-	return _Preconfcommitmentstore.Contract.StoreCommitment(&_Preconfcommitmentstore.TransactOpts, bid, blockNumber, txnHash, decayStartTimeStamp, decayEndTimeStamp, bidSignature, commitmentSignature)
-}
-
-// StoreCommitment is a paid mutator transaction binding the contract method 0xbfd21439.
-//
-// Solidity: function storeCommitment(uint64 bid, uint64 blockNumber, string txnHash, uint64 decayStartTimeStamp, uint64 decayEndTimeStamp, bytes bidSignature, bytes commitmentSignature) returns(bytes32 commitmentIndex)
-func (_Preconfcommitmentstore *PreconfcommitmentstoreTransactorSession) StoreCommitment(bid uint64, blockNumber uint64, txnHash string, decayStartTimeStamp uint64, decayEndTimeStamp uint64, bidSignature []byte, commitmentSignature []byte) (*types.Transaction, error) {
-	return _Preconfcommitmentstore.Contract.StoreCommitment(&_Preconfcommitmentstore.TransactOpts, bid, blockNumber, txnHash, decayStartTimeStamp, decayEndTimeStamp, bidSignature, commitmentSignature)
 }
 
 // StoreEncryptedCommitment is a paid mutator transaction binding the contract method 0x8ba79869.
@@ -1328,27 +1284,6 @@ func (_Preconfcommitmentstore *PreconfcommitmentstoreSession) TransferOwnership(
 // Solidity: function transferOwnership(address newOwner) returns()
 func (_Preconfcommitmentstore *PreconfcommitmentstoreTransactorSession) TransferOwnership(newOwner common.Address) (*types.Transaction, error) {
 	return _Preconfcommitmentstore.Contract.TransferOwnership(&_Preconfcommitmentstore.TransactOpts, newOwner)
-}
-
-// UnlockBidFunds is a paid mutator transaction binding the contract method 0x7b37732f.
-//
-// Solidity: function unlockBidFunds(bytes32 commitmentDigest) returns()
-func (_Preconfcommitmentstore *PreconfcommitmentstoreTransactor) UnlockBidFunds(opts *bind.TransactOpts, commitmentDigest [32]byte) (*types.Transaction, error) {
-	return _Preconfcommitmentstore.contract.Transact(opts, "unlockBidFunds", commitmentDigest)
-}
-
-// UnlockBidFunds is a paid mutator transaction binding the contract method 0x7b37732f.
-//
-// Solidity: function unlockBidFunds(bytes32 commitmentDigest) returns()
-func (_Preconfcommitmentstore *PreconfcommitmentstoreSession) UnlockBidFunds(commitmentDigest [32]byte) (*types.Transaction, error) {
-	return _Preconfcommitmentstore.Contract.UnlockBidFunds(&_Preconfcommitmentstore.TransactOpts, commitmentDigest)
-}
-
-// UnlockBidFunds is a paid mutator transaction binding the contract method 0x7b37732f.
-//
-// Solidity: function unlockBidFunds(bytes32 commitmentDigest) returns()
-func (_Preconfcommitmentstore *PreconfcommitmentstoreTransactorSession) UnlockBidFunds(commitmentDigest [32]byte) (*types.Transaction, error) {
-	return _Preconfcommitmentstore.Contract.UnlockBidFunds(&_Preconfcommitmentstore.TransactOpts, commitmentDigest)
 }
 
 // UpdateBidderRegistry is a paid mutator transaction binding the contract method 0x66544c41.
@@ -1454,6 +1389,152 @@ func (_Preconfcommitmentstore *PreconfcommitmentstoreSession) Receive() (*types.
 // Solidity: receive() payable returns()
 func (_Preconfcommitmentstore *PreconfcommitmentstoreTransactorSession) Receive() (*types.Transaction, error) {
 	return _Preconfcommitmentstore.Contract.Receive(&_Preconfcommitmentstore.TransactOpts)
+}
+
+// PreconfcommitmentstoreCommitmentStoredIterator is returned from FilterCommitmentStored and is used to iterate over the raw logs and unpacked data for CommitmentStored events raised by the Preconfcommitmentstore contract.
+type PreconfcommitmentstoreCommitmentStoredIterator struct {
+	Event *PreconfcommitmentstoreCommitmentStored // Event containing the contract specifics and raw log
+
+	contract *bind.BoundContract // Generic contract to use for unpacking event data
+	event    string              // Event name to use for unpacking event data
+
+	logs chan types.Log        // Log channel receiving the found contract events
+	sub  ethereum.Subscription // Subscription for errors, completion and termination
+	done bool                  // Whether the subscription completed delivering logs
+	fail error                 // Occurred error to stop iteration
+}
+
+// Next advances the iterator to the subsequent event, returning whether there
+// are any more events found. In case of a retrieval or parsing error, false is
+// returned and Error() can be queried for the exact failure.
+func (it *PreconfcommitmentstoreCommitmentStoredIterator) Next() bool {
+	// If the iterator failed, stop iterating
+	if it.fail != nil {
+		return false
+	}
+	// If the iterator completed, deliver directly whatever's available
+	if it.done {
+		select {
+		case log := <-it.logs:
+			it.Event = new(PreconfcommitmentstoreCommitmentStored)
+			if err := it.contract.UnpackLog(it.Event, it.event, log); err != nil {
+				it.fail = err
+				return false
+			}
+			it.Event.Raw = log
+			return true
+
+		default:
+			return false
+		}
+	}
+	// Iterator still in progress, wait for either a data or an error event
+	select {
+	case log := <-it.logs:
+		it.Event = new(PreconfcommitmentstoreCommitmentStored)
+		if err := it.contract.UnpackLog(it.Event, it.event, log); err != nil {
+			it.fail = err
+			return false
+		}
+		it.Event.Raw = log
+		return true
+
+	case err := <-it.sub.Err():
+		it.done = true
+		it.fail = err
+		return it.Next()
+	}
+}
+
+// Error returns any retrieval or parsing error occurred during filtering.
+func (it *PreconfcommitmentstoreCommitmentStoredIterator) Error() error {
+	return it.fail
+}
+
+// Close terminates the iteration process, releasing any pending underlying
+// resources.
+func (it *PreconfcommitmentstoreCommitmentStoredIterator) Close() error {
+	it.sub.Unsubscribe()
+	return nil
+}
+
+// PreconfcommitmentstoreCommitmentStored represents a CommitmentStored event raised by the Preconfcommitmentstore contract.
+type PreconfcommitmentstoreCommitmentStored struct {
+	Bidder              common.Address
+	Commiter            common.Address
+	Bid                 uint64
+	BlockNumber         uint64
+	BidHash             [32]byte
+	DecayStartTimeStamp uint64
+	DecayEndTimeStamp   uint64
+	TxnHash             string
+	CommitmentHash      [32]byte
+	BidSignature        []byte
+	CommitmentSignature []byte
+	BlockCommitedAt     *big.Int
+	SharedSecretKey     []byte
+	Raw                 types.Log // Blockchain specific contextual infos
+}
+
+// FilterCommitmentStored is a free log retrieval operation binding the contract event 0x37442acb80eae9b0bd0aaae1b65428e0d29961cd70f8a0a94ea8537ad879d7fe.
+//
+// Solidity: event CommitmentStored(address bidder, address commiter, uint64 bid, uint64 blockNumber, bytes32 bidHash, uint64 decayStartTimeStamp, uint64 decayEndTimeStamp, string txnHash, bytes32 commitmentHash, bytes bidSignature, bytes commitmentSignature, uint256 blockCommitedAt, bytes sharedSecretKey)
+func (_Preconfcommitmentstore *PreconfcommitmentstoreFilterer) FilterCommitmentStored(opts *bind.FilterOpts) (*PreconfcommitmentstoreCommitmentStoredIterator, error) {
+
+	logs, sub, err := _Preconfcommitmentstore.contract.FilterLogs(opts, "CommitmentStored")
+	if err != nil {
+		return nil, err
+	}
+	return &PreconfcommitmentstoreCommitmentStoredIterator{contract: _Preconfcommitmentstore.contract, event: "CommitmentStored", logs: logs, sub: sub}, nil
+}
+
+// WatchCommitmentStored is a free log subscription operation binding the contract event 0x37442acb80eae9b0bd0aaae1b65428e0d29961cd70f8a0a94ea8537ad879d7fe.
+//
+// Solidity: event CommitmentStored(address bidder, address commiter, uint64 bid, uint64 blockNumber, bytes32 bidHash, uint64 decayStartTimeStamp, uint64 decayEndTimeStamp, string txnHash, bytes32 commitmentHash, bytes bidSignature, bytes commitmentSignature, uint256 blockCommitedAt, bytes sharedSecretKey)
+func (_Preconfcommitmentstore *PreconfcommitmentstoreFilterer) WatchCommitmentStored(opts *bind.WatchOpts, sink chan<- *PreconfcommitmentstoreCommitmentStored) (event.Subscription, error) {
+
+	logs, sub, err := _Preconfcommitmentstore.contract.WatchLogs(opts, "CommitmentStored")
+	if err != nil {
+		return nil, err
+	}
+	return event.NewSubscription(func(quit <-chan struct{}) error {
+		defer sub.Unsubscribe()
+		for {
+			select {
+			case log := <-logs:
+				// New log arrived, parse the event and forward to the user
+				event := new(PreconfcommitmentstoreCommitmentStored)
+				if err := _Preconfcommitmentstore.contract.UnpackLog(event, "CommitmentStored", log); err != nil {
+					return err
+				}
+				event.Raw = log
+
+				select {
+				case sink <- event:
+				case err := <-sub.Err():
+					return err
+				case <-quit:
+					return nil
+				}
+			case err := <-sub.Err():
+				return err
+			case <-quit:
+				return nil
+			}
+		}
+	}), nil
+}
+
+// ParseCommitmentStored is a log parse operation binding the contract event 0x37442acb80eae9b0bd0aaae1b65428e0d29961cd70f8a0a94ea8537ad879d7fe.
+//
+// Solidity: event CommitmentStored(address bidder, address commiter, uint64 bid, uint64 blockNumber, bytes32 bidHash, uint64 decayStartTimeStamp, uint64 decayEndTimeStamp, string txnHash, bytes32 commitmentHash, bytes bidSignature, bytes commitmentSignature, uint256 blockCommitedAt, bytes sharedSecretKey)
+func (_Preconfcommitmentstore *PreconfcommitmentstoreFilterer) ParseCommitmentStored(log types.Log) (*PreconfcommitmentstoreCommitmentStored, error) {
+	event := new(PreconfcommitmentstoreCommitmentStored)
+	if err := _Preconfcommitmentstore.contract.UnpackLog(event, "CommitmentStored", log); err != nil {
+		return nil, err
+	}
+	event.Raw = log
+	return event, nil
 }
 
 // PreconfcommitmentstoreOwnershipTransferredIterator is returned from FilterOwnershipTransferred and is used to iterate over the raw logs and unpacked data for OwnershipTransferred events raised by the Preconfcommitmentstore contract.

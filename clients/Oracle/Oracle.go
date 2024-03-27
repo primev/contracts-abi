@@ -26,12 +26,11 @@ var (
 	_ = common.Big1
 	_ = types.BloomLookup
 	_ = event.NewSubscription
-	_ = abi.ConvertType
 )
 
 // OracleMetaData contains all meta data concerning the Oracle contract.
 var OracleMetaData = &bind.MetaData{
-	ABI: "[{\"type\":\"constructor\",\"inputs\":[{\"name\":\"_preConfContract\",\"type\":\"address\",\"internalType\":\"address\"},{\"name\":\"_nextRequestedBlockNumber\",\"type\":\"uint256\",\"internalType\":\"uint256\"},{\"name\":\"_owner\",\"type\":\"address\",\"internalType\":\"address\"}],\"stateMutability\":\"nonpayable\"},{\"type\":\"fallback\",\"stateMutability\":\"payable\"},{\"type\":\"receive\",\"stateMutability\":\"payable\"},{\"type\":\"function\",\"name\":\"addBuilderAddress\",\"inputs\":[{\"name\":\"builderName\",\"type\":\"string\",\"internalType\":\"string\"},{\"name\":\"builderAddress\",\"type\":\"address\",\"internalType\":\"address\"}],\"outputs\":[],\"stateMutability\":\"nonpayable\"},{\"type\":\"function\",\"name\":\"blockBuilderNameToAddress\",\"inputs\":[{\"name\":\"\",\"type\":\"string\",\"internalType\":\"string\"}],\"outputs\":[{\"name\":\"\",\"type\":\"address\",\"internalType\":\"address\"}],\"stateMutability\":\"view\"},{\"type\":\"function\",\"name\":\"getBuilder\",\"inputs\":[{\"name\":\"builderNameGrafiti\",\"type\":\"string\",\"internalType\":\"string\"}],\"outputs\":[{\"name\":\"\",\"type\":\"address\",\"internalType\":\"address\"}],\"stateMutability\":\"view\"},{\"type\":\"function\",\"name\":\"getNextRequestedBlockNumber\",\"inputs\":[],\"outputs\":[{\"name\":\"\",\"type\":\"uint256\",\"internalType\":\"uint256\"}],\"stateMutability\":\"view\"},{\"type\":\"function\",\"name\":\"moveToNextBlock\",\"inputs\":[],\"outputs\":[],\"stateMutability\":\"nonpayable\"},{\"type\":\"function\",\"name\":\"nextRequestedBlockNumber\",\"inputs\":[],\"outputs\":[{\"name\":\"\",\"type\":\"uint256\",\"internalType\":\"uint256\"}],\"stateMutability\":\"view\"},{\"type\":\"function\",\"name\":\"owner\",\"inputs\":[],\"outputs\":[{\"name\":\"\",\"type\":\"address\",\"internalType\":\"address\"}],\"stateMutability\":\"view\"},{\"type\":\"function\",\"name\":\"processBuilderCommitmentForBlockNumber\",\"inputs\":[{\"name\":\"commitmentIndex\",\"type\":\"bytes32\",\"internalType\":\"bytes32\"},{\"name\":\"blockNumber\",\"type\":\"uint256\",\"internalType\":\"uint256\"},{\"name\":\"blockBuilderName\",\"type\":\"string\",\"internalType\":\"string\"},{\"name\":\"isSlash\",\"type\":\"bool\",\"internalType\":\"bool\"},{\"name\":\"residualBidPercentAfterDecay\",\"type\":\"uint256\",\"internalType\":\"uint256\"}],\"outputs\":[],\"stateMutability\":\"nonpayable\"},{\"type\":\"function\",\"name\":\"renounceOwnership\",\"inputs\":[],\"outputs\":[],\"stateMutability\":\"nonpayable\"},{\"type\":\"function\",\"name\":\"setNextBlock\",\"inputs\":[{\"name\":\"newBlockNumber\",\"type\":\"uint64\",\"internalType\":\"uint64\"}],\"outputs\":[],\"stateMutability\":\"nonpayable\"},{\"type\":\"function\",\"name\":\"transferOwnership\",\"inputs\":[{\"name\":\"newOwner\",\"type\":\"address\",\"internalType\":\"address\"}],\"outputs\":[],\"stateMutability\":\"nonpayable\"},{\"type\":\"function\",\"name\":\"unlockFunds\",\"inputs\":[{\"name\":\"bidIDs\",\"type\":\"bytes32[]\",\"internalType\":\"bytes32[]\"}],\"outputs\":[],\"stateMutability\":\"nonpayable\"},{\"type\":\"event\",\"name\":\"CommitmentProcessed\",\"inputs\":[{\"name\":\"commitmentHash\",\"type\":\"bytes32\",\"indexed\":false,\"internalType\":\"bytes32\"},{\"name\":\"isSlash\",\"type\":\"bool\",\"indexed\":false,\"internalType\":\"bool\"}],\"anonymous\":false},{\"type\":\"event\",\"name\":\"OwnershipTransferred\",\"inputs\":[{\"name\":\"previousOwner\",\"type\":\"address\",\"indexed\":true,\"internalType\":\"address\"},{\"name\":\"newOwner\",\"type\":\"address\",\"indexed\":true,\"internalType\":\"address\"}],\"anonymous\":false}]",
+	ABI: "[{\"inputs\":[{\"internalType\":\"address\",\"name\":\"_preConfContract\",\"type\":\"address\"},{\"internalType\":\"address\",\"name\":\"_blockTrackerContract\",\"type\":\"address\"},{\"internalType\":\"address\",\"name\":\"_owner\",\"type\":\"address\"}],\"stateMutability\":\"nonpayable\",\"type\":\"constructor\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":false,\"internalType\":\"bytes32\",\"name\":\"commitmentHash\",\"type\":\"bytes32\"},{\"indexed\":false,\"internalType\":\"bool\",\"name\":\"isSlash\",\"type\":\"bool\"}],\"name\":\"CommitmentProcessed\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"address\",\"name\":\"previousOwner\",\"type\":\"address\"},{\"indexed\":true,\"internalType\":\"address\",\"name\":\"newOwner\",\"type\":\"address\"}],\"name\":\"OwnershipTransferred\",\"type\":\"event\"},{\"stateMutability\":\"payable\",\"type\":\"fallback\"},{\"inputs\":[{\"internalType\":\"string\",\"name\":\"builderName\",\"type\":\"string\"},{\"internalType\":\"address\",\"name\":\"builderAddress\",\"type\":\"address\"}],\"name\":\"addBuilderAddress\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"string\",\"name\":\"\",\"type\":\"string\"}],\"name\":\"blockBuilderNameToAddress\",\"outputs\":[{\"internalType\":\"address\",\"name\":\"\",\"type\":\"address\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"string\",\"name\":\"builderNameGrafiti\",\"type\":\"string\"}],\"name\":\"getBuilder\",\"outputs\":[{\"internalType\":\"address\",\"name\":\"\",\"type\":\"address\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"owner\",\"outputs\":[{\"internalType\":\"address\",\"name\":\"\",\"type\":\"address\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"bytes32\",\"name\":\"commitmentIndex\",\"type\":\"bytes32\"},{\"internalType\":\"uint256\",\"name\":\"blockNumber\",\"type\":\"uint256\"},{\"internalType\":\"string\",\"name\":\"blockBuilderName\",\"type\":\"string\"},{\"internalType\":\"bool\",\"name\":\"isSlash\",\"type\":\"bool\"},{\"internalType\":\"uint256\",\"name\":\"residualBidPercentAfterDecay\",\"type\":\"uint256\"}],\"name\":\"processBuilderCommitmentForBlockNumber\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"renounceOwnership\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"newOwner\",\"type\":\"address\"}],\"name\":\"transferOwnership\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"bytes32[]\",\"name\":\"bidIDs\",\"type\":\"bytes32[]\"}],\"name\":\"unlockFunds\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"stateMutability\":\"payable\",\"type\":\"receive\"}]",
 }
 
 // OracleABI is the input ABI used to generate the binding from.
@@ -135,11 +134,11 @@ func NewOracleFilterer(address common.Address, filterer bind.ContractFilterer) (
 
 // bindOracle binds a generic wrapper to an already deployed contract.
 func bindOracle(address common.Address, caller bind.ContractCaller, transactor bind.ContractTransactor, filterer bind.ContractFilterer) (*bind.BoundContract, error) {
-	parsed, err := OracleMetaData.GetAbi()
+	parsed, err := abi.JSON(strings.NewReader(OracleABI))
 	if err != nil {
 		return nil, err
 	}
-	return bind.NewBoundContract(address, *parsed, caller, transactor, filterer), nil
+	return bind.NewBoundContract(address, parsed, caller, transactor, filterer), nil
 }
 
 // Call invokes the (constant) contract method with params as input values and
@@ -242,68 +241,6 @@ func (_Oracle *OracleCallerSession) GetBuilder(builderNameGrafiti string) (commo
 	return _Oracle.Contract.GetBuilder(&_Oracle.CallOpts, builderNameGrafiti)
 }
 
-// GetNextRequestedBlockNumber is a free data retrieval call binding the contract method 0xfce2a502.
-//
-// Solidity: function getNextRequestedBlockNumber() view returns(uint256)
-func (_Oracle *OracleCaller) GetNextRequestedBlockNumber(opts *bind.CallOpts) (*big.Int, error) {
-	var out []interface{}
-	err := _Oracle.contract.Call(opts, &out, "getNextRequestedBlockNumber")
-
-	if err != nil {
-		return *new(*big.Int), err
-	}
-
-	out0 := *abi.ConvertType(out[0], new(*big.Int)).(**big.Int)
-
-	return out0, err
-
-}
-
-// GetNextRequestedBlockNumber is a free data retrieval call binding the contract method 0xfce2a502.
-//
-// Solidity: function getNextRequestedBlockNumber() view returns(uint256)
-func (_Oracle *OracleSession) GetNextRequestedBlockNumber() (*big.Int, error) {
-	return _Oracle.Contract.GetNextRequestedBlockNumber(&_Oracle.CallOpts)
-}
-
-// GetNextRequestedBlockNumber is a free data retrieval call binding the contract method 0xfce2a502.
-//
-// Solidity: function getNextRequestedBlockNumber() view returns(uint256)
-func (_Oracle *OracleCallerSession) GetNextRequestedBlockNumber() (*big.Int, error) {
-	return _Oracle.Contract.GetNextRequestedBlockNumber(&_Oracle.CallOpts)
-}
-
-// NextRequestedBlockNumber is a free data retrieval call binding the contract method 0xc512c561.
-//
-// Solidity: function nextRequestedBlockNumber() view returns(uint256)
-func (_Oracle *OracleCaller) NextRequestedBlockNumber(opts *bind.CallOpts) (*big.Int, error) {
-	var out []interface{}
-	err := _Oracle.contract.Call(opts, &out, "nextRequestedBlockNumber")
-
-	if err != nil {
-		return *new(*big.Int), err
-	}
-
-	out0 := *abi.ConvertType(out[0], new(*big.Int)).(**big.Int)
-
-	return out0, err
-
-}
-
-// NextRequestedBlockNumber is a free data retrieval call binding the contract method 0xc512c561.
-//
-// Solidity: function nextRequestedBlockNumber() view returns(uint256)
-func (_Oracle *OracleSession) NextRequestedBlockNumber() (*big.Int, error) {
-	return _Oracle.Contract.NextRequestedBlockNumber(&_Oracle.CallOpts)
-}
-
-// NextRequestedBlockNumber is a free data retrieval call binding the contract method 0xc512c561.
-//
-// Solidity: function nextRequestedBlockNumber() view returns(uint256)
-func (_Oracle *OracleCallerSession) NextRequestedBlockNumber() (*big.Int, error) {
-	return _Oracle.Contract.NextRequestedBlockNumber(&_Oracle.CallOpts)
-}
-
 // Owner is a free data retrieval call binding the contract method 0x8da5cb5b.
 //
 // Solidity: function owner() view returns(address)
@@ -356,27 +293,6 @@ func (_Oracle *OracleTransactorSession) AddBuilderAddress(builderName string, bu
 	return _Oracle.Contract.AddBuilderAddress(&_Oracle.TransactOpts, builderName, builderAddress)
 }
 
-// MoveToNextBlock is a paid mutator transaction binding the contract method 0x32289b72.
-//
-// Solidity: function moveToNextBlock() returns()
-func (_Oracle *OracleTransactor) MoveToNextBlock(opts *bind.TransactOpts) (*types.Transaction, error) {
-	return _Oracle.contract.Transact(opts, "moveToNextBlock")
-}
-
-// MoveToNextBlock is a paid mutator transaction binding the contract method 0x32289b72.
-//
-// Solidity: function moveToNextBlock() returns()
-func (_Oracle *OracleSession) MoveToNextBlock() (*types.Transaction, error) {
-	return _Oracle.Contract.MoveToNextBlock(&_Oracle.TransactOpts)
-}
-
-// MoveToNextBlock is a paid mutator transaction binding the contract method 0x32289b72.
-//
-// Solidity: function moveToNextBlock() returns()
-func (_Oracle *OracleTransactorSession) MoveToNextBlock() (*types.Transaction, error) {
-	return _Oracle.Contract.MoveToNextBlock(&_Oracle.TransactOpts)
-}
-
 // ProcessBuilderCommitmentForBlockNumber is a paid mutator transaction binding the contract method 0x2e9bd11f.
 //
 // Solidity: function processBuilderCommitmentForBlockNumber(bytes32 commitmentIndex, uint256 blockNumber, string blockBuilderName, bool isSlash, uint256 residualBidPercentAfterDecay) returns()
@@ -417,27 +333,6 @@ func (_Oracle *OracleSession) RenounceOwnership() (*types.Transaction, error) {
 // Solidity: function renounceOwnership() returns()
 func (_Oracle *OracleTransactorSession) RenounceOwnership() (*types.Transaction, error) {
 	return _Oracle.Contract.RenounceOwnership(&_Oracle.TransactOpts)
-}
-
-// SetNextBlock is a paid mutator transaction binding the contract method 0x19072add.
-//
-// Solidity: function setNextBlock(uint64 newBlockNumber) returns()
-func (_Oracle *OracleTransactor) SetNextBlock(opts *bind.TransactOpts, newBlockNumber uint64) (*types.Transaction, error) {
-	return _Oracle.contract.Transact(opts, "setNextBlock", newBlockNumber)
-}
-
-// SetNextBlock is a paid mutator transaction binding the contract method 0x19072add.
-//
-// Solidity: function setNextBlock(uint64 newBlockNumber) returns()
-func (_Oracle *OracleSession) SetNextBlock(newBlockNumber uint64) (*types.Transaction, error) {
-	return _Oracle.Contract.SetNextBlock(&_Oracle.TransactOpts, newBlockNumber)
-}
-
-// SetNextBlock is a paid mutator transaction binding the contract method 0x19072add.
-//
-// Solidity: function setNextBlock(uint64 newBlockNumber) returns()
-func (_Oracle *OracleTransactorSession) SetNextBlock(newBlockNumber uint64) (*types.Transaction, error) {
-	return _Oracle.Contract.SetNextBlock(&_Oracle.TransactOpts, newBlockNumber)
 }
 
 // TransferOwnership is a paid mutator transaction binding the contract method 0xf2fde38b.

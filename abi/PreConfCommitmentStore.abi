@@ -29,6 +29,91 @@
     "anonymous": false,
     "inputs": [
       {
+        "indexed": false,
+        "internalType": "address",
+        "name": "bidder",
+        "type": "address"
+      },
+      {
+        "indexed": false,
+        "internalType": "address",
+        "name": "commiter",
+        "type": "address"
+      },
+      {
+        "indexed": false,
+        "internalType": "uint64",
+        "name": "bid",
+        "type": "uint64"
+      },
+      {
+        "indexed": false,
+        "internalType": "uint64",
+        "name": "blockNumber",
+        "type": "uint64"
+      },
+      {
+        "indexed": false,
+        "internalType": "bytes32",
+        "name": "bidHash",
+        "type": "bytes32"
+      },
+      {
+        "indexed": false,
+        "internalType": "uint64",
+        "name": "decayStartTimeStamp",
+        "type": "uint64"
+      },
+      {
+        "indexed": false,
+        "internalType": "uint64",
+        "name": "decayEndTimeStamp",
+        "type": "uint64"
+      },
+      {
+        "indexed": false,
+        "internalType": "string",
+        "name": "txnHash",
+        "type": "string"
+      },
+      {
+        "indexed": false,
+        "internalType": "bytes32",
+        "name": "commitmentHash",
+        "type": "bytes32"
+      },
+      {
+        "indexed": false,
+        "internalType": "bytes",
+        "name": "bidSignature",
+        "type": "bytes"
+      },
+      {
+        "indexed": false,
+        "internalType": "bytes",
+        "name": "commitmentSignature",
+        "type": "bytes"
+      },
+      {
+        "indexed": false,
+        "internalType": "uint256",
+        "name": "blockCommitedAt",
+        "type": "uint256"
+      },
+      {
+        "indexed": false,
+        "internalType": "bytes",
+        "name": "sharedSecretKey",
+        "type": "bytes"
+      }
+    ],
+    "name": "CommitmentStored",
+    "type": "event"
+  },
+  {
+    "anonymous": false,
+    "inputs": [
+      {
         "indexed": true,
         "internalType": "address",
         "name": "previousOwner",
@@ -274,6 +359,11 @@
         "internalType": "uint256",
         "name": "blockCommitedAt",
         "type": "uint256"
+      },
+      {
+        "internalType": "bytes",
+        "name": "sharedSecretKey",
+        "type": "bytes"
       }
     ],
     "stateMutability": "view",
@@ -452,6 +542,11 @@
             "internalType": "uint256",
             "name": "blockCommitedAt",
             "type": "uint256"
+          },
+          {
+            "internalType": "bytes",
+            "name": "sharedSecretKey",
+            "type": "bytes"
           }
         ],
         "internalType": "struct PreConfCommitmentStore.PreConfCommitment",
@@ -530,6 +625,11 @@
             "internalType": "uint256",
             "name": "blockCommitedAt",
             "type": "uint256"
+          },
+          {
+            "internalType": "bytes",
+            "name": "sharedSecretKey",
+            "type": "bytes"
           }
         ],
         "internalType": "struct PreConfCommitmentStore.PreConfCommitment",
@@ -714,6 +814,11 @@
         "internalType": "string",
         "name": "_bidSignature",
         "type": "string"
+      },
+      {
+        "internalType": "string",
+        "name": "_sharedSecretKey",
+        "type": "string"
       }
     ],
     "name": "getPreConfHash",
@@ -748,6 +853,11 @@
   },
   {
     "inputs": [
+      {
+        "internalType": "uint256",
+        "name": "windowToSettle",
+        "type": "uint256"
+      },
       {
         "internalType": "bytes32",
         "name": "commitmentIndex",
@@ -793,6 +903,65 @@
       }
     ],
     "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "bytes32",
+        "name": "encryptedCommitmentIndex",
+        "type": "bytes32"
+      },
+      {
+        "internalType": "uint64",
+        "name": "bid",
+        "type": "uint64"
+      },
+      {
+        "internalType": "uint64",
+        "name": "blockNumber",
+        "type": "uint64"
+      },
+      {
+        "internalType": "string",
+        "name": "txnHash",
+        "type": "string"
+      },
+      {
+        "internalType": "uint64",
+        "name": "decayStartTimeStamp",
+        "type": "uint64"
+      },
+      {
+        "internalType": "uint64",
+        "name": "decayEndTimeStamp",
+        "type": "uint64"
+      },
+      {
+        "internalType": "bytes",
+        "name": "bidSignature",
+        "type": "bytes"
+      },
+      {
+        "internalType": "bytes",
+        "name": "commitmentSignature",
+        "type": "bytes"
+      },
+      {
+        "internalType": "bytes",
+        "name": "sharedSecretKey",
+        "type": "bytes"
+      }
+    ],
+    "name": "openCommitment",
+    "outputs": [
+      {
+        "internalType": "bytes32",
+        "name": "commitmentIndex",
+        "type": "bytes32"
+      }
+    ],
+    "stateMutability": "nonpayable",
     "type": "function"
   },
   {
@@ -892,55 +1061,6 @@
   {
     "inputs": [
       {
-        "internalType": "uint64",
-        "name": "bid",
-        "type": "uint64"
-      },
-      {
-        "internalType": "uint64",
-        "name": "blockNumber",
-        "type": "uint64"
-      },
-      {
-        "internalType": "string",
-        "name": "txnHash",
-        "type": "string"
-      },
-      {
-        "internalType": "uint64",
-        "name": "decayStartTimeStamp",
-        "type": "uint64"
-      },
-      {
-        "internalType": "uint64",
-        "name": "decayEndTimeStamp",
-        "type": "uint64"
-      },
-      {
-        "internalType": "bytes",
-        "name": "bidSignature",
-        "type": "bytes"
-      },
-      {
-        "internalType": "bytes",
-        "name": "commitmentSignature",
-        "type": "bytes"
-      }
-    ],
-    "name": "storeCommitment",
-    "outputs": [
-      {
-        "internalType": "bytes32",
-        "name": "commitmentIndex",
-        "type": "bytes32"
-      }
-    ],
-    "stateMutability": "nonpayable",
-    "type": "function"
-  },
-  {
-    "inputs": [
-      {
         "internalType": "bytes32",
         "name": "commitmentDigest",
         "type": "bytes32"
@@ -971,19 +1091,6 @@
       }
     ],
     "name": "transferOwnership",
-    "outputs": [],
-    "stateMutability": "nonpayable",
-    "type": "function"
-  },
-  {
-    "inputs": [
-      {
-        "internalType": "bytes32",
-        "name": "commitmentDigest",
-        "type": "bytes32"
-      }
-    ],
-    "name": "unlockBidFunds",
     "outputs": [],
     "stateMutability": "nonpayable",
     "type": "function"
@@ -1070,70 +1177,6 @@
       {
         "internalType": "address",
         "name": "recoveredAddress",
-        "type": "address"
-      },
-      {
-        "internalType": "uint256",
-        "name": "stake",
-        "type": "uint256"
-      }
-    ],
-    "stateMutability": "view",
-    "type": "function"
-  },
-  {
-    "inputs": [
-      {
-        "internalType": "string",
-        "name": "txnHash",
-        "type": "string"
-      },
-      {
-        "internalType": "uint64",
-        "name": "bid",
-        "type": "uint64"
-      },
-      {
-        "internalType": "uint64",
-        "name": "blockNumber",
-        "type": "uint64"
-      },
-      {
-        "internalType": "uint64",
-        "name": "decayStartTimeStamp",
-        "type": "uint64"
-      },
-      {
-        "internalType": "uint64",
-        "name": "decayEndTimeStamp",
-        "type": "uint64"
-      },
-      {
-        "internalType": "bytes32",
-        "name": "bidHash",
-        "type": "bytes32"
-      },
-      {
-        "internalType": "bytes",
-        "name": "bidSignature",
-        "type": "bytes"
-      },
-      {
-        "internalType": "bytes",
-        "name": "commitmentSignature",
-        "type": "bytes"
-      }
-    ],
-    "name": "verifyPreConfCommitment",
-    "outputs": [
-      {
-        "internalType": "bytes32",
-        "name": "preConfHash",
-        "type": "bytes32"
-      },
-      {
-        "internalType": "address",
-        "name": "commiterAddress",
         "type": "address"
       }
     ],
