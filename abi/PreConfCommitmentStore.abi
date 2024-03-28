@@ -13,6 +13,11 @@
       },
       {
         "internalType": "address",
+        "name": "_blockTracker",
+        "type": "address"
+      },
+      {
+        "internalType": "address",
         "name": "_oracle",
         "type": "address"
       },
@@ -267,6 +272,19 @@
         "internalType": "bytes32",
         "name": "",
         "type": "bytes32"
+      }
+    ],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [],
+    "name": "blockTracker",
+    "outputs": [
+      {
+        "internalType": "contract IBlockTracker",
+        "name": "",
+        "type": "address"
       }
     ],
     "stateMutability": "view",
@@ -877,6 +895,11 @@
   {
     "inputs": [
       {
+        "internalType": "uint256",
+        "name": "windowToSettle",
+        "type": "uint256"
+      },
+      {
         "internalType": "bytes32",
         "name": "commitmentIndex",
         "type": "bytes32"
@@ -1098,6 +1121,24 @@
   {
     "inputs": [
       {
+        "internalType": "uint256",
+        "name": "windowToSettle",
+        "type": "uint256"
+      },
+      {
+        "internalType": "bytes32",
+        "name": "commitmentDigest",
+        "type": "bytes32"
+      }
+    ],
+    "name": "unlockBidFunds",
+    "outputs": [],
+    "stateMutability": "nonpayable",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
         "internalType": "address",
         "name": "newBidderRegistry",
         "type": "address"
@@ -1177,6 +1218,70 @@
       {
         "internalType": "address",
         "name": "recoveredAddress",
+        "type": "address"
+      }
+    ],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "string",
+        "name": "txnHash",
+        "type": "string"
+      },
+      {
+        "internalType": "uint64",
+        "name": "bid",
+        "type": "uint64"
+      },
+      {
+        "internalType": "uint64",
+        "name": "blockNumber",
+        "type": "uint64"
+      },
+      {
+        "internalType": "uint64",
+        "name": "decayStartTimeStamp",
+        "type": "uint64"
+      },
+      {
+        "internalType": "uint64",
+        "name": "decayEndTimeStamp",
+        "type": "uint64"
+      },
+      {
+        "internalType": "bytes32",
+        "name": "bidHash",
+        "type": "bytes32"
+      },
+      {
+        "internalType": "bytes",
+        "name": "bidSignature",
+        "type": "bytes"
+      },
+      {
+        "internalType": "bytes",
+        "name": "commitmentSignature",
+        "type": "bytes"
+      },
+      {
+        "internalType": "bytes",
+        "name": "sharedSecretKey",
+        "type": "bytes"
+      }
+    ],
+    "name": "verifyPreConfCommitment",
+    "outputs": [
+      {
+        "internalType": "bytes32",
+        "name": "preConfHash",
+        "type": "bytes32"
+      },
+      {
+        "internalType": "address",
+        "name": "commiterAddress",
         "type": "address"
       }
     ],

@@ -92,6 +92,12 @@
       {
         "indexed": false,
         "internalType": "uint256",
+        "name": "window",
+        "type": "uint256"
+      },
+      {
+        "indexed": false,
+        "internalType": "uint256",
         "name": "amount",
         "type": "uint256"
       }
@@ -149,6 +155,29 @@
       }
     ],
     "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "bytes32",
+        "name": "commitmentDigest",
+        "type": "bytes32"
+      },
+      {
+        "internalType": "uint64",
+        "name": "bid",
+        "type": "uint64"
+      },
+      {
+        "internalType": "address",
+        "name": "bidder",
+        "type": "address"
+      }
+    ],
+    "name": "OpenBid",
+    "outputs": [],
+    "stateMutability": "nonpayable",
     "type": "function"
   },
   {
@@ -463,6 +492,24 @@
       }
     ],
     "name": "transferOwnership",
+    "outputs": [],
+    "stateMutability": "nonpayable",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "uint256",
+        "name": "window",
+        "type": "uint256"
+      },
+      {
+        "internalType": "bytes32",
+        "name": "bidID",
+        "type": "bytes32"
+      }
+    ],
+    "name": "unlockFunds",
     "outputs": [],
     "stateMutability": "nonpayable",
     "type": "function"

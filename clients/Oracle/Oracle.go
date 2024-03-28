@@ -30,7 +30,7 @@ var (
 
 // OracleMetaData contains all meta data concerning the Oracle contract.
 var OracleMetaData = &bind.MetaData{
-	ABI: "[{\"inputs\":[{\"internalType\":\"address\",\"name\":\"_preConfContract\",\"type\":\"address\"},{\"internalType\":\"address\",\"name\":\"_blockTrackerContract\",\"type\":\"address\"},{\"internalType\":\"address\",\"name\":\"_owner\",\"type\":\"address\"}],\"stateMutability\":\"nonpayable\",\"type\":\"constructor\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":false,\"internalType\":\"bytes32\",\"name\":\"commitmentHash\",\"type\":\"bytes32\"},{\"indexed\":false,\"internalType\":\"bool\",\"name\":\"isSlash\",\"type\":\"bool\"}],\"name\":\"CommitmentProcessed\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"address\",\"name\":\"previousOwner\",\"type\":\"address\"},{\"indexed\":true,\"internalType\":\"address\",\"name\":\"newOwner\",\"type\":\"address\"}],\"name\":\"OwnershipTransferred\",\"type\":\"event\"},{\"stateMutability\":\"payable\",\"type\":\"fallback\"},{\"inputs\":[{\"internalType\":\"string\",\"name\":\"builderName\",\"type\":\"string\"},{\"internalType\":\"address\",\"name\":\"builderAddress\",\"type\":\"address\"}],\"name\":\"addBuilderAddress\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"string\",\"name\":\"\",\"type\":\"string\"}],\"name\":\"blockBuilderNameToAddress\",\"outputs\":[{\"internalType\":\"address\",\"name\":\"\",\"type\":\"address\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"string\",\"name\":\"builderNameGrafiti\",\"type\":\"string\"}],\"name\":\"getBuilder\",\"outputs\":[{\"internalType\":\"address\",\"name\":\"\",\"type\":\"address\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"owner\",\"outputs\":[{\"internalType\":\"address\",\"name\":\"\",\"type\":\"address\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"bytes32\",\"name\":\"commitmentIndex\",\"type\":\"bytes32\"},{\"internalType\":\"uint256\",\"name\":\"blockNumber\",\"type\":\"uint256\"},{\"internalType\":\"string\",\"name\":\"blockBuilderName\",\"type\":\"string\"},{\"internalType\":\"bool\",\"name\":\"isSlash\",\"type\":\"bool\"},{\"internalType\":\"uint256\",\"name\":\"residualBidPercentAfterDecay\",\"type\":\"uint256\"}],\"name\":\"processBuilderCommitmentForBlockNumber\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"renounceOwnership\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"newOwner\",\"type\":\"address\"}],\"name\":\"transferOwnership\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"bytes32[]\",\"name\":\"bidIDs\",\"type\":\"bytes32[]\"}],\"name\":\"unlockFunds\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"stateMutability\":\"payable\",\"type\":\"receive\"}]",
+	ABI: "[{\"inputs\":[{\"internalType\":\"address\",\"name\":\"_preConfContract\",\"type\":\"address\"},{\"internalType\":\"address\",\"name\":\"_blockTrackerContract\",\"type\":\"address\"},{\"internalType\":\"address\",\"name\":\"_owner\",\"type\":\"address\"}],\"stateMutability\":\"nonpayable\",\"type\":\"constructor\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":false,\"internalType\":\"bytes32\",\"name\":\"commitmentHash\",\"type\":\"bytes32\"},{\"indexed\":false,\"internalType\":\"bool\",\"name\":\"isSlash\",\"type\":\"bool\"}],\"name\":\"CommitmentProcessed\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"address\",\"name\":\"previousOwner\",\"type\":\"address\"},{\"indexed\":true,\"internalType\":\"address\",\"name\":\"newOwner\",\"type\":\"address\"}],\"name\":\"OwnershipTransferred\",\"type\":\"event\"},{\"stateMutability\":\"payable\",\"type\":\"fallback\"},{\"inputs\":[{\"internalType\":\"string\",\"name\":\"builderName\",\"type\":\"string\"},{\"internalType\":\"address\",\"name\":\"builderAddress\",\"type\":\"address\"}],\"name\":\"addBuilderAddress\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"string\",\"name\":\"\",\"type\":\"string\"}],\"name\":\"blockBuilderNameToAddress\",\"outputs\":[{\"internalType\":\"address\",\"name\":\"\",\"type\":\"address\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"string\",\"name\":\"builderNameGrafiti\",\"type\":\"string\"}],\"name\":\"getBuilder\",\"outputs\":[{\"internalType\":\"address\",\"name\":\"\",\"type\":\"address\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"owner\",\"outputs\":[{\"internalType\":\"address\",\"name\":\"\",\"type\":\"address\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"bytes32\",\"name\":\"commitmentIndex\",\"type\":\"bytes32\"},{\"internalType\":\"uint256\",\"name\":\"blockNumber\",\"type\":\"uint256\"},{\"internalType\":\"string\",\"name\":\"blockBuilderName\",\"type\":\"string\"},{\"internalType\":\"bool\",\"name\":\"isSlash\",\"type\":\"bool\"},{\"internalType\":\"uint256\",\"name\":\"residualBidPercentAfterDecay\",\"type\":\"uint256\"}],\"name\":\"processBuilderCommitmentForBlockNumber\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"renounceOwnership\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"newOwner\",\"type\":\"address\"}],\"name\":\"transferOwnership\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"uint256\",\"name\":\"window\",\"type\":\"uint256\"},{\"internalType\":\"bytes32[]\",\"name\":\"bidIDs\",\"type\":\"bytes32[]\"}],\"name\":\"unlockFunds\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"stateMutability\":\"payable\",\"type\":\"receive\"}]",
 }
 
 // OracleABI is the input ABI used to generate the binding from.
@@ -356,25 +356,25 @@ func (_Oracle *OracleTransactorSession) TransferOwnership(newOwner common.Addres
 	return _Oracle.Contract.TransferOwnership(&_Oracle.TransactOpts, newOwner)
 }
 
-// UnlockFunds is a paid mutator transaction binding the contract method 0x9dd4152b.
+// UnlockFunds is a paid mutator transaction binding the contract method 0xb3713e0f.
 //
-// Solidity: function unlockFunds(bytes32[] bidIDs) returns()
-func (_Oracle *OracleTransactor) UnlockFunds(opts *bind.TransactOpts, bidIDs [][32]byte) (*types.Transaction, error) {
-	return _Oracle.contract.Transact(opts, "unlockFunds", bidIDs)
+// Solidity: function unlockFunds(uint256 window, bytes32[] bidIDs) returns()
+func (_Oracle *OracleTransactor) UnlockFunds(opts *bind.TransactOpts, window *big.Int, bidIDs [][32]byte) (*types.Transaction, error) {
+	return _Oracle.contract.Transact(opts, "unlockFunds", window, bidIDs)
 }
 
-// UnlockFunds is a paid mutator transaction binding the contract method 0x9dd4152b.
+// UnlockFunds is a paid mutator transaction binding the contract method 0xb3713e0f.
 //
-// Solidity: function unlockFunds(bytes32[] bidIDs) returns()
-func (_Oracle *OracleSession) UnlockFunds(bidIDs [][32]byte) (*types.Transaction, error) {
-	return _Oracle.Contract.UnlockFunds(&_Oracle.TransactOpts, bidIDs)
+// Solidity: function unlockFunds(uint256 window, bytes32[] bidIDs) returns()
+func (_Oracle *OracleSession) UnlockFunds(window *big.Int, bidIDs [][32]byte) (*types.Transaction, error) {
+	return _Oracle.Contract.UnlockFunds(&_Oracle.TransactOpts, window, bidIDs)
 }
 
-// UnlockFunds is a paid mutator transaction binding the contract method 0x9dd4152b.
+// UnlockFunds is a paid mutator transaction binding the contract method 0xb3713e0f.
 //
-// Solidity: function unlockFunds(bytes32[] bidIDs) returns()
-func (_Oracle *OracleTransactorSession) UnlockFunds(bidIDs [][32]byte) (*types.Transaction, error) {
-	return _Oracle.Contract.UnlockFunds(&_Oracle.TransactOpts, bidIDs)
+// Solidity: function unlockFunds(uint256 window, bytes32[] bidIDs) returns()
+func (_Oracle *OracleTransactorSession) UnlockFunds(window *big.Int, bidIDs [][32]byte) (*types.Transaction, error) {
+	return _Oracle.Contract.UnlockFunds(&_Oracle.TransactOpts, window, bidIDs)
 }
 
 // Fallback is a paid mutator transaction binding the contract fallback function.

@@ -187,6 +187,11 @@
   {
     "inputs": [
       {
+        "internalType": "uint256",
+        "name": "window",
+        "type": "uint256"
+      },
+      {
         "internalType": "bytes32[]",
         "name": "bidIDs",
         "type": "bytes32[]"

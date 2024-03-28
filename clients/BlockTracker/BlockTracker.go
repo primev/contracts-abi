@@ -30,7 +30,7 @@ var (
 
 // BlocktrackerMetaData contains all meta data concerning the Blocktracker contract.
 var BlocktrackerMetaData = &bind.MetaData{
-	ABI: "[{\"inputs\":[{\"internalType\":\"address\",\"name\":\"_owner\",\"type\":\"address\"}],\"stateMutability\":\"nonpayable\",\"type\":\"constructor\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"uint256\",\"name\":\"blockNumber\",\"type\":\"uint256\"},{\"indexed\":true,\"internalType\":\"address\",\"name\":\"winner\",\"type\":\"address\"}],\"name\":\"NewL1Block\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"uint256\",\"name\":\"window\",\"type\":\"uint256\"}],\"name\":\"NewWindow\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"address\",\"name\":\"previousOwner\",\"type\":\"address\"},{\"indexed\":true,\"internalType\":\"address\",\"name\":\"newOwner\",\"type\":\"address\"}],\"name\":\"OwnershipTransferred\",\"type\":\"event\"},{\"stateMutability\":\"payable\",\"type\":\"fallback\"},{\"inputs\":[],\"name\":\"blocksPerWindow\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"currentWindow\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"getCurrentWindow\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"getLastL1BlockNumber\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"getLastL1BlockWinner\",\"outputs\":[{\"internalType\":\"address\",\"name\":\"\",\"type\":\"address\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"lastL1BlockNumber\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"lastL1BlockWinner\",\"outputs\":[{\"internalType\":\"address\",\"name\":\"\",\"type\":\"address\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"owner\",\"outputs\":[{\"internalType\":\"address\",\"name\":\"\",\"type\":\"address\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"uint256\",\"name\":\"_blockNumber\",\"type\":\"uint256\"},{\"internalType\":\"address\",\"name\":\"_winner\",\"type\":\"address\"}],\"name\":\"recordL1Block\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"renounceOwnership\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"newOwner\",\"type\":\"address\"}],\"name\":\"transferOwnership\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"stateMutability\":\"payable\",\"type\":\"receive\"}]",
+	ABI: "[{\"inputs\":[{\"internalType\":\"address\",\"name\":\"_owner\",\"type\":\"address\"}],\"stateMutability\":\"nonpayable\",\"type\":\"constructor\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"uint256\",\"name\":\"blockNumber\",\"type\":\"uint256\"},{\"indexed\":true,\"internalType\":\"address\",\"name\":\"winner\",\"type\":\"address\"}],\"name\":\"NewL1Block\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"uint256\",\"name\":\"window\",\"type\":\"uint256\"}],\"name\":\"NewWindow\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"address\",\"name\":\"previousOwner\",\"type\":\"address\"},{\"indexed\":true,\"internalType\":\"address\",\"name\":\"newOwner\",\"type\":\"address\"}],\"name\":\"OwnershipTransferred\",\"type\":\"event\"},{\"stateMutability\":\"payable\",\"type\":\"fallback\"},{\"inputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"name\":\"blockWinners\",\"outputs\":[{\"internalType\":\"address\",\"name\":\"\",\"type\":\"address\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"blocksPerWindow\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"currentWindow\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"uint256\",\"name\":\"blockNumber\",\"type\":\"uint256\"}],\"name\":\"getBlockWinner\",\"outputs\":[{\"internalType\":\"address\",\"name\":\"\",\"type\":\"address\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"getBlocksPerWindow\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"getCurrentWindow\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"getLastL1BlockNumber\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"getLastL1BlockWinner\",\"outputs\":[{\"internalType\":\"address\",\"name\":\"\",\"type\":\"address\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"lastL1BlockNumber\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"lastL1BlockWinner\",\"outputs\":[{\"internalType\":\"address\",\"name\":\"\",\"type\":\"address\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"owner\",\"outputs\":[{\"internalType\":\"address\",\"name\":\"\",\"type\":\"address\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"uint256\",\"name\":\"_blockNumber\",\"type\":\"uint256\"},{\"internalType\":\"address\",\"name\":\"_winner\",\"type\":\"address\"}],\"name\":\"recordL1Block\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"renounceOwnership\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"uint256\",\"name\":\"_blocksPerWindow\",\"type\":\"uint256\"}],\"name\":\"setBlocksPerWindow\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"newOwner\",\"type\":\"address\"}],\"name\":\"transferOwnership\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"stateMutability\":\"payable\",\"type\":\"receive\"}]",
 }
 
 // BlocktrackerABI is the input ABI used to generate the binding from.
@@ -179,6 +179,37 @@ func (_Blocktracker *BlocktrackerTransactorRaw) Transact(opts *bind.TransactOpts
 	return _Blocktracker.Contract.contract.Transact(opts, method, params...)
 }
 
+// BlockWinners is a free data retrieval call binding the contract method 0xe4747419.
+//
+// Solidity: function blockWinners(uint256 ) view returns(address)
+func (_Blocktracker *BlocktrackerCaller) BlockWinners(opts *bind.CallOpts, arg0 *big.Int) (common.Address, error) {
+	var out []interface{}
+	err := _Blocktracker.contract.Call(opts, &out, "blockWinners", arg0)
+
+	if err != nil {
+		return *new(common.Address), err
+	}
+
+	out0 := *abi.ConvertType(out[0], new(common.Address)).(*common.Address)
+
+	return out0, err
+
+}
+
+// BlockWinners is a free data retrieval call binding the contract method 0xe4747419.
+//
+// Solidity: function blockWinners(uint256 ) view returns(address)
+func (_Blocktracker *BlocktrackerSession) BlockWinners(arg0 *big.Int) (common.Address, error) {
+	return _Blocktracker.Contract.BlockWinners(&_Blocktracker.CallOpts, arg0)
+}
+
+// BlockWinners is a free data retrieval call binding the contract method 0xe4747419.
+//
+// Solidity: function blockWinners(uint256 ) view returns(address)
+func (_Blocktracker *BlocktrackerCallerSession) BlockWinners(arg0 *big.Int) (common.Address, error) {
+	return _Blocktracker.Contract.BlockWinners(&_Blocktracker.CallOpts, arg0)
+}
+
 // BlocksPerWindow is a free data retrieval call binding the contract method 0x6347609e.
 //
 // Solidity: function blocksPerWindow() view returns(uint256)
@@ -239,6 +270,68 @@ func (_Blocktracker *BlocktrackerSession) CurrentWindow() (*big.Int, error) {
 // Solidity: function currentWindow() view returns(uint256)
 func (_Blocktracker *BlocktrackerCallerSession) CurrentWindow() (*big.Int, error) {
 	return _Blocktracker.Contract.CurrentWindow(&_Blocktracker.CallOpts)
+}
+
+// GetBlockWinner is a free data retrieval call binding the contract method 0x6753ab34.
+//
+// Solidity: function getBlockWinner(uint256 blockNumber) view returns(address)
+func (_Blocktracker *BlocktrackerCaller) GetBlockWinner(opts *bind.CallOpts, blockNumber *big.Int) (common.Address, error) {
+	var out []interface{}
+	err := _Blocktracker.contract.Call(opts, &out, "getBlockWinner", blockNumber)
+
+	if err != nil {
+		return *new(common.Address), err
+	}
+
+	out0 := *abi.ConvertType(out[0], new(common.Address)).(*common.Address)
+
+	return out0, err
+
+}
+
+// GetBlockWinner is a free data retrieval call binding the contract method 0x6753ab34.
+//
+// Solidity: function getBlockWinner(uint256 blockNumber) view returns(address)
+func (_Blocktracker *BlocktrackerSession) GetBlockWinner(blockNumber *big.Int) (common.Address, error) {
+	return _Blocktracker.Contract.GetBlockWinner(&_Blocktracker.CallOpts, blockNumber)
+}
+
+// GetBlockWinner is a free data retrieval call binding the contract method 0x6753ab34.
+//
+// Solidity: function getBlockWinner(uint256 blockNumber) view returns(address)
+func (_Blocktracker *BlocktrackerCallerSession) GetBlockWinner(blockNumber *big.Int) (common.Address, error) {
+	return _Blocktracker.Contract.GetBlockWinner(&_Blocktracker.CallOpts, blockNumber)
+}
+
+// GetBlocksPerWindow is a free data retrieval call binding the contract method 0x8711a019.
+//
+// Solidity: function getBlocksPerWindow() view returns(uint256)
+func (_Blocktracker *BlocktrackerCaller) GetBlocksPerWindow(opts *bind.CallOpts) (*big.Int, error) {
+	var out []interface{}
+	err := _Blocktracker.contract.Call(opts, &out, "getBlocksPerWindow")
+
+	if err != nil {
+		return *new(*big.Int), err
+	}
+
+	out0 := *abi.ConvertType(out[0], new(*big.Int)).(**big.Int)
+
+	return out0, err
+
+}
+
+// GetBlocksPerWindow is a free data retrieval call binding the contract method 0x8711a019.
+//
+// Solidity: function getBlocksPerWindow() view returns(uint256)
+func (_Blocktracker *BlocktrackerSession) GetBlocksPerWindow() (*big.Int, error) {
+	return _Blocktracker.Contract.GetBlocksPerWindow(&_Blocktracker.CallOpts)
+}
+
+// GetBlocksPerWindow is a free data retrieval call binding the contract method 0x8711a019.
+//
+// Solidity: function getBlocksPerWindow() view returns(uint256)
+func (_Blocktracker *BlocktrackerCallerSession) GetBlocksPerWindow() (*big.Int, error) {
+	return _Blocktracker.Contract.GetBlocksPerWindow(&_Blocktracker.CallOpts)
 }
 
 // GetCurrentWindow is a free data retrieval call binding the contract method 0x0f67e7d5.
@@ -467,6 +560,27 @@ func (_Blocktracker *BlocktrackerSession) RenounceOwnership() (*types.Transactio
 // Solidity: function renounceOwnership() returns()
 func (_Blocktracker *BlocktrackerTransactorSession) RenounceOwnership() (*types.Transaction, error) {
 	return _Blocktracker.Contract.RenounceOwnership(&_Blocktracker.TransactOpts)
+}
+
+// SetBlocksPerWindow is a paid mutator transaction binding the contract method 0x468a66ab.
+//
+// Solidity: function setBlocksPerWindow(uint256 _blocksPerWindow) returns()
+func (_Blocktracker *BlocktrackerTransactor) SetBlocksPerWindow(opts *bind.TransactOpts, _blocksPerWindow *big.Int) (*types.Transaction, error) {
+	return _Blocktracker.contract.Transact(opts, "setBlocksPerWindow", _blocksPerWindow)
+}
+
+// SetBlocksPerWindow is a paid mutator transaction binding the contract method 0x468a66ab.
+//
+// Solidity: function setBlocksPerWindow(uint256 _blocksPerWindow) returns()
+func (_Blocktracker *BlocktrackerSession) SetBlocksPerWindow(_blocksPerWindow *big.Int) (*types.Transaction, error) {
+	return _Blocktracker.Contract.SetBlocksPerWindow(&_Blocktracker.TransactOpts, _blocksPerWindow)
+}
+
+// SetBlocksPerWindow is a paid mutator transaction binding the contract method 0x468a66ab.
+//
+// Solidity: function setBlocksPerWindow(uint256 _blocksPerWindow) returns()
+func (_Blocktracker *BlocktrackerTransactorSession) SetBlocksPerWindow(_blocksPerWindow *big.Int) (*types.Transaction, error) {
+	return _Blocktracker.Contract.SetBlocksPerWindow(&_Blocktracker.TransactOpts, _blocksPerWindow)
 }
 
 // TransferOwnership is a paid mutator transaction binding the contract method 0xf2fde38b.
