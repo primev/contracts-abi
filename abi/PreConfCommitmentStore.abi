@@ -34,6 +34,12 @@
     "anonymous": false,
     "inputs": [
       {
+        "indexed": true,
+        "internalType": "bytes32",
+        "name": "commitmentIndex",
+        "type": "bytes32"
+      },
+      {
         "indexed": false,
         "internalType": "address",
         "name": "bidder",
@@ -113,6 +119,43 @@
       }
     ],
     "name": "CommitmentStored",
+    "type": "event"
+  },
+  {
+    "anonymous": false,
+    "inputs": [
+      {
+        "indexed": true,
+        "internalType": "bytes32",
+        "name": "commitmentIndex",
+        "type": "bytes32"
+      },
+      {
+        "indexed": false,
+        "internalType": "address",
+        "name": "commiter",
+        "type": "address"
+      },
+      {
+        "indexed": false,
+        "internalType": "bytes32",
+        "name": "commitmentDigest",
+        "type": "bytes32"
+      },
+      {
+        "indexed": false,
+        "internalType": "bytes",
+        "name": "commitmentSignature",
+        "type": "bytes"
+      },
+      {
+        "indexed": false,
+        "internalType": "uint256",
+        "name": "blockCommitedAt",
+        "type": "uint256"
+      }
+    ],
+    "name": "EncryptedCommitmentStored",
     "type": "event"
   },
   {
