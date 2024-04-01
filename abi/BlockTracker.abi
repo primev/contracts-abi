@@ -24,6 +24,12 @@
         "internalType": "address",
         "name": "winner",
         "type": "address"
+      },
+      {
+        "indexed": true,
+        "internalType": "uint256",
+        "name": "window",
+        "type": "uint256"
       }
     ],
     "name": "NewL1Block",

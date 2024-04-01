@@ -30,7 +30,7 @@ var (
 
 // BlocktrackerMetaData contains all meta data concerning the Blocktracker contract.
 var BlocktrackerMetaData = &bind.MetaData{
-	ABI: "[{\"inputs\":[{\"internalType\":\"address\",\"name\":\"_owner\",\"type\":\"address\"}],\"stateMutability\":\"nonpayable\",\"type\":\"constructor\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"uint256\",\"name\":\"blockNumber\",\"type\":\"uint256\"},{\"indexed\":true,\"internalType\":\"address\",\"name\":\"winner\",\"type\":\"address\"}],\"name\":\"NewL1Block\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"uint256\",\"name\":\"window\",\"type\":\"uint256\"}],\"name\":\"NewWindow\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"address\",\"name\":\"previousOwner\",\"type\":\"address\"},{\"indexed\":true,\"internalType\":\"address\",\"name\":\"newOwner\",\"type\":\"address\"}],\"name\":\"OwnershipTransferred\",\"type\":\"event\"},{\"stateMutability\":\"payable\",\"type\":\"fallback\"},{\"inputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"name\":\"blockWinners\",\"outputs\":[{\"internalType\":\"address\",\"name\":\"\",\"type\":\"address\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"blocksPerWindow\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"currentWindow\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"uint256\",\"name\":\"blockNumber\",\"type\":\"uint256\"}],\"name\":\"getBlockWinner\",\"outputs\":[{\"internalType\":\"address\",\"name\":\"\",\"type\":\"address\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"getBlocksPerWindow\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"getCurrentWindow\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"getLastL1BlockNumber\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"getLastL1BlockWinner\",\"outputs\":[{\"internalType\":\"address\",\"name\":\"\",\"type\":\"address\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"lastL1BlockNumber\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"lastL1BlockWinner\",\"outputs\":[{\"internalType\":\"address\",\"name\":\"\",\"type\":\"address\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"owner\",\"outputs\":[{\"internalType\":\"address\",\"name\":\"\",\"type\":\"address\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"uint256\",\"name\":\"_blockNumber\",\"type\":\"uint256\"},{\"internalType\":\"address\",\"name\":\"_winner\",\"type\":\"address\"}],\"name\":\"recordL1Block\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"renounceOwnership\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"uint256\",\"name\":\"_blocksPerWindow\",\"type\":\"uint256\"}],\"name\":\"setBlocksPerWindow\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"newOwner\",\"type\":\"address\"}],\"name\":\"transferOwnership\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"stateMutability\":\"payable\",\"type\":\"receive\"}]",
+	ABI: "[{\"inputs\":[{\"internalType\":\"address\",\"name\":\"_owner\",\"type\":\"address\"}],\"stateMutability\":\"nonpayable\",\"type\":\"constructor\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"uint256\",\"name\":\"blockNumber\",\"type\":\"uint256\"},{\"indexed\":true,\"internalType\":\"address\",\"name\":\"winner\",\"type\":\"address\"},{\"indexed\":true,\"internalType\":\"uint256\",\"name\":\"window\",\"type\":\"uint256\"}],\"name\":\"NewL1Block\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"uint256\",\"name\":\"window\",\"type\":\"uint256\"}],\"name\":\"NewWindow\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"address\",\"name\":\"previousOwner\",\"type\":\"address\"},{\"indexed\":true,\"internalType\":\"address\",\"name\":\"newOwner\",\"type\":\"address\"}],\"name\":\"OwnershipTransferred\",\"type\":\"event\"},{\"stateMutability\":\"payable\",\"type\":\"fallback\"},{\"inputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"name\":\"blockWinners\",\"outputs\":[{\"internalType\":\"address\",\"name\":\"\",\"type\":\"address\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"blocksPerWindow\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"currentWindow\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"uint256\",\"name\":\"blockNumber\",\"type\":\"uint256\"}],\"name\":\"getBlockWinner\",\"outputs\":[{\"internalType\":\"address\",\"name\":\"\",\"type\":\"address\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"getBlocksPerWindow\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"getCurrentWindow\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"getLastL1BlockNumber\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"getLastL1BlockWinner\",\"outputs\":[{\"internalType\":\"address\",\"name\":\"\",\"type\":\"address\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"lastL1BlockNumber\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"lastL1BlockWinner\",\"outputs\":[{\"internalType\":\"address\",\"name\":\"\",\"type\":\"address\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"owner\",\"outputs\":[{\"internalType\":\"address\",\"name\":\"\",\"type\":\"address\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"uint256\",\"name\":\"_blockNumber\",\"type\":\"uint256\"},{\"internalType\":\"address\",\"name\":\"_winner\",\"type\":\"address\"}],\"name\":\"recordL1Block\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"renounceOwnership\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"uint256\",\"name\":\"_blocksPerWindow\",\"type\":\"uint256\"}],\"name\":\"setBlocksPerWindow\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"newOwner\",\"type\":\"address\"}],\"name\":\"transferOwnership\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"stateMutability\":\"payable\",\"type\":\"receive\"}]",
 }
 
 // BlocktrackerABI is the input ABI used to generate the binding from.
@@ -717,13 +717,14 @@ func (it *BlocktrackerNewL1BlockIterator) Close() error {
 type BlocktrackerNewL1Block struct {
 	BlockNumber *big.Int
 	Winner      common.Address
+	Window      *big.Int
 	Raw         types.Log // Blockchain specific contextual infos
 }
 
-// FilterNewL1Block is a free log retrieval operation binding the contract event 0x2fa9ac702e37c10159294633f20ab8f1e33e7d01607be3603ec0aa3676969d7b.
+// FilterNewL1Block is a free log retrieval operation binding the contract event 0x8323d3e5d25db513e1a772870aaa45e9b069a13d49879d72e70638b5c1c18cb7.
 //
-// Solidity: event NewL1Block(uint256 indexed blockNumber, address indexed winner)
-func (_Blocktracker *BlocktrackerFilterer) FilterNewL1Block(opts *bind.FilterOpts, blockNumber []*big.Int, winner []common.Address) (*BlocktrackerNewL1BlockIterator, error) {
+// Solidity: event NewL1Block(uint256 indexed blockNumber, address indexed winner, uint256 indexed window)
+func (_Blocktracker *BlocktrackerFilterer) FilterNewL1Block(opts *bind.FilterOpts, blockNumber []*big.Int, winner []common.Address, window []*big.Int) (*BlocktrackerNewL1BlockIterator, error) {
 
 	var blockNumberRule []interface{}
 	for _, blockNumberItem := range blockNumber {
@@ -733,18 +734,22 @@ func (_Blocktracker *BlocktrackerFilterer) FilterNewL1Block(opts *bind.FilterOpt
 	for _, winnerItem := range winner {
 		winnerRule = append(winnerRule, winnerItem)
 	}
+	var windowRule []interface{}
+	for _, windowItem := range window {
+		windowRule = append(windowRule, windowItem)
+	}
 
-	logs, sub, err := _Blocktracker.contract.FilterLogs(opts, "NewL1Block", blockNumberRule, winnerRule)
+	logs, sub, err := _Blocktracker.contract.FilterLogs(opts, "NewL1Block", blockNumberRule, winnerRule, windowRule)
 	if err != nil {
 		return nil, err
 	}
 	return &BlocktrackerNewL1BlockIterator{contract: _Blocktracker.contract, event: "NewL1Block", logs: logs, sub: sub}, nil
 }
 
-// WatchNewL1Block is a free log subscription operation binding the contract event 0x2fa9ac702e37c10159294633f20ab8f1e33e7d01607be3603ec0aa3676969d7b.
+// WatchNewL1Block is a free log subscription operation binding the contract event 0x8323d3e5d25db513e1a772870aaa45e9b069a13d49879d72e70638b5c1c18cb7.
 //
-// Solidity: event NewL1Block(uint256 indexed blockNumber, address indexed winner)
-func (_Blocktracker *BlocktrackerFilterer) WatchNewL1Block(opts *bind.WatchOpts, sink chan<- *BlocktrackerNewL1Block, blockNumber []*big.Int, winner []common.Address) (event.Subscription, error) {
+// Solidity: event NewL1Block(uint256 indexed blockNumber, address indexed winner, uint256 indexed window)
+func (_Blocktracker *BlocktrackerFilterer) WatchNewL1Block(opts *bind.WatchOpts, sink chan<- *BlocktrackerNewL1Block, blockNumber []*big.Int, winner []common.Address, window []*big.Int) (event.Subscription, error) {
 
 	var blockNumberRule []interface{}
 	for _, blockNumberItem := range blockNumber {
@@ -754,8 +759,12 @@ func (_Blocktracker *BlocktrackerFilterer) WatchNewL1Block(opts *bind.WatchOpts,
 	for _, winnerItem := range winner {
 		winnerRule = append(winnerRule, winnerItem)
 	}
+	var windowRule []interface{}
+	for _, windowItem := range window {
+		windowRule = append(windowRule, windowItem)
+	}
 
-	logs, sub, err := _Blocktracker.contract.WatchLogs(opts, "NewL1Block", blockNumberRule, winnerRule)
+	logs, sub, err := _Blocktracker.contract.WatchLogs(opts, "NewL1Block", blockNumberRule, winnerRule, windowRule)
 	if err != nil {
 		return nil, err
 	}
@@ -787,9 +796,9 @@ func (_Blocktracker *BlocktrackerFilterer) WatchNewL1Block(opts *bind.WatchOpts,
 	}), nil
 }
 
-// ParseNewL1Block is a log parse operation binding the contract event 0x2fa9ac702e37c10159294633f20ab8f1e33e7d01607be3603ec0aa3676969d7b.
+// ParseNewL1Block is a log parse operation binding the contract event 0x8323d3e5d25db513e1a772870aaa45e9b069a13d49879d72e70638b5c1c18cb7.
 //
-// Solidity: event NewL1Block(uint256 indexed blockNumber, address indexed winner)
+// Solidity: event NewL1Block(uint256 indexed blockNumber, address indexed winner, uint256 indexed window)
 func (_Blocktracker *BlocktrackerFilterer) ParseNewL1Block(log types.Log) (*BlocktrackerNewL1Block, error) {
 	event := new(BlocktrackerNewL1Block)
 	if err := _Blocktracker.contract.UnpackLog(event, "NewL1Block", log); err != nil {
