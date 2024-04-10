@@ -5,6 +5,7 @@ type Contracts struct {
 	ProviderRegistry       string
 	PreconfCommitmentStore string
 	Oracle                 string
+	BlockTracker           string
 }
 
 var TestnetContracts = Contracts{
@@ -12,4 +13,5 @@ var TestnetContracts = Contracts{
 	ProviderRegistry:       "0x070cE6161AD79a3BC7aEa222FdfC6AD171Ca83F3",
 	PreconfCommitmentStore: "0x4DfF34f74aE5C48a5050eb54e7cEDAb9DEF03715",
 	Oracle:                 "0x6bD961a0c15057983F6b457319187782fc98FcAc",
+	BlockTracker:           "0xCB4AA84C916BB891cBF43320e0c97C3d4329Cec7",
 }
