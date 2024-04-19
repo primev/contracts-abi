@@ -30,7 +30,7 @@ var (
 
 // BlocktrackerMetaData contains all meta data concerning the Blocktracker contract.
 var BlocktrackerMetaData = &bind.MetaData{
-	ABI: "[{\"inputs\":[{\"internalType\":\"address\",\"name\":\"_owner\",\"type\":\"address\"}],\"stateMutability\":\"nonpayable\",\"type\":\"constructor\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"blocksPerWindow\",\"type\":\"uint256\"}],\"name\":\"NewBlocksPerWindow\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"uint256\",\"name\":\"blockNumber\",\"type\":\"uint256\"},{\"indexed\":true,\"internalType\":\"address\",\"name\":\"winner\",\"type\":\"address\"},{\"indexed\":true,\"internalType\":\"uint256\",\"name\":\"window\",\"type\":\"uint256\"}],\"name\":\"NewL1Block\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"uint256\",\"name\":\"window\",\"type\":\"uint256\"}],\"name\":\"NewWindow\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"address\",\"name\":\"previousOwner\",\"type\":\"address\"},{\"indexed\":true,\"internalType\":\"address\",\"name\":\"newOwner\",\"type\":\"address\"}],\"name\":\"OwnershipTransferred\",\"type\":\"event\"},{\"stateMutability\":\"payable\",\"type\":\"fallback\"},{\"inputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"name\":\"blockWinners\",\"outputs\":[{\"internalType\":\"address\",\"name\":\"\",\"type\":\"address\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"blocksPerWindow\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"currentWindow\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"uint256\",\"name\":\"blockNumber\",\"type\":\"uint256\"}],\"name\":\"getBlockWinner\",\"outputs\":[{\"internalType\":\"address\",\"name\":\"\",\"type\":\"address\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"getBlocksPerWindow\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"getCurrentWindow\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"getLastL1BlockNumber\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"getLastL1BlockWinner\",\"outputs\":[{\"internalType\":\"address\",\"name\":\"\",\"type\":\"address\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"lastL1BlockNumber\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"lastL1BlockWinner\",\"outputs\":[{\"internalType\":\"address\",\"name\":\"\",\"type\":\"address\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"owner\",\"outputs\":[{\"internalType\":\"address\",\"name\":\"\",\"type\":\"address\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"uint256\",\"name\":\"_blockNumber\",\"type\":\"uint256\"},{\"internalType\":\"address\",\"name\":\"_winner\",\"type\":\"address\"}],\"name\":\"recordL1Block\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"renounceOwnership\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"uint256\",\"name\":\"_blocksPerWindow\",\"type\":\"uint256\"}],\"name\":\"setBlocksPerWindow\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"newOwner\",\"type\":\"address\"}],\"name\":\"transferOwnership\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"stateMutability\":\"payable\",\"type\":\"receive\"}]",
+	ABI: "[{\"inputs\":[{\"internalType\":\"address\",\"name\":\"_owner\",\"type\":\"address\"}],\"stateMutability\":\"nonpayable\",\"type\":\"constructor\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"blocksPerWindow\",\"type\":\"uint256\"}],\"name\":\"NewBlocksPerWindow\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"uint256\",\"name\":\"blockNumber\",\"type\":\"uint256\"},{\"indexed\":true,\"internalType\":\"address\",\"name\":\"winner\",\"type\":\"address\"},{\"indexed\":true,\"internalType\":\"uint256\",\"name\":\"window\",\"type\":\"uint256\"}],\"name\":\"NewL1Block\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"uint256\",\"name\":\"window\",\"type\":\"uint256\"}],\"name\":\"NewWindow\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"address\",\"name\":\"previousOwner\",\"type\":\"address\"},{\"indexed\":true,\"internalType\":\"address\",\"name\":\"newOwner\",\"type\":\"address\"}],\"name\":\"OwnershipTransferred\",\"type\":\"event\"},{\"stateMutability\":\"payable\",\"type\":\"fallback\"},{\"inputs\":[{\"internalType\":\"string\",\"name\":\"builderName\",\"type\":\"string\"},{\"internalType\":\"address\",\"name\":\"builderAddress\",\"type\":\"address\"}],\"name\":\"addBuilderAddress\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"string\",\"name\":\"\",\"type\":\"string\"}],\"name\":\"blockBuilderNameToAddress\",\"outputs\":[{\"internalType\":\"address\",\"name\":\"\",\"type\":\"address\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"name\":\"blockWinners\",\"outputs\":[{\"internalType\":\"address\",\"name\":\"\",\"type\":\"address\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"blocksPerWindow\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"currentWindow\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"uint256\",\"name\":\"blockNumber\",\"type\":\"uint256\"}],\"name\":\"getBlockWinner\",\"outputs\":[{\"internalType\":\"address\",\"name\":\"\",\"type\":\"address\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"getBlocksPerWindow\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"string\",\"name\":\"builderNameGrafiti\",\"type\":\"string\"}],\"name\":\"getBuilder\",\"outputs\":[{\"internalType\":\"address\",\"name\":\"\",\"type\":\"address\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"getCurrentWindow\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"uint256\",\"name\":\"blockNumber\",\"type\":\"uint256\"}],\"name\":\"getWindowFromBlockNumber\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"owner\",\"outputs\":[{\"internalType\":\"address\",\"name\":\"\",\"type\":\"address\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"uint256\",\"name\":\"_blockNumber\",\"type\":\"uint256\"},{\"internalType\":\"string\",\"name\":\"_winnerGraffiti\",\"type\":\"string\"}],\"name\":\"recordL1Block\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"renounceOwnership\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"uint256\",\"name\":\"_blocksPerWindow\",\"type\":\"uint256\"}],\"name\":\"setBlocksPerWindow\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"newOwner\",\"type\":\"address\"}],\"name\":\"transferOwnership\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"stateMutability\":\"payable\",\"type\":\"receive\"}]",
 }
 
 // BlocktrackerABI is the input ABI used to generate the binding from.
@@ -177,6 +177,37 @@ func (_Blocktracker *BlocktrackerTransactorRaw) Transfer(opts *bind.TransactOpts
 // Transact invokes the (paid) contract method with params as input values.
 func (_Blocktracker *BlocktrackerTransactorRaw) Transact(opts *bind.TransactOpts, method string, params ...interface{}) (*types.Transaction, error) {
 	return _Blocktracker.Contract.contract.Transact(opts, method, params...)
+}
+
+// BlockBuilderNameToAddress is a free data retrieval call binding the contract method 0xeebac3ac.
+//
+// Solidity: function blockBuilderNameToAddress(string ) view returns(address)
+func (_Blocktracker *BlocktrackerCaller) BlockBuilderNameToAddress(opts *bind.CallOpts, arg0 string) (common.Address, error) {
+	var out []interface{}
+	err := _Blocktracker.contract.Call(opts, &out, "blockBuilderNameToAddress", arg0)
+
+	if err != nil {
+		return *new(common.Address), err
+	}
+
+	out0 := *abi.ConvertType(out[0], new(common.Address)).(*common.Address)
+
+	return out0, err
+
+}
+
+// BlockBuilderNameToAddress is a free data retrieval call binding the contract method 0xeebac3ac.
+//
+// Solidity: function blockBuilderNameToAddress(string ) view returns(address)
+func (_Blocktracker *BlocktrackerSession) BlockBuilderNameToAddress(arg0 string) (common.Address, error) {
+	return _Blocktracker.Contract.BlockBuilderNameToAddress(&_Blocktracker.CallOpts, arg0)
+}
+
+// BlockBuilderNameToAddress is a free data retrieval call binding the contract method 0xeebac3ac.
+//
+// Solidity: function blockBuilderNameToAddress(string ) view returns(address)
+func (_Blocktracker *BlocktrackerCallerSession) BlockBuilderNameToAddress(arg0 string) (common.Address, error) {
+	return _Blocktracker.Contract.BlockBuilderNameToAddress(&_Blocktracker.CallOpts, arg0)
 }
 
 // BlockWinners is a free data retrieval call binding the contract method 0xe4747419.
@@ -334,6 +365,37 @@ func (_Blocktracker *BlocktrackerCallerSession) GetBlocksPerWindow() (*big.Int, 
 	return _Blocktracker.Contract.GetBlocksPerWindow(&_Blocktracker.CallOpts)
 }
 
+// GetBuilder is a free data retrieval call binding the contract method 0x237ba8fb.
+//
+// Solidity: function getBuilder(string builderNameGrafiti) view returns(address)
+func (_Blocktracker *BlocktrackerCaller) GetBuilder(opts *bind.CallOpts, builderNameGrafiti string) (common.Address, error) {
+	var out []interface{}
+	err := _Blocktracker.contract.Call(opts, &out, "getBuilder", builderNameGrafiti)
+
+	if err != nil {
+		return *new(common.Address), err
+	}
+
+	out0 := *abi.ConvertType(out[0], new(common.Address)).(*common.Address)
+
+	return out0, err
+
+}
+
+// GetBuilder is a free data retrieval call binding the contract method 0x237ba8fb.
+//
+// Solidity: function getBuilder(string builderNameGrafiti) view returns(address)
+func (_Blocktracker *BlocktrackerSession) GetBuilder(builderNameGrafiti string) (common.Address, error) {
+	return _Blocktracker.Contract.GetBuilder(&_Blocktracker.CallOpts, builderNameGrafiti)
+}
+
+// GetBuilder is a free data retrieval call binding the contract method 0x237ba8fb.
+//
+// Solidity: function getBuilder(string builderNameGrafiti) view returns(address)
+func (_Blocktracker *BlocktrackerCallerSession) GetBuilder(builderNameGrafiti string) (common.Address, error) {
+	return _Blocktracker.Contract.GetBuilder(&_Blocktracker.CallOpts, builderNameGrafiti)
+}
+
 // GetCurrentWindow is a free data retrieval call binding the contract method 0x0f67e7d5.
 //
 // Solidity: function getCurrentWindow() view returns(uint256)
@@ -365,12 +427,12 @@ func (_Blocktracker *BlocktrackerCallerSession) GetCurrentWindow() (*big.Int, er
 	return _Blocktracker.Contract.GetCurrentWindow(&_Blocktracker.CallOpts)
 }
 
-// GetLastL1BlockNumber is a free data retrieval call binding the contract method 0xc1378995.
+// GetWindowFromBlockNumber is a free data retrieval call binding the contract method 0x70ef60db.
 //
-// Solidity: function getLastL1BlockNumber() view returns(uint256)
-func (_Blocktracker *BlocktrackerCaller) GetLastL1BlockNumber(opts *bind.CallOpts) (*big.Int, error) {
+// Solidity: function getWindowFromBlockNumber(uint256 blockNumber) view returns(uint256)
+func (_Blocktracker *BlocktrackerCaller) GetWindowFromBlockNumber(opts *bind.CallOpts, blockNumber *big.Int) (*big.Int, error) {
 	var out []interface{}
-	err := _Blocktracker.contract.Call(opts, &out, "getLastL1BlockNumber")
+	err := _Blocktracker.contract.Call(opts, &out, "getWindowFromBlockNumber", blockNumber)
 
 	if err != nil {
 		return *new(*big.Int), err
@@ -382,111 +444,18 @@ func (_Blocktracker *BlocktrackerCaller) GetLastL1BlockNumber(opts *bind.CallOpt
 
 }
 
-// GetLastL1BlockNumber is a free data retrieval call binding the contract method 0xc1378995.
+// GetWindowFromBlockNumber is a free data retrieval call binding the contract method 0x70ef60db.
 //
-// Solidity: function getLastL1BlockNumber() view returns(uint256)
-func (_Blocktracker *BlocktrackerSession) GetLastL1BlockNumber() (*big.Int, error) {
-	return _Blocktracker.Contract.GetLastL1BlockNumber(&_Blocktracker.CallOpts)
+// Solidity: function getWindowFromBlockNumber(uint256 blockNumber) view returns(uint256)
+func (_Blocktracker *BlocktrackerSession) GetWindowFromBlockNumber(blockNumber *big.Int) (*big.Int, error) {
+	return _Blocktracker.Contract.GetWindowFromBlockNumber(&_Blocktracker.CallOpts, blockNumber)
 }
 
-// GetLastL1BlockNumber is a free data retrieval call binding the contract method 0xc1378995.
+// GetWindowFromBlockNumber is a free data retrieval call binding the contract method 0x70ef60db.
 //
-// Solidity: function getLastL1BlockNumber() view returns(uint256)
-func (_Blocktracker *BlocktrackerCallerSession) GetLastL1BlockNumber() (*big.Int, error) {
-	return _Blocktracker.Contract.GetLastL1BlockNumber(&_Blocktracker.CallOpts)
-}
-
-// GetLastL1BlockWinner is a free data retrieval call binding the contract method 0x50617e96.
-//
-// Solidity: function getLastL1BlockWinner() view returns(address)
-func (_Blocktracker *BlocktrackerCaller) GetLastL1BlockWinner(opts *bind.CallOpts) (common.Address, error) {
-	var out []interface{}
-	err := _Blocktracker.contract.Call(opts, &out, "getLastL1BlockWinner")
-
-	if err != nil {
-		return *new(common.Address), err
-	}
-
-	out0 := *abi.ConvertType(out[0], new(common.Address)).(*common.Address)
-
-	return out0, err
-
-}
-
-// GetLastL1BlockWinner is a free data retrieval call binding the contract method 0x50617e96.
-//
-// Solidity: function getLastL1BlockWinner() view returns(address)
-func (_Blocktracker *BlocktrackerSession) GetLastL1BlockWinner() (common.Address, error) {
-	return _Blocktracker.Contract.GetLastL1BlockWinner(&_Blocktracker.CallOpts)
-}
-
-// GetLastL1BlockWinner is a free data retrieval call binding the contract method 0x50617e96.
-//
-// Solidity: function getLastL1BlockWinner() view returns(address)
-func (_Blocktracker *BlocktrackerCallerSession) GetLastL1BlockWinner() (common.Address, error) {
-	return _Blocktracker.Contract.GetLastL1BlockWinner(&_Blocktracker.CallOpts)
-}
-
-// LastL1BlockNumber is a free data retrieval call binding the contract method 0x9544d851.
-//
-// Solidity: function lastL1BlockNumber() view returns(uint256)
-func (_Blocktracker *BlocktrackerCaller) LastL1BlockNumber(opts *bind.CallOpts) (*big.Int, error) {
-	var out []interface{}
-	err := _Blocktracker.contract.Call(opts, &out, "lastL1BlockNumber")
-
-	if err != nil {
-		return *new(*big.Int), err
-	}
-
-	out0 := *abi.ConvertType(out[0], new(*big.Int)).(**big.Int)
-
-	return out0, err
-
-}
-
-// LastL1BlockNumber is a free data retrieval call binding the contract method 0x9544d851.
-//
-// Solidity: function lastL1BlockNumber() view returns(uint256)
-func (_Blocktracker *BlocktrackerSession) LastL1BlockNumber() (*big.Int, error) {
-	return _Blocktracker.Contract.LastL1BlockNumber(&_Blocktracker.CallOpts)
-}
-
-// LastL1BlockNumber is a free data retrieval call binding the contract method 0x9544d851.
-//
-// Solidity: function lastL1BlockNumber() view returns(uint256)
-func (_Blocktracker *BlocktrackerCallerSession) LastL1BlockNumber() (*big.Int, error) {
-	return _Blocktracker.Contract.LastL1BlockNumber(&_Blocktracker.CallOpts)
-}
-
-// LastL1BlockWinner is a free data retrieval call binding the contract method 0xb2be0c7c.
-//
-// Solidity: function lastL1BlockWinner() view returns(address)
-func (_Blocktracker *BlocktrackerCaller) LastL1BlockWinner(opts *bind.CallOpts) (common.Address, error) {
-	var out []interface{}
-	err := _Blocktracker.contract.Call(opts, &out, "lastL1BlockWinner")
-
-	if err != nil {
-		return *new(common.Address), err
-	}
-
-	out0 := *abi.ConvertType(out[0], new(common.Address)).(*common.Address)
-
-	return out0, err
-
-}
-
-// LastL1BlockWinner is a free data retrieval call binding the contract method 0xb2be0c7c.
-//
-// Solidity: function lastL1BlockWinner() view returns(address)
-func (_Blocktracker *BlocktrackerSession) LastL1BlockWinner() (common.Address, error) {
-	return _Blocktracker.Contract.LastL1BlockWinner(&_Blocktracker.CallOpts)
-}
-
-// LastL1BlockWinner is a free data retrieval call binding the contract method 0xb2be0c7c.
-//
-// Solidity: function lastL1BlockWinner() view returns(address)
-func (_Blocktracker *BlocktrackerCallerSession) LastL1BlockWinner() (common.Address, error) {
-	return _Blocktracker.Contract.LastL1BlockWinner(&_Blocktracker.CallOpts)
+// Solidity: function getWindowFromBlockNumber(uint256 blockNumber) view returns(uint256)
+func (_Blocktracker *BlocktrackerCallerSession) GetWindowFromBlockNumber(blockNumber *big.Int) (*big.Int, error) {
+	return _Blocktracker.Contract.GetWindowFromBlockNumber(&_Blocktracker.CallOpts, blockNumber)
 }
 
 // Owner is a free data retrieval call binding the contract method 0x8da5cb5b.
@@ -520,25 +489,46 @@ func (_Blocktracker *BlocktrackerCallerSession) Owner() (common.Address, error) 
 	return _Blocktracker.Contract.Owner(&_Blocktracker.CallOpts)
 }
 
-// RecordL1Block is a paid mutator transaction binding the contract method 0x46782942.
+// AddBuilderAddress is a paid mutator transaction binding the contract method 0x0bd0a9e1.
 //
-// Solidity: function recordL1Block(uint256 _blockNumber, address _winner) returns()
-func (_Blocktracker *BlocktrackerTransactor) RecordL1Block(opts *bind.TransactOpts, _blockNumber *big.Int, _winner common.Address) (*types.Transaction, error) {
-	return _Blocktracker.contract.Transact(opts, "recordL1Block", _blockNumber, _winner)
+// Solidity: function addBuilderAddress(string builderName, address builderAddress) returns()
+func (_Blocktracker *BlocktrackerTransactor) AddBuilderAddress(opts *bind.TransactOpts, builderName string, builderAddress common.Address) (*types.Transaction, error) {
+	return _Blocktracker.contract.Transact(opts, "addBuilderAddress", builderName, builderAddress)
 }
 
-// RecordL1Block is a paid mutator transaction binding the contract method 0x46782942.
+// AddBuilderAddress is a paid mutator transaction binding the contract method 0x0bd0a9e1.
 //
-// Solidity: function recordL1Block(uint256 _blockNumber, address _winner) returns()
-func (_Blocktracker *BlocktrackerSession) RecordL1Block(_blockNumber *big.Int, _winner common.Address) (*types.Transaction, error) {
-	return _Blocktracker.Contract.RecordL1Block(&_Blocktracker.TransactOpts, _blockNumber, _winner)
+// Solidity: function addBuilderAddress(string builderName, address builderAddress) returns()
+func (_Blocktracker *BlocktrackerSession) AddBuilderAddress(builderName string, builderAddress common.Address) (*types.Transaction, error) {
+	return _Blocktracker.Contract.AddBuilderAddress(&_Blocktracker.TransactOpts, builderName, builderAddress)
 }
 
-// RecordL1Block is a paid mutator transaction binding the contract method 0x46782942.
+// AddBuilderAddress is a paid mutator transaction binding the contract method 0x0bd0a9e1.
 //
-// Solidity: function recordL1Block(uint256 _blockNumber, address _winner) returns()
-func (_Blocktracker *BlocktrackerTransactorSession) RecordL1Block(_blockNumber *big.Int, _winner common.Address) (*types.Transaction, error) {
-	return _Blocktracker.Contract.RecordL1Block(&_Blocktracker.TransactOpts, _blockNumber, _winner)
+// Solidity: function addBuilderAddress(string builderName, address builderAddress) returns()
+func (_Blocktracker *BlocktrackerTransactorSession) AddBuilderAddress(builderName string, builderAddress common.Address) (*types.Transaction, error) {
+	return _Blocktracker.Contract.AddBuilderAddress(&_Blocktracker.TransactOpts, builderName, builderAddress)
+}
+
+// RecordL1Block is a paid mutator transaction binding the contract method 0x1d63f108.
+//
+// Solidity: function recordL1Block(uint256 _blockNumber, string _winnerGraffiti) returns()
+func (_Blocktracker *BlocktrackerTransactor) RecordL1Block(opts *bind.TransactOpts, _blockNumber *big.Int, _winnerGraffiti string) (*types.Transaction, error) {
+	return _Blocktracker.contract.Transact(opts, "recordL1Block", _blockNumber, _winnerGraffiti)
+}
+
+// RecordL1Block is a paid mutator transaction binding the contract method 0x1d63f108.
+//
+// Solidity: function recordL1Block(uint256 _blockNumber, string _winnerGraffiti) returns()
+func (_Blocktracker *BlocktrackerSession) RecordL1Block(_blockNumber *big.Int, _winnerGraffiti string) (*types.Transaction, error) {
+	return _Blocktracker.Contract.RecordL1Block(&_Blocktracker.TransactOpts, _blockNumber, _winnerGraffiti)
+}
+
+// RecordL1Block is a paid mutator transaction binding the contract method 0x1d63f108.
+//
+// Solidity: function recordL1Block(uint256 _blockNumber, string _winnerGraffiti) returns()
+func (_Blocktracker *BlocktrackerTransactorSession) RecordL1Block(_blockNumber *big.Int, _winnerGraffiti string) (*types.Transaction, error) {
+	return _Blocktracker.Contract.RecordL1Block(&_Blocktracker.TransactOpts, _blockNumber, _winnerGraffiti)
 }
 
 // RenounceOwnership is a paid mutator transaction binding the contract method 0x715018a6.

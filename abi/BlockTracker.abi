@@ -87,6 +87,43 @@
   {
     "inputs": [
       {
+        "internalType": "string",
+        "name": "builderName",
+        "type": "string"
+      },
+      {
+        "internalType": "address",
+        "name": "builderAddress",
+        "type": "address"
+      }
+    ],
+    "name": "addBuilderAddress",
+    "outputs": [],
+    "stateMutability": "nonpayable",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "string",
+        "name": "",
+        "type": "string"
+      }
+    ],
+    "name": "blockBuilderNameToAddress",
+    "outputs": [
+      {
+        "internalType": "address",
+        "name": "",
+        "type": "address"
+      }
+    ],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
         "internalType": "uint256",
         "name": "",
         "type": "uint256"
@@ -162,6 +199,25 @@
     "type": "function"
   },
   {
+    "inputs": [
+      {
+        "internalType": "string",
+        "name": "builderNameGrafiti",
+        "type": "string"
+      }
+    ],
+    "name": "getBuilder",
+    "outputs": [
+      {
+        "internalType": "address",
+        "name": "",
+        "type": "address"
+      }
+    ],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
     "inputs": [],
     "name": "getCurrentWindow",
     "outputs": [
@@ -175,52 +231,19 @@
     "type": "function"
   },
   {
-    "inputs": [],
-    "name": "getLastL1BlockNumber",
+    "inputs": [
+      {
+        "internalType": "uint256",
+        "name": "blockNumber",
+        "type": "uint256"
+      }
+    ],
+    "name": "getWindowFromBlockNumber",
     "outputs": [
       {
         "internalType": "uint256",
         "name": "",
         "type": "uint256"
-      }
-    ],
-    "stateMutability": "view",
-    "type": "function"
-  },
-  {
-    "inputs": [],
-    "name": "getLastL1BlockWinner",
-    "outputs": [
-      {
-        "internalType": "address",
-        "name": "",
-        "type": "address"
-      }
-    ],
-    "stateMutability": "view",
-    "type": "function"
-  },
-  {
-    "inputs": [],
-    "name": "lastL1BlockNumber",
-    "outputs": [
-      {
-        "internalType": "uint256",
-        "name": "",
-        "type": "uint256"
-      }
-    ],
-    "stateMutability": "view",
-    "type": "function"
-  },
-  {
-    "inputs": [],
-    "name": "lastL1BlockWinner",
-    "outputs": [
-      {
-        "internalType": "address",
-        "name": "",
-        "type": "address"
       }
     ],
     "stateMutability": "view",
@@ -247,9 +270,9 @@
         "type": "uint256"
       },
       {
-        "internalType": "address",
-        "name": "_winner",
-        "type": "address"
+        "internalType": "string",
+        "name": "_winnerGraffiti",
+        "type": "string"
       }
     ],
     "name": "recordL1Block",

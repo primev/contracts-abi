@@ -915,11 +915,6 @@
   {
     "inputs": [
       {
-        "internalType": "uint256",
-        "name": "windowToSettle",
-        "type": "uint256"
-      },
-      {
         "internalType": "bytes32",
         "name": "commitmentIndex",
         "type": "bytes32"
@@ -937,11 +932,6 @@
   },
   {
     "inputs": [
-      {
-        "internalType": "uint256",
-        "name": "windowToSettle",
-        "type": "uint256"
-      },
       {
         "internalType": "bytes32",
         "name": "commitmentIndex",
@@ -1157,24 +1147,6 @@
       }
     ],
     "name": "transferOwnership",
-    "outputs": [],
-    "stateMutability": "nonpayable",
-    "type": "function"
-  },
-  {
-    "inputs": [
-      {
-        "internalType": "uint256",
-        "name": "windowToSettle",
-        "type": "uint256"
-      },
-      {
-        "internalType": "bytes32",
-        "name": "commitmentDigest",
-        "type": "bytes32"
-      }
-    ],
-    "name": "unlockBidFunds",
     "outputs": [],
     "stateMutability": "nonpayable",
     "type": "function"
