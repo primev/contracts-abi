@@ -3,7 +3,7 @@
     "inputs": [
       {
         "internalType": "uint256",
-        "name": "_minAllowance",
+        "name": "_minDeposit",
         "type": "uint256"
       },
       {
@@ -42,7 +42,7 @@
       {
         "indexed": false,
         "internalType": "uint256",
-        "name": "prepaidAmount",
+        "name": "depositedAmount",
         "type": "uint256"
       },
       {
@@ -261,6 +261,19 @@
     "type": "function"
   },
   {
+    "inputs": [
+      {
+        "internalType": "uint256",
+        "name": "window",
+        "type": "uint256"
+      }
+    ],
+    "name": "depositForSpecificWindow",
+    "outputs": [],
+    "stateMutability": "payable",
+    "type": "function"
+  },
+  {
     "inputs": [],
     "name": "feePercent",
     "outputs": [
@@ -312,7 +325,7 @@
         "type": "uint256"
       }
     ],
-    "name": "getAllowance",
+    "name": "getDeposit",
     "outputs": [
       {
         "internalType": "uint256",
@@ -381,7 +394,7 @@
   },
   {
     "inputs": [],
-    "name": "minAllowance",
+    "name": "minDeposit",
     "outputs": [
       {
         "internalType": "uint256",
@@ -416,19 +429,6 @@
       }
     ],
     "stateMutability": "view",
-    "type": "function"
-  },
-  {
-    "inputs": [
-      {
-        "internalType": "uint256",
-        "name": "window",
-        "type": "uint256"
-      }
-    ],
-    "name": "prepayAllowanceForSpecificWindow",
-    "outputs": [],
-    "stateMutability": "payable",
     "type": "function"
   },
   {
